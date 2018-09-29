@@ -4,6 +4,9 @@
     <title><![CDATA[mac下配置github个人博客]]></title>
     <url>%2F2018%2F09%2F29%2Fmac%E9%85%8D%E7%BD%AEgithub%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[一 前言本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在一个朋友的建议下开始尝试搭建自己的github博客，真是一路心酸啊！ 二 准备工作创建Github域名和放博客的库 首先需要注册一个Github账号。 注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New repository按钮创建仓库，注意这个仓库名不能随便写。例如我的Github账号为musibii，那么库名为musibii.github.io。 安装Git、Nodejs和HexoHexo可以说是最流行的博客框架了，基于Nodejs，想要搭建好，需要安装Git、Nodejs和Hexo。 安装Git 可以直接在命令行使用brew来安装Git$ brew install git因为我之前已经安装了Git，所以这次给我安装了两个扩展包。 安装Nodejs为了便于管理Nodejs版本，首先安装nvm，这是Nodejs版本管理器，可以实现Nodejs多版本切换。$ curl -o- [https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh](https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh) | bash安装完成后，重启终端并执行下列命令即可安装Node.js$ nvm install \d后面跟的是Node.js的版本，今天就是被这个给坑了，应该安装较新的版本，之前安装的为 4，然后一直报错。$ nvm install 8安装后在终端输入$ nvm use node就会使用最新的nodejs版本了。 安装Hexo$ sudo npm install hexo-cli -g注意需要sudo权限，不然会出错 配置博客接下来需要使用Hexo来初始化一个博客，然后根据自己的需求更改一些自定义配置，比如字体、动画效果、主题等等。 创建博客为自己的博客创建一个文件夹，然后cd 文件夹，并执行下面的代码。$ hexo init username.github.io 更改主题 基础配置然后需要的就是在_config.yml里面修改个人信息，比如博客的主题、作者还有语言以及修改的主题名，最重要的是要和你的github仓库关联起来。其他的可以根据自己的需求酌情更改，比如我就增加了页面的动画效果Next主题动画效果 你的第一篇博客万事俱备，只剩编写博客了 $ hexo new &#39;你的博客名字&#39;执行完后会在‘username.github.io/source/_posts/‘目录下出现你的博客名字 博客使用markdown格式，编写完后执行 $ hexo server如果出现下面的页面 在浏览器页面输入http://localhost:4000我的界面会和你们的不一样，出现了 Hello就说明成功了。 安装hexo-deployer-git –save自动部署发布工具$ npm install hexo-deployer-git --save 发布博客$ hexo deploy结束后进入博客就可以看见了！]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
   </entry>
   <entry>
     <title></title>
