@@ -378,8 +378,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/10/10/匿名函数python内置高阶函数以及递归/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/10/匿名函数python内置高阶函数以及递归/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/10/匿名函数python内置高阶函数以及递归/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -570,8 +569,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/10/08/字符编码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/08/字符编码/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/08/字符编码/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -761,8 +759,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/10/01/git-ssh配置和使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/01/git-ssh配置和使用/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/01/git-ssh配置和使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -953,8 +950,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/09/29/Mac使用Hexo配置GItHub博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/29/Mac使用Hexo配置GItHub博客/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/29/Mac使用Hexo配置GItHub博客/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1123,8 +1119,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/09/29/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/29/hello-world/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/29/hello-world/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1507,14 +1502,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://musibii.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
 
 
 
@@ -1530,12 +1517,38 @@
 
 
 
+  
 
 
 
 
 
 
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'E8Xo0TLsc16XjxNJjqf2VWNn-gzGzoHsz',
+        appKey: 'paT97If8aHTO6ecx5xz1dhp0',
+        placeholder: 'ヾﾉ≧∀≦)欢迎评论哦',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
