@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,9 +96,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -648,7 +648,8 @@
           
           匿名函数python定义一个函数通常使用def关键词，后面跟函数名，然后是注释、代码块等。
 123def func():    '''注释'''    print('from func')
-这样就在全局命名空间定义了一个叫func的函数，func表示函数体的内存地址，因为func指向函数体内存地址，
+这样就在全局命名空间定义了一个叫func的函数，func表示函数体的内存地址，因为func指向函数体内存地址，所以可以通过func来调用函数。
+那么匿名函数呢？从名字就可看出，匿名。想想就有点像以前小时候的佚名
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -847,7 +848,7 @@
         
           
           本来都以为自己完全弄懂字符编码了，昨天一个小问题给难倒了，思考了很久才得出答案，惭愧
-字符编码的简介字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最
+字符编码的简介字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最简单，直接用一个字节也就是7bit，总共128种状态就可以满足交流需求；但是像中国等不以英语为第一母
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1047,7 +1048,7 @@
           
           
 设置Git的user name和emai：（如果是第一次的话）$ git config --global user.name &#39;musibii&#39;$ git config --global user.email &#39;shaozuanzuan@gmail.com&#39;
-生成秘
+生成秘钥$ ssh-keygen -t rsa -C &#39;shaozuanzuan@gmail.co
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1247,7 +1248,8 @@
           
           一 前言本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在室友makeupstories的建议下开始尝试搭建自己的github博客，真是一路心酸啊！不过成就感也是大大滴。
 二 准备工作创建Github域名和放博客的库
-首先需要注册一个Github账
+首先需要注册一个Github账号。
+注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New rep
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1423,7 +1425,7 @@
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.Hello,
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1489,6 +1491,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -1663,8 +1667,6 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
