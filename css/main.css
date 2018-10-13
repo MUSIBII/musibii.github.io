@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36ff66;
+  background: #aaff86;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2691,10 +2691,10 @@ embed {
   display: inline-block;
 }
 body {
-  background: url("/images/samuel-scrimshaw-JXANugsHjCg.jpg");
+  background: url("/images/blogbackgroud.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position: 100% 100%;
   background-size: cover;
   width: 100%;
 }
