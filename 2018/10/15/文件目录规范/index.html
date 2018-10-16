@@ -87,17 +87,17 @@
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="随着功能的增多，代码逻辑也会越来越多，导致代码逻辑混乱不便于管理项目。为了解决这个问题，可以将相同功能的代码集合在一个文件夹，设置一个入口函数，一些设置文件放在一个文件，主要逻辑代码放一个文件夹。。。 这样对于整个业务有很好的可读性和扩展性。 对于之前的ATM+购物车项目最开始所有的逻辑代码都在一个文件，当我们需要修改某些函数时，遇到了一点困难，就是整个项目有600+行代码，而且什么都在里面，对于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181016150128296.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fwafkzp4tfj31fa0l878x.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fwafgxzs1aj31kw0gyte1.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwa37zzjrxj31kw0jiaeo.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwa3dq19nhj31kw0hj787.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fwafhw8ky8j31kw0gxafy.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa3lcydh6j31kw0iik05.jpg">
-<meta property="og:updated_time" content="2018-10-16T14:23:20.244Z">
+<meta property="og:updated_time" content="2018-10-16T14:26:40.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件目录规范">
 <meta name="twitter:description" content="随着功能的增多，代码逻辑也会越来越多，导致代码逻辑混乱不便于管理项目。为了解决这个问题，可以将相同功能的代码集合在一个文件夹，设置一个入口函数，一些设置文件放在一个文件，主要逻辑代码放一个文件夹。。。 这样对于整个业务有很好的可读性和扩展性。 对于之前的ATM+购物车项目最开始所有的逻辑代码都在一个文件，当我们需要修改某些函数时，遇到了一点困难，就是整个项目有600+行代码，而且什么都在里面，对于">
-<meta name="twitter:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181016150128296.png">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fwafkzp4tfj31fa0l878x.jpg">
 
 
 
@@ -355,7 +355,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-16T22:23:20+08:00" content="2018-10-16">
+    <time itemprop="dateUpdated" datetime="2018-10-16T22:26:40+08:00" content="2018-10-16">
       2018-10-16
     </time>
   </span>
@@ -461,7 +461,7 @@
 <p>这样对于整个业务有很好的可读性和扩展性。</p>
 <p>对于之前的ATM+购物车项目最开始所有的逻辑代码都在一个文件，当我们需要修改某些函数时，遇到了一点困难，就是整个项目有600+行代码，而且什么都在里面，对于想快速具体的找到想修改的地方确实需要花费一些时间，效率低下。所以重新修改后，将具体功能代码放在一起，很明显逻辑清晰了，而且看的也很舒服。</p>
 <p>如下为我的项目结构中的bin文件夹：</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016150128296.png" alt=""></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fwafkzp4tfj31fa0l878x.jpg" alt=""></p>
 <p>bin目录下的start.py文件为启动函数，首先在启动函数里面导入os和sys模块，目的是为了将当前项目的根路径加入环境变量，接着导入相关函数和变量。该py文件仅仅作为程序的入口，里面没有逻辑代码。</p>
 <p>如下为conf文件夹：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwafgxzs1aj31kw0gyte1.jpg" alt=""></p>
