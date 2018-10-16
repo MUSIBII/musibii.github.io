@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="内置模块," />
 
 
 
@@ -79,24 +79,20 @@
 
 
 
-<meta name="description" content="一 前言本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在室友makeupstories的建议下开始尝试搭建自己的github博客，真是一路心酸啊！不过成就感也是大大滴。 二 准备工作创建Github域名和放博客的库 首先需要注册一个Github账号。 注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New rep">
+<meta name="description" content="python内置模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块  一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import timeprint(time.time())# 运行结果 153">
+<meta name="keywords" content="内置模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac下配置github个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/09/29/Mac使用Hexo配置GItHub博客/index.html">
+<meta property="og:title" content="Python内置模块之time">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/Python内置模块之time/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="一 前言本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在室友makeupstories的建议下开始尝试搭建自己的github博客，真是一路心酸啊！不过成就感也是大大滴。 二 准备工作创建Github域名和放博客的库 首先需要注册一个Github账号。 注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New rep">
+<meta property="og:description" content="python内置模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块  一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import timeprint(time.time())# 运行结果 153">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fvqopgrrbjj31340xwgqn.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fvqoq10wgij316y0mk12k.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fvqoqk8yvnj315m034myo.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fvqoqw0o4tj30n8094my7.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fvqor5lg9vj30rw07qq62.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fvqorcgdofj313k0sqwgx.jpg">
-<meta property="og:updated_time" content="2018-10-08T09:20:52.230Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
+<meta property="og:updated_time" content="2018-10-16T10:40:42.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac下配置github个人博客">
-<meta name="twitter:description" content="一 前言本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在室友makeupstories的建议下开始尝试搭建自己的github博客，真是一路心酸啊！不过成就感也是大大滴。 二 准备工作创建Github域名和放博客的库 首先需要注册一个Github账号。 注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New rep">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fvqopgrrbjj31340xwgqn.jpg">
+<meta name="twitter:title" content="Python内置模块之time">
+<meta name="twitter:description" content="python内置模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块  一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import timeprint(time.time())# 运行结果 153">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
 
 
 
@@ -126,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/29/Mac使用Hexo配置GItHub博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/16/Python内置模块之time/"/>
 
 
 
 
 
-  <title>mac下配置github个人博客 | MUSIBII</title>
+  <title>Python内置模块之time | MUSIBII</title>
   
 
 
@@ -312,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/Mac使用Hexo配置GItHub博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/Python内置模块之time/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -329,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mac下配置github个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">Python内置模块之time</h1>
         
 
         <div class="post-meta">
@@ -341,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T14:10:01+08:00">
-                2018-09-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T14:48:09+08:00">
+                2018-10-16
               </time>
             
 
@@ -354,8 +350,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-08T17:20:52+08:00" content="2018-10-08">
-      2018-10-08
+    <time itemprop="dateUpdated" datetime="2018-10-16T18:40:42+08:00" content="2018-10-16">
+      2018-10-16
     </time>
   </span>
 
@@ -391,8 +387,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/29/Mac使用Hexo配置GItHub博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/29/Mac使用Hexo配置GItHub博客/" itemprop="commentCount"></span>
+                <a href="/2018/10/16/Python内置模块之time/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/16/Python内置模块之time/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  737word
+                  568word
                 </span>
               
 
@@ -456,43 +452,52 @@
       
 
       
-        <h1 id="一-前言"><a href="#一-前言" class="headerlink" title="一 前言"></a>一 前言</h1><p>本来一直用博客园写博客的，奈何博客园界面惨不忍睹，而且自带的markdown编辑器更是烂的可以，于是在室友makeupstories的建议下开始尝试搭建自己的github博客，真是一路心酸啊！不过成就感也是大大滴。</p>
-<h1 id="二-准备工作"><a href="#二-准备工作" class="headerlink" title="二 准备工作"></a>二 准备工作</h1><h2 id="创建Github域名和放博客的库"><a href="#创建Github域名和放博客的库" class="headerlink" title="创建Github域名和放博客的库"></a>创建Github域名和放博客的库</h2><ol>
-<li>首先需要注册一个<a href="https://github.com" target="_blank" rel="noopener">Github</a>账号。</li>
-<li>注册之后需要新建一个库(repository)来存储网站，点击首页任意位置出现的New repository按钮创建仓库，注意这个仓库名不能随便写。例如我的Github账号为musibii，那么库名为musibii.github.io。<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fvqopgrrbjj31340xwgqn.jpg" alt=""></li>
+        <p><strong>python内置模块系列（一）：time模块与datetime</strong></p>
+<p>time模块是python内置查看当前时间戳的一个模块</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg" alt=""></p>
+<h1 id="一-time"><a href="#一-time" class="headerlink" title="一 time"></a>一 time</h1><h3 id="1-获得时间戳"><a href="#1-获得时间戳" class="headerlink" title="1 获得时间戳"></a>1 获得时间戳</h3><p>时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是<strong>float</strong>类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.time())</span><br><span class="line"><span class="comment"># 运行结果 1539678307.779871</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-结构化时间字符串"><a href="#2-结构化时间字符串" class="headerlink" title="2 结构化时间字符串"></a>2 结构化时间字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime()) <span class="comment"># 返回一个元祖对象，里面是每个时间的值(东八区)</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=48, tm_sec=4, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime().tm_year) <span class="comment"># 单独获取某个时间属性</span></span><br><span class="line"><span class="comment"># 运行结果 2018</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.gmtime()) <span class="comment"># 世界统一时间，比北京时间晚8小时</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=8, tm_min=51, tm_sec=16, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-格式化的字符串时间"><a href="#3-格式化的字符串时间" class="headerlink" title="3 格式化的字符串时间"></a>3 格式化的字符串时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time </span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>))</span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %X %p'</span>))</span><br><span class="line"><span class="comment"># 运行结果 </span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-三种格式之间的相互转换"><a href="#4-三种格式之间的相互转换" class="headerlink" title="4 三种格式之间的相互转换"></a>4 三种格式之间的相互转换</h3><ol>
+<li>时间戳转为结构化</li>
 </ol>
-<h2 id="安装Git、Nodejs和Hexo"><a href="#安装Git、Nodejs和Hexo" class="headerlink" title="安装Git、Nodejs和Hexo"></a>安装Git、Nodejs和Hexo</h2><p>Hexo可以说是最流行的博客框架了，基于Nodejs，想要搭建好，需要安装Git、Nodejs和Hexo。</p>
-<ol>
-<li>安装Git<br>可以直接在命令行使用brew来安装Git<br><code>$ brew install git</code><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fvqoq10wgij316y0mk12k.jpg" alt=""></li>
-</ol>
-<p>因为我之前已经安装了Git，所以这次给我安装了两个扩展包。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime(time.time()))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=57, tm_sec=18, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li><p>安装Nodejs<br>为了便于管理Nodejs版本，首先安装nvm，这是Nodejs版本管理器，可以实现Nodejs多版本切换。<br><code>$ curl -o-  [https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh](https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh)  | bash</code><br>安装完成后，重启终端并执行下列命令即可安装Node.js<br><code>$ nvm install \d</code><br>后面跟的是Node.js的版本，今天就是被这个给坑了，应该安装较新的版本，之前安装的为 4，然后一直报错。<br><code>$ nvm install 8</code><br>安装后在终端输入<br><code>$ nvm use node</code><br>就会使用最新的nodejs版本了。</p>
-</li>
-<li><p>安装Hexo<br><code>$ sudo npm install hexo-cli -g</code><br>注意需要sudo权限，不然会出错</p>
-</li>
+<li>结构化转字符串</li>
 </ol>
-<h1 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h1><p>接下来需要使用Hexo来初始化一个博客，然后根据自己的需求更改一些自定义配置，比如字体、动画效果、主题等等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">"%Y-%m-%d"</span>,time.localtime(time.time())))</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>字符串转结构化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">'2018-10-16'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=15, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=0, tm_yday=288, tm_isdst=-1)</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>结构化转时间戳</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.mktime(time.strptime(<span class="string">'2018-10-15'</span>, <span class="string">'%Y-%m-%d'</span>)))</span><br><span class="line"><span class="comment"># 运行结果 1539532800.0</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>格林威治时间</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.asctime(time.localtime()))</span><br><span class="line">print(time.ctime())</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># Tue Oct 16 17:12:34 2018</span></span><br><span class="line"><span class="comment"># Fri Jan  2 08:00:00 1970</span></span><br></pre></td></tr></table></figure>
+<h1 id="二-datetime"><a href="#二-datetime" class="headerlink" title="二 datetime"></a>二 datetime</h1><p>datetime是一个包，里面包含对时间的处理和日期的处理</p>
 <ol>
-<li><p>创建博客<br>为自己的博客创建一个文件夹，然后cd 文件夹，并执行下面的代码。<br><code>$ hexo init username.github.io</code></p>
-</li>
-<li><p>更改主题<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fvqoqk8yvnj315m034myo.jpg" alt=""></p>
-</li>
-<li><p>基础配置<br>然后需要的就是在_config.yml里面修改个人信息，比如博客的主题、作者还有语言以及修改的主题名，最重要的是要和你的github仓库关联起来。<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fvqoqw0o4tj30n8094my7.jpg" alt=""><br>其他的可以根据自己的需求酌情更改，比如我就增加了页面的动画效果<br><a href="https://theme-next.iissnan.com/theme-settings.html#use-motion" target="_blank" rel="noopener">Next主题动画效果</a></p>
-</li>
+<li>获取当前详细时间</li>
 </ol>
-<h1 id="你的第一篇博客"><a href="#你的第一篇博客" class="headerlink" title="你的第一篇博客"></a>你的第一篇博客</h1><ol>
-<li><p><code>$ hexo new &#39;你的博客名字&#39;</code><br>执行完后会在<br>‘username.github.io/source/_posts/‘目录下出现你的博客名字</p>
-</li>
-<li><p>博客使用markdown格式，编写完后执行<br><code>$ hexo server</code><br>如果出现下面的页面<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fvqor5lg9vj30rw07qq62.jpg" alt=""></p>
-</li>
-<li><p>在浏览器页面输入<br><code>http://localhost:4000</code><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fvqorcgdofj313k0sqwgx.jpg" alt=""><br>我的界面会和你们的不一样，出现了 Hello就说明成功了。</p>
-</li>
-<li><p>安装hexo-deployer-git –save自动部署发布工具<br><code>$ npm install hexo-deployer-git --save</code></p>
-</li>
-<li><p>发布博客<br><code>$ hexo deploy</code><br>结束后进入博客就可以看见了！</p>
-</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now())</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16 17:25:16.186114</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>获取时间的某一部分</li>
 </ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now().hour) <span class="comment"># 分钟、年份等同理</span></span><br><span class="line"><span class="comment"># 运行结果 17</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>替换时间的某一部分</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t1 = date.datetime.now()</span><br><span class="line">t1 = t1.replace(year=<span class="number">2019</span>)</span><br><span class="line">print(t1)</span><br><span class="line"><span class="comment"># 运行结果 2019-10-16 18:36:42.166986</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>时间差对象</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t2 = datetime.timedelta(weeks=<span class="number">1</span>)</span><br><span class="line">t3 = datetime.datetime.now()</span><br><span class="line">print(t2 + t3)</span><br><span class="line"><span class="comment"># 运行结果 2018-10-23 18:40:10.481854</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -508,6 +513,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/内置模块/" rel="tag"># 内置模块</a>
+          
+        </div>
+      
 
       
       
@@ -517,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/29/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/10/15/文件目录规范/" rel="next" title="文件目录规范">
+                <i class="fa fa-chevron-left"></i> 文件目录规范
               </a>
             
           </div>
@@ -526,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/01/git-ssh配置和使用/" rel="prev" title="ssh免钥登陆github">
-                ssh免钥登陆github <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-前言"><span class="nav-number">1.</span> <span class="nav-text">一 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-准备工作"><span class="nav-number">2.</span> <span class="nav-text">二 准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Github域名和放博客的库"><span class="nav-number">2.1.</span> <span class="nav-text">创建Github域名和放博客的库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git、Nodejs和Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git、Nodejs和Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置博客"><span class="nav-number">3.</span> <span class="nav-text">配置博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你的第一篇博客"><span class="nav-number">4.</span> <span class="nav-text">你的第一篇博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-time"><span class="nav-number">1.</span> <span class="nav-text">一 time</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-获得时间戳"><span class="nav-number">1.0.1.</span> <span class="nav-text">1 获得时间戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-结构化时间字符串"><span class="nav-number">1.0.2.</span> <span class="nav-text">2 结构化时间字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-格式化的字符串时间"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 格式化的字符串时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-三种格式之间的相互转换"><span class="nav-number">1.0.4.</span> <span class="nav-text">4 三种格式之间的相互转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-datetime"><span class="nav-number">2.</span> <span class="nav-text">二 datetime</span></a></li></ol></div>
             
 
           </div>
