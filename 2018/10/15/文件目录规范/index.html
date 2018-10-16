@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwa3dq19nhj31kw0hj787.jpg">
 <meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181016152743915.png">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa3lcydh6j31kw0iik05.jpg">
-<meta property="og:updated_time" content="2018-10-16T12:28:10.952Z">
+<meta property="og:updated_time" content="2018-10-16T12:41:04.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件目录规范">
 <meta name="twitter:description" content="随着功能的增多，代码逻辑也会越来越多，导致代码逻辑混乱不便于管理项目。为了解决这个问题，可以将相同功能的代码集合在一个文件夹，设置一个入口函数，一些设置文件放在一个文件，主要逻辑代码放一个文件夹。。。 这样对于整个业务有很好的可读性和扩展性。 对于之前的ATM+购物车项目最开始所有的逻辑代码都在一个文件，当我们需要修改某些函数时，遇到了一点困难，就是整个项目有600+行代码，而且什么都在里面，对于">
@@ -355,7 +355,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-16T20:28:10+08:00" content="2018-10-16">
+    <time itemprop="dateUpdated" datetime="2018-10-16T20:41:04+08:00" content="2018-10-16">
       2018-10-16
     </time>
   </span>
@@ -461,10 +461,10 @@
 <p>这样对于整个业务有很好的可读性和扩展性。</p>
 <p>对于之前的ATM+购物车项目最开始所有的逻辑代码都在一个文件，当我们需要修改某些函数时，遇到了一点困难，就是整个项目有600+行代码，而且什么都在里面，对于想快速具体的找到想修改的地方确实需要花费一些时间，效率低下。所以重新修改后，将具体功能代码放在一起，很明显逻辑清晰了，而且看的也很舒服。</p>
 <p>如下为我的项目结构中的bin文件夹：</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016150128296.png" alt="image-20181016150128296"></p>
+<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016150128296.png" alt=""></p>
 <p>bin目录下的start.py文件为启动函数，首先在启动函数里面导入os和sys模块，目的是为了将当前项目的根路径加入环境变量，接着导入相关函数和变量。该py文件仅仅作为程序的入口，里面没有逻辑代码。</p>
 <p>如下为conf文件夹：</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016151345499.png" alt="image-20181016151345499"></p>
+<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016151345499.png" alt=""></p>
 <p>conf是configuration的缩写，为配置的意思，里面只有settings文件，可以看出里面都是定义的一些变量，（在这里的变量其实应该使用大写的）</p>
 <p>接下来是主要业务逻辑代码文件夹core（核心）：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwa37zzjrxj31kw0jiaeo.jpg" alt=""></p>
@@ -473,7 +473,7 @@
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwa3dq19nhj31kw0hj787.jpg" alt=""></p>
 <p>这些信息文件在每一个账户登录时，会根据登录名创建一个文件，模式为追加，当退出时将数据刷入文件并关闭文件。</p>
 <p>接下来为lib，lib是library的缩写，表示库的意思。里面只有common文件（里面可以放共用的一些功能代码或者第三方库）</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016152743915.png" alt="image-20181016152743915"></p>
+<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181016152743915.png" alt=""></p>
 <p>common文件里面是几个通用的功能函数，比如日志装饰器、读取用户所有信息的函数、、、</p>
 <p>接下来为log文件夹，记录日志，哪个用户登陆了，做了什么事情都会记录下来（仔细想来，生活中我们在某些应用中做的事情是不是也会记录下来？答案是肯定的）</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwa3lcydh6j31kw0iik05.jpg" alt=""></p>
