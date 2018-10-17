@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="内置模块," />
 
 
 
@@ -79,22 +79,20 @@
 
 
 
-<meta name="description" content="本来都以为自己完全弄懂字符编码了，昨天一个小问题给难倒了，思考了很久才得出答案，惭愧 字符编码的简介字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最简单，直接用一个字节也就是7bit，总共128种状态就可以满足交流需求；但是像中国等不以英语为第一母">
+<meta name="description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
+<meta name="keywords" content="内置模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符编码">
-<meta property="og:url" content="http://yoursite.com/2018/10/08/字符编码/index.html">
+<meta property="og:title" content="Python模块之time">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="本来都以为自己完全弄懂字符编码了，昨天一个小问题给难倒了，思考了很久才得出答案，惭愧 字符编码的简介字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最简单，直接用一个字节也就是7bit，总共128种状态就可以满足交流需求；但是像中国等不以英语为第一母">
+<meta property="og:description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fw0v8r9cm5j30vm05w77y.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fw0x03quo8j319e0gm764.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fw0xfocfdaj31bc0c675n.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fw0xj6hev8j31hs0dmwga.jpg">
-<meta property="og:updated_time" content="2018-10-08T09:14:35.685Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
+<meta property="og:updated_time" content="2018-10-17T07:15:41.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符编码">
-<meta name="twitter:description" content="本来都以为自己完全弄懂字符编码了，昨天一个小问题给难倒了，思考了很久才得出答案，惭愧 字符编码的简介字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最简单，直接用一个字节也就是7bit，总共128种状态就可以满足交流需求；但是像中国等不以英语为第一母">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fw0v8r9cm5j30vm05w77y.jpg">
+<meta name="twitter:title" content="Python模块之time">
+<meta name="twitter:description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/08/字符编码/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/"/>
 
 
 
 
 
-  <title>字符编码 | MUSIBII</title>
+  <title>Python模块之time | MUSIBII</title>
   
 
 
@@ -310,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/字符编码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -327,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">字符编码</h1>
+          <h1 class="post-title" itemprop="name headline">Python模块之time</h1>
         
 
         <div class="post-meta">
@@ -339,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T15:06:33+08:00">
-                2018-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T14:48:09+08:00">
+                2018-10-16
               </time>
             
 
@@ -352,8 +350,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-08T17:14:35+08:00" content="2018-10-08">
-      2018-10-08
+    <time itemprop="dateUpdated" datetime="2018-10-17T15:15:41+08:00" content="2018-10-17">
+      2018-10-17
     </time>
   </span>
 
@@ -371,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Basics/" itemprop="url" rel="index">
-                    <span itemprop="name">Computer Basics</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -389,8 +387,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/08/字符编码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/08/字符编码/" itemprop="commentCount"></span>
+                <a href="/2018/10/16/Python常用模块之time与datetime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/16/Python常用模块之time与datetime/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -417,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2kword
+                  589word
                 </span>
               
 
@@ -433,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4min
+                  2min
                 </span>
               
             </div>
@@ -454,36 +452,53 @@
       
 
       
-        <p><strong>本来都以为自己完全弄懂字符编码了，昨天一个小问题给难倒了，思考了很久才得出答案，惭愧</strong></p>
-<h1 id="字符编码的简介"><a href="#字符编码的简介" class="headerlink" title="字符编码的简介"></a>字符编码的简介</h1><p>字符编码可以说每一种编程语言都会遇到的问题，为什么会有这么多的问题呢，就是因为计算机发展速度太快了，不仅计算机的诞生国要使用，第三世界国家也要使用，所以人和计算机的交流方式就变得复杂起来。像英语国家最简单，直接用一个字节也就是7bit，总共128种状态就可以满足交流需求；但是像中国等不以英语为第一母语的国家就会出很多问题了，但中文就有60000+个，那么很显然，7bit满足不了需求，所以为了满足需求，中国出了gb2312编码，不过gb2312也不能满足需求，所以又出来了gbk编码，可以表示60000+汉子。</p>
-<p>虽然可以通过自己国家去规定本国的字符编码方式，可是这么多国家，每个国家都有自己的编码方式，那么跨过交流会变得困难起来。为了解决这种问题，在1990年开始起草unicode码，简称万国码。里面是一张超级大的对照表，包含了所有的编码集，比如：utf-8、shiftjis、gbk、iso-8859-1。既然包含这么多的对照表，那么每个国家都继续用自己的编码操作文件，但是在内存中都用unicode码，存的时候又根据unicode对照映射成自己国家的编码方式存储不就可以解决跨国交流的问题了嘛。</p>
-<h1 id="文本编辑器打开文件"><a href="#文本编辑器打开文件" class="headerlink" title="文本编辑器打开文件"></a>文本编辑器打开文件</h1><p>文本编辑器打开文件通常分为三步：</p>
-<ol>
-<li><p>首先启动文本编辑器</p>
-</li>
-<li><p>文本编辑器将存储在硬盘中的文件读入内存</p>
-</li>
-<li><p>文本编辑器识别内存中文件的编码方式进而解码</p>
-<p>第一步不用多解释了，重要在第二步和第三步。</p>
-<p>硬盘中的文件会有一种编码方式，如下图</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fw0v8r9cm5j30vm05w77y.jpg" alt=""></p>
-</li>
+        <p><strong>python常用模块系列（一）：time模块与datetime</strong></p>
+<p>time模块是python内置查看当前时间戳的一个模块；</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg" alt=""></p>
+<p>datetime模块是用来对日期和时间进行操作的一个模块。</p>
+<h1 id="一-time"><a href="#一-time" class="headerlink" title="一 time"></a>一 time</h1><h3 id="1-获得时间戳"><a href="#1-获得时间戳" class="headerlink" title="1 获得时间戳"></a>1 获得时间戳</h3><p>时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是<strong>float</strong>类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.time())</span><br><span class="line"><span class="comment"># 运行结果 1539678307.779871</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-结构化时间字符串"><a href="#2-结构化时间字符串" class="headerlink" title="2 结构化时间字符串"></a>2 结构化时间字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime()) <span class="comment"># 返回一个元祖对象，里面是每个时间的值(东八区)</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=48, tm_sec=4, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime().tm_year) <span class="comment"># 单独获取某个时间属性</span></span><br><span class="line"><span class="comment"># 运行结果 2018</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.gmtime()) <span class="comment"># 世界统一时间，比北京时间晚8小时</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=8, tm_min=51, tm_sec=16, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-格式化的字符串时间"><a href="#3-格式化的字符串时间" class="headerlink" title="3 格式化的字符串时间"></a>3 格式化的字符串时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time </span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>))</span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %X %p'</span>))</span><br><span class="line"><span class="comment"># 运行结果 </span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-三种格式之间的相互转换"><a href="#4-三种格式之间的相互转换" class="headerlink" title="4 三种格式之间的相互转换"></a>4 三种格式之间的相互转换</h3><ol>
+<li>时间戳转为结构化</li>
 </ol>
-<p>可以看出来有ASCII和UTF-8两种编码方式，所以当文本编辑器将它们读入内存中时，需要按照ASCII和UTF-8分别解码成unicode码（内存中默认编码都为unicode），第三步需要在显示屏上显示出来，那么需要将内存中的unicode码解码出来，那么这时候按照什么解码方式呢？如果我们没指定的话按照当前环境的编码方式，比如windows系统默认编码方式为gbk，类linux系统默认编码方式为utf-8。所以这就会出现问题了，假如在windows系统中读取utf-8编码方式的文件时</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fw0x03quo8j319e0gm764.jpg" alt=""></p>
-<p>在windows下使用python2进行试验，定义了一个变量，并且是unicode编码的，当我分别是用utf-8和gbk对unicode编码时，然后打印发现utf-8码乱码了，这就说明在打印的时候会根据当前环境的编码方式进行解码，这和windows默认编码为gbk是相符的。</p>
-<h1 id="python中的编码"><a href="#python中的编码" class="headerlink" title="python中的编码"></a>python中的编码</h1><p>在python中有两种编码：分别为文件编码以及运行代码时定义字符串的编码</p>
-<ol>
-<li><p>第一种在前面解释了，总的来说一个文本编辑器从硬盘中读入文件时，第一步按照文件存储的编码解码为unicode码存入内存，然后根据文件头声明的编码解码（如果有文件头声明编码方式的话），否则就按照环境默认编码进行解码。</p>
-<p>而python2和python3有很大的不同，python2默认编码为ascii，python3默认编码为utf-8，即python2编写的文件默认为ASCII编码，python3编写的文件默认为utf-8编码，但是读入内存中都需要解码为unicode。</p>
-</li>
-<li><p>第二种的话，在上幅图中为了演示，把字符串定义为unicode码，那么字符串前面不加’u’呢？</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fw0xfocfdaj31bc0c675n.jpg" alt=""></p>
-</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime(time.time()))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=57, tm_sec=18, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>结构化转字符串</li>
 </ol>
-<p>按照我们之前的认识，ASCII识别不了中文，所以在print(a)时应该会报错才对啊，为什么不报错呢？这个应该是python2做的改变，当识别不了中文时，使用当前系统默认编码进行编码和解码，来证明一下，我使用linux做个试验就知道了。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fw0xj6hev8j31hs0dmwga.jpg" alt=""></p>
-<p>真相大白了，python2这个改进不得不说挺机智的，因为历史遗留问题才导致python2的编码问题经过这样算是一种比较完美的解决方式。而完美的python3会有这种问题吗？怎么可能。python3是完美的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">"%Y-%m-%d"</span>,time.localtime(time.time())))</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>字符串转结构化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">'2018-10-16'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=15, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=0, tm_yday=288, tm_isdst=-1)</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>结构化转时间戳</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.mktime(time.strptime(<span class="string">'2018-10-15'</span>, <span class="string">'%Y-%m-%d'</span>)))</span><br><span class="line"><span class="comment"># 运行结果 1539532800.0</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>格林威治时间</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.asctime(time.localtime()))</span><br><span class="line">print(time.ctime())</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># Tue Oct 16 17:12:34 2018</span></span><br><span class="line"><span class="comment"># Fri Jan  2 08:00:00 1970</span></span><br></pre></td></tr></table></figure>
+<h1 id="二-datetime"><a href="#二-datetime" class="headerlink" title="二 datetime"></a>二 datetime</h1><p>datetime是一个包，里面包含对时间的处理和日期的处理</p>
+<ol>
+<li>获取当前详细时间</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now())</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16 17:25:16.186114</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>获取时间的某一部分</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now().hour) <span class="comment"># 分钟、年份等同理</span></span><br><span class="line"><span class="comment"># 运行结果 17</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>替换时间的某一部分</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t1 = date.datetime.now()</span><br><span class="line">t1 = t1.replace(year=<span class="number">2019</span>)</span><br><span class="line">print(t1)</span><br><span class="line"><span class="comment"># 运行结果 2019-10-16 18:36:42.166986</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>时间差对象</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t2 = datetime.timedelta(weeks=<span class="number">1</span>)</span><br><span class="line">t3 = datetime.datetime.now()</span><br><span class="line">print(t2 + t3)</span><br><span class="line"><span class="comment"># 运行结果 2018-10-23 18:40:10.481854</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -499,6 +514,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/内置模块/" rel="tag"># 内置模块</a>
+          
+        </div>
+      
 
       
       
@@ -508,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/01/git-ssh配置和使用/" rel="next" title="ssh免钥登陆github">
-                <i class="fa fa-chevron-left"></i> ssh免钥登陆github
+              <a href="/2018/10/15/文件目录规范/" rel="next" title="文件目录规范">
+                <i class="fa fa-chevron-left"></i> 文件目录规范
               </a>
             
           </div>
@@ -518,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/10/匿名函数python内置高阶函数以及递归/" rel="prev" title="匿名函数python内置高阶函数以及递归">
-                匿名函数python内置高阶函数以及递归 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/17/Python常用模块之sys与os/" rel="prev" title="python模块之sys与os">
+                python模块之sys与os <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -683,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符编码的简介"><span class="nav-number">1.</span> <span class="nav-text">字符编码的简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本编辑器打开文件"><span class="nav-number">2.</span> <span class="nav-text">文本编辑器打开文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python中的编码"><span class="nav-number">3.</span> <span class="nav-text">python中的编码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-time"><span class="nav-number">1.</span> <span class="nav-text">一 time</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-获得时间戳"><span class="nav-number">1.0.1.</span> <span class="nav-text">1 获得时间戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-结构化时间字符串"><span class="nav-number">1.0.2.</span> <span class="nav-text">2 结构化时间字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-格式化的字符串时间"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 格式化的字符串时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-三种格式之间的相互转换"><span class="nav-number">1.0.4.</span> <span class="nav-text">4 三种格式之间的相互转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-datetime"><span class="nav-number">2.</span> <span class="nav-text">二 datetime</span></a></li></ol></div>
             
 
           </div>
