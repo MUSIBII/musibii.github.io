@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwb936i1inj315s0k4mz4.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb96w50gvj30yo0hwad3.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwb98j1xnvj30t00h4412.jpg">
-<meta property="og:updated_time" content="2018-10-17T08:53:37.375Z">
+<meta property="og:updated_time" content="2018-10-17T10:34:11.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python模块之sys与os">
 <meta name="twitter:description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
@@ -354,7 +354,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-17T16:53:37+08:00" content="2018-10-17">
+    <time itemprop="dateUpdated" datetime="2018-10-17T18:34:11+08:00" content="2018-10-17">
       2018-10-17
     </time>
   </span>
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  658word
+                  1kword
                 </span>
               
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3min
+                  4min
                 </span>
               
             </div>
@@ -545,6 +545,46 @@
 <li>获取当前平台换行符</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.lineseq, end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="三-os下的path模块"><a href="#三-os下的path模块" class="headerlink" title="三 os下的path模块"></a>三 os下的path模块</h1><ol>
+<li>返回绝对路径</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.abspath(<span class="string">'a/b/c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码/a/b/c</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>将路径拆分为文件夹路径和文件名（返回元祖）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.split(<span class="string">'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 ('/Users/jingxing/PycharmProjects/python全栈/day20/代码', '5.os下path模块.py')</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>获取路径中的上一级</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.dirname(__file__))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>获取路径的最后一级名称</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.basename(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 5.os下path模块.py</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>判断路径是否存在（返回布尔值）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">print</span> path.exists(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>)</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>判断是否为绝对路径（返回布尔值）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.isabs(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>路径拼接</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.join(<span class="string">'/Users/jingxing/PycharmProjects/'</span>, <span class="string">'day20'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/day20</span></span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>获取文件的大小</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.getsize(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>大写变小写，斜杠根据当前平台修改</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normcase(<span class="string">r'a/\b/\c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/\b/\c</span></span><br></pre></td></tr></table></figure>
+<ol start="10">
+<li>斜杠会修改为当前平台的分隔符，执行..来返回上一级</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normpath(<span class="string">'a/b/c/../c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/b/c</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -746,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-sys"><span class="nav-number">1.</span> <span class="nav-text">一 sys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-os"><span class="nav-number">2.</span> <span class="nav-text">二 os</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-sys"><span class="nav-number">1.</span> <span class="nav-text">一 sys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-os"><span class="nav-number">2.</span> <span class="nav-text">二 os</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-os下的path模块"><span class="nav-number">3.</span> <span class="nav-text">三 os下的path模块</span></a></li></ol></div>
             
 
           </div>
@@ -780,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.9k</span>
+    <span title="Site words total count">10.3k</span>
   
 </div>
 
