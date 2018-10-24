@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="面向对象," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Linux Python Vim macOS">
+<meta name="description" content="多态三问  什么是多态?  多态指的是同一种事物的多种形态,举个例子:每个人都会睡觉,但是每个人的睡觉姿势,睡眠质量都不一样,再说,每个人的祖宗都是猿类,但是现在几乎没有一模一样的两个人,有句话说世界上没有两片相同的叶子,这就是多态,这也是为什么这个世界多姿多彩,因为我们一样,我们也不一样.  为何要用多态?  我觉得不是用不用多态的问题,python的哲学是一切皆对象,那么对象其实可以想象成现实">
+<meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python数据类型与类的总结">
-<meta property="og:url" content="http://yoursite.com/2018/10/23/python数据类型与类的总结/index.html">
+<meta property="og:title" content="类的三大特性之多态">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/类的三大特性之多态/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="Linux Python Vim macOS">
+<meta property="og:description" content="多态三问  什么是多态?  多态指的是同一种事物的多种形态,举个例子:每个人都会睡觉,但是每个人的睡觉姿势,睡眠质量都不一样,再说,每个人的祖宗都是猿类,但是现在几乎没有一模一样的两个人,有句话说世界上没有两片相同的叶子,这就是多态,这也是为什么这个世界多姿多彩,因为我们一样,我们也不一样.  为何要用多态?  我觉得不是用不用多态的问题,python的哲学是一切皆对象,那么对象其实可以想象成现实">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T07:53:59.792Z">
+<meta property="og:updated_time" content="2018-10-24T15:15:16.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python数据类型与类的总结">
-<meta name="twitter:description" content="Linux Python Vim macOS">
+<meta name="twitter:title" content="类的三大特性之多态">
+<meta name="twitter:description" content="多态三问  什么是多态?  多态指的是同一种事物的多种形态,举个例子:每个人都会睡觉,但是每个人的睡觉姿势,睡眠质量都不一样,再说,每个人的祖宗都是猿类,但是现在几乎没有一模一样的两个人,有句话说世界上没有两片相同的叶子,这就是多态,这也是为什么这个世界多姿多彩,因为我们一样,我们也不一样.  为何要用多态?  我觉得不是用不用多态的问题,python的哲学是一切皆对象,那么对象其实可以想象成现实">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/23/python数据类型与类的总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/类的三大特性之多态/"/>
 
 
 
 
 
-  <title>python数据类型与类的总结 | MUSIBII</title>
+  <title>类的三大特性之多态 | MUSIBII</title>
   
 
 
@@ -305,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/python数据类型与类的总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/类的三大特性之多态/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -322,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python数据类型与类的总结</h1>
+          <h1 class="post-title" itemprop="name headline">类的三大特性之多态</h1>
         
 
         <div class="post-meta">
@@ -334,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T15:53:59+08:00">
-                2018-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-24T17:13:08+08:00">
+                2018-10-24
               </time>
             
 
@@ -347,12 +348,34 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-23T15:53:59+08:00" content="2018-10-23">
-      2018-10-23
+    <time itemprop="dateUpdated" datetime="2018-10-24T23:15:16+08:00" content="2018-10-24">
+      2018-10-24
     </time>
   </span>
 
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -362,8 +385,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/23/python数据类型与类的总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/python数据类型与类的总结/" itemprop="commentCount"></span>
+                <a href="/2018/10/24/类的三大特性之多态/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/24/类的三大特性之多态/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0word
+                  1.2kword
                 </span>
               
 
@@ -406,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  5min
                 </span>
               
             </div>
@@ -427,7 +450,22 @@
       
 
       
-        
+        <p><strong>多态三问</strong></p>
+<ol>
+<li>什么是多态?</li>
+</ol>
+<p>多态指的是同一种事物的多种形态,举个例子:每个人都会睡觉,但是每个人的睡觉姿势,睡眠质量都不一样,再说,每个人的祖宗都是猿类,但是现在几乎没有一模一样的两个人,有句话说世界上没有两片相同的叶子,这就是多态,这也是为什么这个世界多姿多彩,因为我们一样,我们也不一样.</p>
+<ol start="2">
+<li>为何要用多态?</li>
+</ol>
+<p>我觉得不是用不用多态的问题,python的哲学是一切皆对象,那么对象其实可以想象成现实生活中的个体,这就自然而然有了多态的概念了,多个对象的某一个相同的方法,却有不一样的表现形式.那么在Python中怎么定义多态呢?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> abc</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(metaclass=abc.ABCMeta)</span>:</span></span><br><span class="line"><span class="meta">    @abc.abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">speak</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># Animal() 父类不能实例化,因为父类本身就是用来制定标准的</span></span><br><span class="line"><span class="comment"># speak方法被一个装饰装饰了,意味着只要是继承Animal类的子类都必须实现speak方法,强制实行的</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">speak</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#只有这样,才可以继承Animal类</span></span><br></pre></td></tr></table></figure>
+<p>python是一门自由度很高的语言,几乎没有什么强制要做的事情,这有好处也有坏处.好处是一门语言越自由那么开发者的创新性就越强,所以才有了越来越多的第三方库,使得python的生态环境愈发完善,像著名的requests库,唯一的一个非转基因的python HTTP库,人类可以安全享用.(扯远了…),越来越多的开发者使用python,开发新的特性和新的库,那么坏处就是python很自由,所以没有什么标准,你可以有你的标准,我可以有我的标准,按理说python是不禁止的,那么怎么解决这个问题呢?</p>
+<p>python的开发者都约定成俗的执行一些事情,比如常量全大写,函数名小写或者加下划线,类呢,就使用驼峰法命名,那么我们一看到变量名就可以知道这是个什么类型的变量了,同理,在python的类中,也约定成俗了用同样的名字改写自己的方法,查看基类object的源码可知:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">object</span>:</span></span><br><span class="line">    <span class="string">""" The most base type """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__delattr__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Implement delattr(self, name). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__dir__</span><span class="params">(self)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        __dir__() -&gt; list</span></span><br><span class="line"><span class="string">        default dir() implementation</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self==value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" default object formatter """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattribute__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return getattr(self, name). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__ge__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self&gt;=value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__gt__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self&gt;value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__hash__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return hash(self). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init_subclass__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        This method is called when a class is subclassed.</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        The default implementation does nothing. It may be</span></span><br><span class="line"><span class="string">        overridden to extend subclasses.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span> <span class="comment"># known special case of object.__init__</span></span><br><span class="line">        <span class="string">""" Initialize self.  See help(type(self)) for accurate signature. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__le__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self&lt;=value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__lt__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self&lt;value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod # known case of __new__</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *more)</span>:</span> <span class="comment"># known special case of object.__new__</span></span><br><span class="line">        <span class="string">""" Create and return a new object.  See help(type) for accurate signature. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__ne__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return self!=value. """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__reduce_ex__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" helper for pickle """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__reduce__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" helper for pickle """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return repr(self). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Implement setattr(self, name, value). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sizeof__</span><span class="params">(self)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        __sizeof__() -&gt; int</span></span><br><span class="line"><span class="string">        size of object in memory, in bytes</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self, *args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">""" Return str(self). """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod # known case</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__subclasshook__</span><span class="params">(cls, subclass)</span>:</span> <span class="comment"># known special case of object.__subclasshook__</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Abstract classes can override this to customize issubclass().</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        This is invoked early on by abc.ABCMeta.__subclasscheck__().</span></span><br><span class="line"><span class="string">        It should return True, False or NotImplemented.  If it returns</span></span><br><span class="line"><span class="string">        NotImplemented, the normal algorithm is used.  Otherwise, it</span></span><br><span class="line"><span class="string">        overrides the normal algorithm (and the outcome is cached).</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    __class__ = <span class="keyword">None</span> <span class="comment"># (!) forward: type, real value is ''</span></span><br><span class="line">    __dict__ = &#123;&#125;</span><br><span class="line">    __doc__ = <span class="string">''</span></span><br><span class="line">    __module__ = <span class="string">''</span></span><br></pre></td></tr></table></figure>
+<p>这里面的双下划线的方法,是基类已经定义好了的方法,那么继承基类的类,如果没有就用我的,如果有的话,你也用相同的名字,这样的话不管什么对象,都有同样的方法执行类似的事情,这就是多态,这也是python语言的魅力.</p>
+<p>具体点来说,像linux的哲学是一切皆文件,那么通常来说文件只有两个属性,读和写,那么linux已经把各种复杂的方法封装为了读和写两个方法,那么就算我们不了解linux里面的某些硬件,我们也可以使用同样的方法来操作硬件.</p>
+
       
     </div>
     
@@ -442,6 +480,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
+          
+        </div>
+      
 
       
       
@@ -451,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/22/面向对象编程/" rel="next" title="面向对象编程">
-                <i class="fa fa-chevron-left"></i> 面向对象编程
+              <a href="/2018/10/24/类的三大特性之封装/" rel="next" title="类的三大特性之封装">
+                <i class="fa fa-chevron-left"></i> 类的三大特性之封装
               </a>
             
           </div>
@@ -461,8 +505,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/23/类的三大特性之继承/" rel="prev" title="类的三大特性之继承">
-                类的三大特性之继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/24/装饰器的进一步学习/" rel="prev" title="装饰器的进一步学习">
+                装饰器的进一步学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
