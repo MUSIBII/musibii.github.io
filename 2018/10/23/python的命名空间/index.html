@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="NameSpace," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Linux Python Vim macOS">
+<meta name="description" content="最开始对名称空间的了解是在学习函数的时候,那时候知道了作用域的查找顺序,以及全局名称空间和局部名称空间,产生疑惑的时候为学递归的时候,那时候还没有名称空间这个概念,只知道递归有个最大深度,那时候以后递归产生的名称空间是一层套一层的,以及类里面的名称空间,所以产生了深究名称空间的想法,这才诞生了这篇博客,本篇博客借鉴了python的命名空间的内容,本人对里面的例子都试验了并发现了一个错误,在类中定义">
+<meta name="keywords" content="NameSpace">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python的命名空间">
+<meta property="og:title" content="python的名称空间">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/python的命名空间/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="Linux Python Vim macOS">
+<meta property="og:description" content="最开始对名称空间的了解是在学习函数的时候,那时候知道了作用域的查找顺序,以及全局名称空间和局部名称空间,产生疑惑的时候为学递归的时候,那时候还没有名称空间这个概念,只知道递归有个最大深度,那时候以后递归产生的名称空间是一层套一层的,以及类里面的名称空间,所以产生了深究名称空间的想法,这才诞生了这篇博客,本篇博客借鉴了python的命名空间的内容,本人对里面的例子都试验了并发现了一个错误,在类中定义">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T09:19:16.056Z">
+<meta property="og:updated_time" content="2018-10-25T15:08:23.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python的命名空间">
-<meta name="twitter:description" content="Linux Python Vim macOS">
+<meta name="twitter:title" content="python的名称空间">
+<meta name="twitter:description" content="最开始对名称空间的了解是在学习函数的时候,那时候知道了作用域的查找顺序,以及全局名称空间和局部名称空间,产生疑惑的时候为学递归的时候,那时候还没有名称空间这个概念,只知道递归有个最大深度,那时候以后递归产生的名称空间是一层套一层的,以及类里面的名称空间,所以产生了深究名称空间的想法,这才诞生了这篇博客,本篇博客借鉴了python的命名空间的内容,本人对里面的例子都试验了并发现了一个错误,在类中定义">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>python的命名空间 | MUSIBII</title>
+  <title>python的名称空间 | MUSIBII</title>
   
 
 
@@ -322,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python的命名空间</h1>
+          <h1 class="post-title" itemprop="name headline">python的名称空间</h1>
         
 
         <div class="post-meta">
@@ -347,12 +348,34 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-23T17:19:16+08:00" content="2018-10-23">
-      2018-10-23
+    <time itemprop="dateUpdated" datetime="2018-10-25T23:08:23+08:00" content="2018-10-25">
+      2018-10-25
     </time>
   </span>
 
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0word
+                  1kword
                 </span>
               
 
@@ -406,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  4min
                 </span>
               
             </div>
@@ -427,7 +450,33 @@
       
 
       
-        
+        <p>最开始对名称空间的了解是在学习函数的时候,那时候知道了作用域的查找顺序,以及全局名称空间和局部名称空间,产生疑惑的时候为学递归的时候,那时候还没有名称空间这个概念,只知道递归有个最大深度,那时候以后递归产生的名称空间是一层套一层的,以及类里面的名称空间,所以产生了深究名称空间的想法,这才诞生了这篇博客,本篇博客借鉴了<a href="https://segmentfault.com/a/1190000004519811" target="_blank" rel="noopener">python的命名空间</a>的内容,本人对里面的例子都试验了并发现了一个错误,在类中定义的列表生成式产生的命名空间也可以访问到类属性.</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a.py</span></span><br><span class="line">lis = [<span class="string">'musibii'</span>, <span class="string">'thales'</span>]</span><br><span class="line">print(<span class="string">'lis1'</span>, id(name))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">global</span> lis</span><br><span class="line">        lis.append(<span class="string">'maffia'</span>)</span><br><span class="line">        print(<span class="string">'lis'</span>, id(lis))</span><br><span class="line">        <span class="keyword">return</span> lis</span><br><span class="line">    </span><br><span class="line">print(<span class="string">'lis2'</span>, lis)</span><br><span class="line"></span><br><span class="line"><span class="comment"># b.py</span></span><br><span class="line"><span class="keyword">from</span> a <span class="keyword">import</span> A</span><br><span class="line">print(<span class="string">'b'</span>, A)</span><br></pre></td></tr></table></figure>
+<p>执行 b 文件的结果为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis1 <span class="number">4421146632</span></span><br><span class="line">lis2 [<span class="string">'musibii'</span>, <span class="string">'thales'</span>]</span><br><span class="line">b &lt;<span class="class"><span class="keyword">class</span> '<span class="title">a</span>.<span class="title">A</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以发现,虽然 b 只是导入了 a 中的 class A, 但导入这个过程执行了整个 a 文件,那么是否能够在 b 中访问 a 中的全局变量 lis 呢?</p>
+<p>使用 from a import A 的形式只是把 A 产生的名称空间复制了一份到 b 产生的名称空间中.</p>
+<h1 id="Python的一些基本概念"><a href="#Python的一些基本概念" class="headerlink" title="Python的一些基本概念"></a>Python的一些基本概念</h1><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>在Python 中一切皆对象,那么对象到底代表什么呢?我的理解是在执行 py 文件时产生的一切变量都称为对象,如果把内存比作一座超大的房子的话,那么对象就是这座房子里的租客,那么这个租客随身携带的东西就是这个对象的一切了,对象都具有唯一的 id( 内存地址),类型( python3中统一了类和类型的概念),以及对象的值,对象一旦建立, id 便不会改变, id 就是对象在内存中的地址.</p>
+<p>用常见的对象来类比一下这三个概念:</p>
+<ol>
+<li>常量</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NAME = <span class="string">'musibii'</span></span><br><span class="line">print(id(NAME))</span><br><span class="line">print(type(NAME))</span><br><span class="line">print(globals()) <span class="comment"># 查看全局名称空间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="number">4374978776</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br><span class="line">&#123;'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x104c45fd0&gt;, '__spec__': None, '__annotations__': &#123;&#125;, '__builtins__': &lt;module 'builtins' (built-in)&gt;, '__file__': '/Users/jingxing/PycharmProjects/python全栈/作业/day27/duixiang.py', '__cached__': None, 'NAME': 'musibii'&#125;</span><br></pre></td></tr></table></figure>
+<p>出来的结果分别是 id,类型以及字典里面最后一个键值对对应的就是 NAME 的值.</p>
+<ol start="2">
+<li>函数</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'musibii'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        age = <span class="number">18</span></span><br><span class="line">        print(<span class="string">'age'</span>, age)</span><br><span class="line">    inner()</span><br><span class="line">    print(locals()) <span class="comment"># 想要查看函数里面的值,必须在函数内部查看,因为函数执行完成会释放内存资源</span></span><br><span class="line"></span><br><span class="line">print(id(func))</span><br><span class="line">print(type(func))</span><br><span class="line">func()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="number">4529634840</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">function</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">age</span> 18</span></span><br><span class="line">&#123;'inner': &lt;function func.&lt;locals&gt;.inner at 0x10e1cac80&gt;, 'name': 'musibii'&#125;</span><br></pre></td></tr></table></figure>
+<p>id 和类型不必多说,函数对应的属性值里面不包括嵌套函数里面的属性(说明:名称空间是相互独立的)</p>
+<ol start="3">
+<li>类</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cls</span>:</span></span><br><span class="line">    school = <span class="string">'hashangda'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell_info</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s : %s'</span> % (self.name, self.age))</span><br><span class="line"></span><br><span class="line">print(id(Cls))</span><br><span class="line">print(type(Cls))</span><br><span class="line">print(Cla.__dict__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="number">140390381504248</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">type</span>'&gt;</span></span><br><span class="line">&#123;'__module__': '__main__', 'school': 'hashangda', '__init__': &lt;function Cls.__init__ at 0x10648eae8&gt;, 'tell_info': &lt;function Cls.tell_info at 0x10648ebf8&gt;, '__dict__': &lt;attribute '__dict__' of 'Cls' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Cls' objects&gt;, '__doc__': None&#125;</span><br></pre></td></tr></table></figure>
+<p>类的 id 为内存地址,类型为type类型,在 type 里面 type 就是类型的意思,所以说 python 里所有的类的类型都是类型,而类里面的属性就是类的值了.</p>
+<p>python 里面所有的对象都具有的并且根确定身份有关的值为 id, 类型和值了.名称不是对象的属性,名称只是指向对象,因为可以多个名称指向同一个对象.</p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>在对象里把变量名叫为名称其实是不准确的,这些名称都有一个共同的名字: identifier(和 id 是两个意思),中文名为’标识符’.</p>
+<p>标识符:在 Python中,各类对象的名称,比如函数名,方法名,类名,变量名.常量名都称为标识符.</p>
+
       
     </div>
     
@@ -441,6 +490,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NameSpace/" rel="tag"># NameSpace</a>
+          
+        </div>
       
 
       
@@ -520,8 +575,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -562,7 +626,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -608,6 +672,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python的一些基本概念"><span class="nav-number">2.</span> <span class="nav-text">Python的一些基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符"><span class="nav-number">2.0.2.</span> <span class="nav-text">标识符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -635,7 +715,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.4k</span>
+    <span title="Site words total count">30.5k</span>
   
 </div>
 

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="**类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__">
+<meta name="description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="类的内置方法">
 <meta property="og:url" content="http://yoursite.com/2018/10/25/类的内置方法/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="**类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__">
+<meta property="og:description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T08:22:43.190Z">
+<meta property="og:updated_time" content="2018-10-25T15:25:23.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="类的内置方法">
-<meta name="twitter:description" content="**类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__">
+<meta name="twitter:description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
 
 
 
@@ -348,7 +348,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-25T16:22:43+08:00" content="2018-10-25">
+    <time itemprop="dateUpdated" datetime="2018-10-25T23:25:23+08:00" content="2018-10-25">
       2018-10-25
     </time>
   </span>
@@ -450,7 +450,7 @@
       
 
       
-        <p>**类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了.</p>
+        <p><strong>类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了.</strong></p>
 <p>在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:</p>
 <ol>
 <li>isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象</li>
@@ -459,7 +459,7 @@
 <h3 id="1-str-方法"><a href="#1-str-方法" class="headerlink" title="1 __str__方法"></a>1 __str__方法</h3><p>会在对象被打印的时候自动触发,然后将返回值当做打印的结果</p>
 <p>使用例子:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span></span><br><span class="line">    de __init__(self, name, age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;%s : %s&gt;'</span> % (self.name, self.age)</span><br><span class="line">    </span><br><span class="line">peo = People(<span class="string">'musibii'</span>, <span class="number">18</span>)</span><br><span class="line">print(peo) <span class="comment"># print(peo.__str__())</span></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">&lt;musibii : <span class="number">18</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-del-方法"><a href="#2-del-方法" class="headerlink" title="2 __del__方法"></a>2 __del__方法</h3><p>会在对象被删除时自动处罚执行,用来在对象被删除前回收资源</p>
+<h3 id="2-del-方法"><a href="#2-del-方法" class="headerlink" title="2 __del__方法"></a>2 __del__方法</h3><p>会在对象被删除时自动触发执行,用来在对象被删除前回收资源</p>
 <p>使用例子:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y, filepath)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        self.f = open(filepath, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 写回收系统资源相关的代码</span></span><br><span class="line">        self.f.close()</span><br><span class="line">        </span><br><span class="line">obj = Bar(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="keyword">del</span> obj</span><br></pre></td></tr></table></figure>
 <p><strong>未完待续</strong></p>
@@ -609,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -698,7 +698,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.4k</span>
+    <span title="Site words total count">30.5k</span>
   
 </div>
 

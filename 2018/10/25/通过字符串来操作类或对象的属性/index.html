@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为,因为获取用户的输入都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的行驶了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值 setattr:修改属性值 delattr:删除属性  一 hasattr方法查看源码可知: 1234567d">
+<meta name="description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为获取用户的输入,因为得到的值都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的形式了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值,没有该属性的话会报错,设置一个默认值 None setattr:修改属性值, 有就修改,没有就添加 d">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过字符串来操作类或对象的属性">
 <meta property="og:url" content="http://yoursite.com/2018/10/25/通过字符串来操作类或对象的属性/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为,因为获取用户的输入都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的行驶了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值 setattr:修改属性值 delattr:删除属性  一 hasattr方法查看源码可知: 1234567d">
+<meta property="og:description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为获取用户的输入,因为得到的值都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的形式了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值,没有该属性的话会报错,设置一个默认值 None setattr:修改属性值, 有就修改,没有就添加 d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T08:03:04.503Z">
+<meta property="og:updated_time" content="2018-10-25T15:24:47.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过字符串来操作类或对象的属性">
-<meta name="twitter:description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为,因为获取用户的输入都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的行驶了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值 setattr:修改属性值 delattr:删除属性  一 hasattr方法查看源码可知: 1234567d">
+<meta name="twitter:description" content="通过字符串来查看获取修改删除类或对象的属性的使用场景为获取用户的输入,因为得到的值都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的形式了. 那么有四个方法可以通过字符串来操作属性:  hasattr:是否具有该属性,返回布尔值 getattr:获取属性值,没有该属性的话会报错,设置一个默认值 None setattr:修改属性值, 有就修改,没有就添加 d">
 
 
 
@@ -348,7 +348,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-25T16:03:04+08:00" content="2018-10-25">
+    <time itemprop="dateUpdated" datetime="2018-10-25T23:24:47+08:00" content="2018-10-25">
       2018-10-25
     </time>
   </span>
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  753word
+                  796word
                 </span>
               
 
@@ -450,13 +450,13 @@
       
 
       
-        <p>通过字符串来查看获取修改删除类或对象的属性的使用场景为,因为获取用户的输入都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的行驶了.</p>
+        <p>通过字符串来查看获取修改删除类或对象的属性的使用场景为获取用户的输入,因为得到的值都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的形式了.</p>
 <p>那么有四个方法可以通过字符串来操作属性:</p>
 <ol>
 <li>hasattr:是否具有该属性,返回布尔值</li>
-<li>getattr:获取属性值</li>
-<li>setattr:修改属性值</li>
-<li>delattr:删除属性</li>
+<li>getattr:获取属性值,没有该属性的话会报错,设置一个默认值 None</li>
+<li>setattr:修改属性值, 有就修改,没有就添加</li>
+<li>delattr:删除属性,有就删除,没有会报错,应该加个判断</li>
 </ol>
 <h3 id="一-hasattr方法"><a href="#一-hasattr方法" class="headerlink" title="一 hasattr方法"></a>一 hasattr方法</h3><p>查看源码可知:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hasattr</span><span class="params">(*args, **kwargs)</span>:</span> <span class="comment"># real signature unknown</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Return whether the object has an attribute with the given name.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    This is done by calling getattr(obj, name) and catching AttributeError.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
@@ -466,7 +466,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hasattr</span></span><br><span class="line">obj = Foo(<span class="string">'musibii'</span>, <span class="number">18</span>)</span><br><span class="line">print(hasattr(obj, <span class="string">'name'</span>))</span><br><span class="line">print(hasattr(obj, <span class="string">'age'</span>))</span><br><span class="line">print(hasattr(obj, <span class="string">'gender'</span>))</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
 <h3 id="二-getattr方法"><a href="#二-getattr方法" class="headerlink" title="二 getattr方法"></a>二 getattr方法</h3><p>查看源码可知:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getattr</span><span class="params">(object, name, default=None)</span>:</span> <span class="comment"># known special case of getattr</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    getattr(object, name[, default]) -&gt; value</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y.</span></span><br><span class="line"><span class="string">    When a default argument is given, it is returned when the attribute doesn't</span></span><br><span class="line"><span class="string">    exist; without it, an exception is raised in that case.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p>实际该方法是调用的传入对象的魔术方法__getattribute__,查看object的源码,从魔术方法__getattribute__的注释发现’’’return getattr(self, name)’’’,当对对象调用getattr方法是,就会触发__getattribute__方法.只有对象具有__getattribute__魔术方法,才可以使用getattr方法,一般来说除非定义类的时候改写了该方法,可能会有不同的结果.</p>
+<p>实际该方法是调用的传入对象的魔术方法__getattribute__,查看object的源码,从魔术方法__getattribute__的注释发现’’’return getattr(self, name)’’’,当对对象调用getattr方法是,就会触发__getattribute__方法.只有对象具有__getattribute__魔术方法,才可以使用getattr方法,一般来说除非定义类的时候改写了该方法,有不同的结果.</p>
 <p>使用例子</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># getattr</span></span><br><span class="line">print(getattr(obj, <span class="string">'name'</span>))</span><br><span class="line">print(getattr(obj, <span class="string">'age'</span>))</span><br><span class="line">print(getattr(obj, <span class="string">'gender'</span>, <span class="keyword">None</span>)) <span class="comment"># 如果没有要获取的属性的话,应该定义默认值,否则会报错</span></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">musibii</span><br><span class="line"><span class="number">18</span></span><br><span class="line"><span class="keyword">None</span></span><br></pre></td></tr></table></figure>
 <h3 id="三-setattr方法"><a href="#三-setattr方法" class="headerlink" title="三 setattr方法"></a>三 setattr方法</h3><p>查看源码可知:</p>
@@ -481,6 +481,7 @@
 <p>和getattr一样,该方法传入的对象需要有__delattr__魔术方法才可以调用delattr方法.</p>
 <p>使用例子:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># delattr</span></span><br><span class="line"><span class="comment"># 删除属性的时候,如果没有所给的属性名,那么会报错,所以在使用delattr的时候加上if判断</span></span><br><span class="line">delattr(obj, <span class="string">'gender'</span>)</span><br><span class="line"><span class="keyword">if</span> hasattr(obj, <span class="string">'xxx'</span>):</span><br><span class="line">    delattr(obj, <span class="string">'xxx'</span>)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -630,7 +631,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -719,7 +720,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.4k</span>
+    <span title="Site words total count">30.5k</span>
   
 </div>
 
