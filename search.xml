@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[类的内置方法]]></title>
+    <url>%2F2018%2F10%2F25%2F%E7%B1%BB%E7%9A%84%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[**类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法: isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类 1 __str__方法会在对象被打印的时候自动触发,然后将返回值当做打印的结果 使用例子: 123456789101112class People: de __init__(self, name, age): self.name = name self.age = age def __str__(self): return '&lt;%s : %s&gt;' % (self.name, self.age) peo = People('musibii', 18)print(peo) # print(peo.__str__())# 运行结果&lt;musibii : 18&gt; 2 __del__方法会在对象被删除时自动处罚执行,用来在对象被删除前回收资源 使用例子: 123456789101112class Bar: def __init__(self, x, y, filepath): self.x = x self.y = y self.f = open(filepath, 'r', encoding='utf-8') def __del__(self): # 写回收系统资源相关的代码 self.f.close() obj = Bar(10, 20)del obj 未完待续]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通过字符串来操作类或对象的属性]]></title>
+    <url>%2F2018%2F10%2F25%2F%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%A5%E6%93%8D%E4%BD%9C%E7%B1%BB%E6%88%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[通过字符串来查看获取修改删除类或对象的属性的使用场景为,因为获取用户的输入都是字符串类型,那么就可以直接通过字符串来操作属性而不用把字符串修改为可以通过句点法访问的行驶了. 那么有四个方法可以通过字符串来操作属性: hasattr:是否具有该属性,返回布尔值 getattr:获取属性值 setattr:修改属性值 delattr:删除属性 一 hasattr方法查看源码可知: 1234567def hasattr(*args, **kwargs): # real signature unknown """ Return whether the object has an attribute with the given name. This is done by calling getattr(obj, name) and catching AttributeError. """ pass 翻译过来就是:返回对象是否具有给定名称的属性。这是通过调用getattr函数和捕获AttributeError错误来完成的. 使用例子 1234567class Foo: def __init__(self, name, age): self.name = name self.age = age def tell_info(self): print('%s : %s' % (self.name, self.age)) 123456789# hasattrobj = Foo('musibii', 18)print(hasattr(obj, 'name'))print(hasattr(obj, 'age'))print(hasattr(obj, 'gender'))# 运行结果TrueTrueFalse 二 getattr方法查看源码可知: 123456789def getattr(object, name, default=None): # known special case of getattr """ getattr(object, name[, default]) -&gt; value Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y. When a default argument is given, it is returned when the attribute doesn't exist; without it, an exception is raised in that case. """ pass 实际该方法是调用的传入对象的魔术方法__getattribute__,查看object的源码,从魔术方法__getattribute__的注释发现’’’return getattr(self, name)’’’,当对对象调用getattr方法是,就会触发__getattribute__方法.只有对象具有__getattribute__魔术方法,才可以使用getattr方法,一般来说除非定义类的时候改写了该方法,可能会有不同的结果. 使用例子 12345678# getattrprint(getattr(obj, 'name'))print(getattr(obj, 'age'))print(getattr(obj, 'gender', None)) # 如果没有要获取的属性的话,应该定义默认值,否则会报错# 运行结果musibii18None 三 setattr方法查看源码可知: 1234567def setattr(x, y, v): # real signature unknown; restored from __doc__ """ Sets the named attribute on the given object to the specified value. setattr(x, 'y', v) is equivalent to ``x.y = v'' """ pass 设置所给对象的属性一个给定的值. 和getattr一样,该方法传入的对象需要有__setattr__魔术方法才可以调用getattr方法. 使用例子: 1234567891011# setattrprint(obj.__dict__)setattr(obj, 'name', 'maffia')print(obj.__dict__)setattr(obj, 'gender', 'male')print(obj,__dict__)# 运行结果&#123;'name': 'musibii', 'age': 18&#125;&#123;'name': 'maffia', 'age': 18&#125;&#123;'name': 'maffia', 'age': 18, 'gender': 'male'&#125;# 如果设置的属性对象里面没有的话会新增属性 四 delattr方法查看源码可知: 1234567def delattr(x, y): # real signature unknown; restored from __doc__ """ Deletes the named attribute from the given object. delattr(x, 'y') is equivalent to ``del x.y'' """ pass 从所给对象删除属性. 和getattr一样,该方法传入的对象需要有__delattr__魔术方法才可以调用delattr方法. 使用例子: 12345# delattr# 删除属性的时候,如果没有所给的属性名,那么会报错,所以在使用delattr的时候加上if判断delattr(obj, 'gender')if hasattr(obj, 'xxx'): delattr(obj, 'xxx')]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[类方法之绑定方法和非绑定方法]]></title>
+    <url>%2F2018%2F10%2F25%2F%E7%B1%BB%E6%96%B9%E6%B3%95%E4%B9%8B%E7%BB%91%E5%AE%9A%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%9E%E7%BB%91%E5%AE%9A%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[在类中定义的函数总共可以分为两大类: 绑定方法 绑定方法 特殊之处:绑定给谁就应该由谁来调用,谁来调用就会将谁当做第一个参数自动传入 绑定给对象的方法:在类中定义函数没有被任何装饰器修饰的情况下,默认就是绑定对象的. 绑定给类的方法:为类中定义函数一个classmethod,就是绑定给类的. 非绑定方法 特殊之处:非绑定方法就是一个普通函数,既不与类绑定又不予对象绑定,意味着类和对象都可以调用,但是无论谁来调用都是一个普通函数,没有自动传值的效果. 非绑定方法:为类中定义函数添加一个装饰器staticmethod,就是非绑定方法. 类中的绑定方法通常来说是默认给对象是用的,加了classmthod装饰器才是给类使用的,那么这三种方法的使用场景是什么呢? 默认绑定给对象的没什么好说的, 绑定给类的方法:一般用来自动实例化对象(传入某些特殊的配置文件对象), 非绑定方法:非绑定方法不用传入对象,也不用传入类,用在单纯的返回或得到某些值. 123456789101112131415161718192021222324252627282930313233343536373839404142class Foo: def func1(self): print('func1', self) @classmethod def func2(cls): print('func2', cls) @staticmethod def func3(x, y): print('func3', x, y) obj = Foo()# 绑定给对象的方法# 绑定给对象的,应该由对象来调用obj.func1()print(obj)# 运行结果func1 &lt;__main__.Foo object at 0x107e8c6d8&gt;&lt;__main__.Foo object at 0x107e8c6d8&gt;# 绑定给类的方法# 绑定给类的方法应该由类来调用print(Foo.func2)print(obj.func2) # 由对象来调用的结果一样# 运行结果&lt;bound method Foo.func2 of &lt;class '__main__.Foo'&gt;&gt;&lt;bound method Foo.func2 of &lt;class '__main__.Foo'&gt;&gt;# 非绑定方法print(obj.func3)print(Foo.func3)obj.func3(1, 2)obj.func3(1, 2)# 运行结果&lt;function Foo.func3 at 0x1063e3bf8&gt;&lt;function Foo.func3 at 0x1063e3bf8&gt;func3 1 2func3 1 2 实际使用的例子:主要是绑定给类的使用场景; 123# settings.pyIP='1.1.2.2'PORT=3306 1234567891011121314151617181920212223242526272829303132333435# main.pyimport settingsclass MySQL: def __init__(self, ip, port): self.id = self.creat_id() self.ip = ip self.port = port def tell_info(self): print('&lt;%s : %s : %s' % (self.id, self.ip, self.port)) @staticmethod def creat_id(self): import uuid return uuid.uuid4() @classmethod def from_conf(cls): return cls(settings.IP, settings.PORT) obj = MySQL('1.1.1.1', 3306)obj.tell_info()# 运行结果&lt;86044651-cea8-4d93-99dc-46a02e169d6d : 1.1.1.1 : 3306&gt;a = obj.from_conf() # 产生一个新的对象a.tell_info()# 运行结果&lt;efec5e5f-4bfc-4534-8e60-940824532506 : 1.1.1.2 : 3306&gt;obj1 = MySQL.from_conf()obj1.tell_info()# 运行结果&lt;9463911a-ebcf-416a-9332-54282f3f3cba : 1.1.1.2 : 3306&gt;]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[装饰器的进一步学习]]></title>
     <url>%2F2018%2F10%2F24%2F%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[今天在调用被装饰器装饰的函数的时候实际调用函数返回的值和自己预想的不一样,经过朋友的指点发现问题在返回被装饰器装饰的函数的运行结果上. 12345678910111213141516def auth_login(func): def wrapper(*args, **kwargs): func(*args, **kwargs) return wrapper@auth_logindef paymoney(total): if total &gt; 0: return True else: return False if paymoney(10): print('数额充足')else: print('数额不足') 这个简单的装饰器应该很容易分析出结果,预想中的结果应该是打印:数额充足,然而结果却是什么都没打印,其实是因为装饰器有问题,因为并没有把被装饰的函数运行结果返回,那么装饰器的运行结果就为None,自然什么都不会打印. 正确的装饰器如下: 12345def auth_login(func): def wrapper(*args, **kwargs): res = func(*args, **kwargs) return res return wrapper]]></content>
