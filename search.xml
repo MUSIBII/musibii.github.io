@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python 模块与包的导入问题]]></title>
+    <url>%2F2018%2F10%2F27%2Fpython-%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[类的内置方法]]></title>
     <url>%2F2018%2F10%2F25%2F%E7%B1%BB%E7%9A%84%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法: isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类 1 __str__方法会在对象被打印的时候自动触发,然后将返回值当做打印的结果 使用例子: 123456789101112class People: de __init__(self, name, age): self.name = name self.age = age def __str__(self): return '&lt;%s : %s&gt;' % (self.name, self.age) peo = People('musibii', 18)print(peo) # print(peo.__str__())# 运行结果&lt;musibii : 18&gt; 2 __del__方法会在对象被删除时自动触发执行,用来在对象被删除前回收资源 使用例子: 123456789101112class Bar: def __init__(self, x, y, filepath): self.x = x self.y = y self.f = open(filepath, 'r', encoding='utf-8') def __del__(self): # 写回收系统资源相关的代码 self.f.close() obj = Bar(10, 20)del obj 未完待续]]></content>
@@ -92,6 +97,12 @@
     <title><![CDATA[python数据类型与类的总结]]></title>
     <url>%2F2018%2F10%2F23%2Fpython%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[面向对象编程]]></title>
@@ -170,7 +181,7 @@
   <entry>
     <title><![CDATA[python模块之configparser模块]]></title>
     <url>%2F2018%2F10%2F18%2Fpython%E4%B9%8Bconfigparser%E6%A8%A1%E5%9D%97%2F</url>
-    <content type="text"><![CDATA[一 什么是configparser？configparser是用于解析配置文件的模块。什么是配置文件呢？包含配置程序信息的文件就称为配置文件。什么样的数据应该作为配置信息呢？需要修改但是不经常改的信息就可以作为配置信息，比如数据文件的路径。 二 什么是配置文件？配置文件中只有两种内容： section，分区 option，选项，是键值对的形式 三 configparser的使用wiki12345678910# useinfo.cfg[user]name1 = musibiiname2 = thalesname3 = ddd[password]password1 = woshinibabapassword2 = 123456password3 = 123 1234567891011121314151617181920212223242526import configparser# 创建一个解析器config = configparser.ConfigParser()# 读取并解析cfg文件config.read('useinfo.cfg', encoding='utf-8')# 获取所有sectionprint(config.sections())# 获取某个分区下所有optionprint(config.options('user'))# 获取某个选项具体的值print(config.get('user', 'name1'))# get返回的都是字符串类型，如果需要转换类型，直接使用get+对应的类型(bool，int，float)print(config.getint('password', 'password1'))# 是否有某个选项，返回布尔值config.has_option()# 是否有某个分区config.has_section()# 不常用的一些方法# 添加分区(必须先添加分区才可以修改分区下面的值)config.add_section('server')config.set('server', 'usr', '192.168.1.1')# 删除选项config.remove_option('user', 'name1')# 写入文件with open('useinfo.cfg', 'wt', encoding='ust-8') as f: config.write(f)]]></content>
+    <content type="text"><![CDATA[一 什么是configparser？configparser是用于解析配置文件的模块。什么是配置文件呢？包含配置程序信息的文件就称为配置文件。什么样的数据应该作为配置信息呢？需要修改但是不经常改的信息就可以作为配置信息，比如数据文件的路径。 二 什么是配置文件？配置文件中只有两种内容： section，分区 option，选项，是键值对的形式 三 configparser的使用wiki12345678910# useinfo.cfg[user]name1 = musibiiname2 = thalesname3 = ddd[password]password1 = woshinibabapassword2 = 123456password3 = 123 1234567891011121314151617181920212223242526import configparser# 创建一个解析器config = configparser.ConfigParser()# 读取并解析cfg文件config.read('useinfo.cfg', encoding='utf-8')# 获取所有sectionprint(config.sections())# 获取某个分区下所有optionprint(config.options('user'))# 获取某个选项具体的值print(config.get('user', 'name1'))# get返回的都是字符串类型，如果需要转换类型，直接使用get+对应的类型(bool，int，float)print(config.getint('password', 'password1'))# 是否有某个选项，返回布尔值config.has_option()# 是否有某个分区config.has_section()# 不常用的一些方法# 添加分区(必须先添加分区才可以修改分区下面的值)config.add_section('server')config.set('server', 'usr', '192.168.1.1')# 删除选项config.remove_option('user', 'name1')# 写入文件with open('useinfo.cfg', 'wt', encoding='ust-8') as f: config.write(f) 使用例子: 1234# admin.cfg[admin]name=maffiapassword=woshinibaba 1234567891011121314# test.pyimport configparserconfig = configparser.ConfigParser()# 获取账号和密码信息def load_admin(): admin_info = [] config.read(admin.cfg, encoding='utf-8') sections = config.sections() for i in range(len(sections)-1): user_dic = &#123;'name': config.items(sections[i])[i][1], 'password': config.items(sections[i])[i+1][1]&#125; admin_info.append(user_dic) return admin_info]]></content>
       <categories>
         <category>Python</category>
       </categories>

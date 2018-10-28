@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="一 什么是configparser？configparser是用于解析配置文件的模块。什么是配置文件呢？包含配置程序信息的文件就称为配置文件。什么样的数据应该作为配置信息呢？需要修改但是不经常改的信息就可以作为配置信息，比如数据文件的路径。 二 什么是配置文件？配置文件中只有两种内容：  section，分区 option，选项，是键值对的形式  三 configparser的使用wiki1234">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-18T12:31:36.213Z">
+<meta property="og:updated_time" content="2018-10-28T03:43:43.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python模块之configparser模块">
 <meta name="twitter:description" content="一 什么是configparser？configparser是用于解析配置文件的模块。什么是配置文件呢？包含配置程序信息的文件就称为配置文件。什么样的数据应该作为配置信息呢？需要修改但是不经常改的信息就可以作为配置信息，比如数据文件的路径。 二 什么是配置文件？配置文件中只有两种内容：  section，分区 option，选项，是键值对的形式  三 configparser的使用wiki1234">
@@ -348,8 +348,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-18T20:31:36+08:00" content="2018-10-18">
-      2018-10-18
+    <time itemprop="dateUpdated" datetime="2018-10-28T11:43:43+08:00" content="2018-10-28">
+      2018-10-28
     </time>
   </span>
 
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  326word
+                  395word
                 </span>
               
 
@@ -458,6 +458,9 @@
 </ol>
 <h2 id="三-configparser的使用"><a href="#三-configparser的使用" class="headerlink" title="三 configparser的使用"></a>三 configparser的使用</h2><figure class="highlight plain"><figcaption><span>wiki</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># useinfo.cfg</span><br><span class="line">[user]</span><br><span class="line">name1 = musibii</span><br><span class="line">name2 = thales</span><br><span class="line">name3 = ddd</span><br><span class="line"></span><br><span class="line">[password]</span><br><span class="line">password1 = woshinibaba</span><br><span class="line">password2 = 123456</span><br><span class="line">password3 = 123</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line"><span class="comment"># 创建一个解析器</span></span><br><span class="line">config = configparser.ConfigParser()</span><br><span class="line"><span class="comment"># 读取并解析cfg文件</span></span><br><span class="line">config.read(<span class="string">'useinfo.cfg'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># 获取所有section</span></span><br><span class="line">print(config.sections())</span><br><span class="line"><span class="comment"># 获取某个分区下所有option</span></span><br><span class="line">print(config.options(<span class="string">'user'</span>))</span><br><span class="line"><span class="comment"># 获取某个选项具体的值</span></span><br><span class="line">print(config.get(<span class="string">'user'</span>, <span class="string">'name1'</span>))</span><br><span class="line"><span class="comment"># get返回的都是字符串类型，如果需要转换类型，直接使用get+对应的类型(bool，int，float)</span></span><br><span class="line">print(config.getint(<span class="string">'password'</span>, <span class="string">'password1'</span>))</span><br><span class="line"><span class="comment"># 是否有某个选项，返回布尔值</span></span><br><span class="line">config.has_option()</span><br><span class="line"><span class="comment"># 是否有某个分区</span></span><br><span class="line">config.has_section()</span><br><span class="line"><span class="comment"># 不常用的一些方法</span></span><br><span class="line"><span class="comment"># 添加分区(必须先添加分区才可以修改分区下面的值)</span></span><br><span class="line">config.add_section(<span class="string">'server'</span>)</span><br><span class="line">config.set(<span class="string">'server'</span>, <span class="string">'usr'</span>, <span class="string">'192.168.1.1'</span>)</span><br><span class="line"><span class="comment"># 删除选项</span></span><br><span class="line">config.remove_option(<span class="string">'user'</span>, <span class="string">'name1'</span>)</span><br><span class="line"><span class="comment"># 写入文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'useinfo.cfg'</span>, <span class="string">'wt'</span>, encoding=<span class="string">'ust-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    config.write(f)</span><br></pre></td></tr></table></figure>
+<p>使用例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># admin.cfg</span><br><span class="line">[admin]</span><br><span class="line">name=maffia</span><br><span class="line">password=woshinibaba</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line">config = configparser.ConfigParser()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取账号和密码信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_admin</span><span class="params">()</span>:</span></span><br><span class="line">    admin_info = []</span><br><span class="line">    config.read(admin.cfg, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    sections = config.sections()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(sections)<span class="number">-1</span>):</span><br><span class="line">        user_dic = &#123;<span class="string">'name'</span>: config.items(sections[i])[i][<span class="number">1</span>],</span><br><span class="line">                   <span class="string">'password'</span>: config.items(sections[i])[i+<span class="number">1</span>][<span class="number">1</span>]&#125;</span><br><span class="line">        admin_info.append(user_dic)</span><br><span class="line">    <span class="keyword">return</span> admin_info</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -586,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.9k</span>
+    <span title="Site words total count">34k</span>
   
 </div>
 
