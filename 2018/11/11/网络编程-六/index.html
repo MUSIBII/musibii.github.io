@@ -79,30 +79,29 @@
 
 
 
-<meta name="description" content="一 客户端/服务端架构 硬件 C/S 架构  软件 C/S 架构 互联网处处是 C/S 架构的 如一个网站就是服务端,浏览器是客户端( B/S 架构)  服务端需要遵循的原则:  服务端与客户端都需要有惟一的地址,但是服务端的地址必须固定/绑定 对外一直提供服务,需要稳定运行 服务端需要支持并发   网络 网络建立的目的是为了数据交互(通信) 如何实现通信: 1. 建立好底层的物理连接介质 2.">
+<meta name="description" content="前言在上篇文章解决了 TCP 和 UDP 并发的问题,是通过一个 socketserver模块实现的,那么这个模块到底做了什么可以实现并发的效果呢? socketserver 源码分析进入 socketserver 中查看注释:  翻译如下: 通用套接字服务类 该模块试图捕获定义服务器的各个方面 基于套接字的服务器 基于请求的服务器 在进一步查看请求之前进行客户地址验证,(这实际上是一个钩子,用于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络编程(一)">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/网络编程-一/index.html">
+<meta property="og:title" content="网络编程(六)">
+<meta property="og:url" content="http://yoursite.com/2018/11/11/网络编程-六/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="一 客户端/服务端架构 硬件 C/S 架构  软件 C/S 架构 互联网处处是 C/S 架构的 如一个网站就是服务端,浏览器是客户端( B/S 架构)  服务端需要遵循的原则:  服务端与客户端都需要有惟一的地址,但是服务端的地址必须固定/绑定 对外一直提供服务,需要稳定运行 服务端需要支持并发   网络 网络建立的目的是为了数据交互(通信) 如何实现通信: 1. 建立好底层的物理连接介质 2.">
+<meta property="og:description" content="前言在上篇文章解决了 TCP 和 UDP 并发的问题,是通过一个 socketserver模块实现的,那么这个模块到底做了什么可以实现并发的效果呢? socketserver 源码分析进入 socketserver 中查看注释:  翻译如下: 通用套接字服务类 该模块试图捕获定义服务器的各个方面 基于套接字的服务器 基于请求的服务器 在进一步查看请求之前进行客户地址验证,(这实际上是一个钩子,用于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fwyjnukpjqj30ke09ojsr.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwyjp5g9n1j30ik04vgmf.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwyk0i1snvj30i2034jrh.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fwykh847llj31101akdwu.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwykr499haj30jg0ergn0.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwyls7jodaj312y088425.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwym12dookj30z809ggmu.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwymqivhr5j30i203ot8t.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwymrrfhyyj30i703t3yo.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwyn9g4puyj30ii042wel.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwyn9ycqwhj30ha03fwen.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwynjcrt45j30kp072mxv.jpg">
-<meta property="og:updated_time" content="2018-11-06T13:15:09.371Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fx477n0fj8g30dc06onpg.gif">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fx47f81ixnj30l00coq3k.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4aehutm8j311m0lkacr.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx4apy6id2j310u0mi76s.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4awbk00xj311k0ootdl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fx4bicao65j312o0twjwm.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4cs2psjij31340qkn2g.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4d9xi766j313w0o0jvs.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx4df4pa37j30wq07ewf6.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx4dgns7uhj315e0ietd2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx4ejycnb8j30ts0m80x3.jpg">
+<meta property="og:updated_time" content="2018-11-11T12:48:54.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络编程(一)">
-<meta name="twitter:description" content="一 客户端/服务端架构 硬件 C/S 架构  软件 C/S 架构 互联网处处是 C/S 架构的 如一个网站就是服务端,浏览器是客户端( B/S 架构)  服务端需要遵循的原则:  服务端与客户端都需要有惟一的地址,但是服务端的地址必须固定/绑定 对外一直提供服务,需要稳定运行 服务端需要支持并发   网络 网络建立的目的是为了数据交互(通信) 如何实现通信: 1. 建立好底层的物理连接介质 2.">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fwyjnukpjqj30ke09ojsr.jpg">
+<meta name="twitter:title" content="网络编程(六)">
+<meta name="twitter:description" content="前言在上篇文章解决了 TCP 和 UDP 并发的问题,是通过一个 socketserver模块实现的,那么这个模块到底做了什么可以实现并发的效果呢? socketserver 源码分析进入 socketserver 中查看注释:  翻译如下: 通用套接字服务类 该模块试图捕获定义服务器的各个方面 基于套接字的服务器 基于请求的服务器 在进一步查看请求之前进行客户地址验证,(这实际上是一个钩子,用于">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fx477n0fj8g30dc06onpg.gif">
 
 
 
@@ -132,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/02/网络编程-一/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/11/网络编程-六/"/>
 
 
 
 
 
-  <title>网络编程(一) | MUSIBII</title>
+  <title>网络编程(六) | MUSIBII</title>
   
 
 
@@ -318,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/网络编程-一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/网络编程-六/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -335,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网络编程(一)</h1>
+          <h1 class="post-title" itemprop="name headline">网络编程(六)</h1>
         
 
         <div class="post-meta">
@@ -347,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T19:05:27+08:00">
-                2018-11-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T16:12:44+08:00">
+                2018-11-11
               </time>
             
 
@@ -360,8 +359,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-06T21:15:09+08:00" content="2018-11-06">
-      2018-11-06
+    <time itemprop="dateUpdated" datetime="2018-11-11T20:48:54+08:00" content="2018-11-11">
+      2018-11-11
     </time>
   </span>
 
@@ -379,8 +378,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络编程/" itemprop="url" rel="index">
-                    <span itemprop="name">网络编程</span>
+                  <a href="/categories/socketserver源码探析/" itemprop="url" rel="index">
+                    <span itemprop="name">socketserver源码探析</span>
                   </a>
                 </span>
 
@@ -397,8 +396,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/网络编程-一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/02/网络编程-一/" itemprop="commentCount"></span>
+                <a href="/2018/11/11/网络编程-六/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/11/网络编程-六/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -425,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.5kword
+                  2kword
                 </span>
               
 
@@ -441,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15min
+                  8min
                 </span>
               
             </div>
@@ -462,122 +461,91 @@
       
 
       
-        <h2 id="一-客户端-服务端架构"><a href="#一-客户端-服务端架构" class="headerlink" title="一 客户端/服务端架构"></a>一 客户端/服务端架构</h2><ol>
-<li><p>硬件 C/S 架构</p>
-</li>
-<li><p>软件 C/S 架构</p>
-<p>互联网处处是 C/S 架构的</p>
-<p>如一个网站就是服务端,浏览器是客户端( B/S 架构)</p>
-</li>
-<li><p>服务端需要遵循的原则:</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在上篇文章解决了 TCP 和 UDP 并发的问题,是通过一个 socketserver模块实现的,那么这个模块到底做了什么可以实现并发的效果呢?</p>
+<h1 id="socketserver-源码分析"><a href="#socketserver-源码分析" class="headerlink" title="socketserver 源码分析"></a>socketserver 源码分析</h1><p>进入 socketserver 中查看注释:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fx477n0fj8g30dc06onpg.gif" alt=""></p>
+<p>翻译如下:</p>
+<p>通用套接字服务类</p>
+<p>该模块试图捕获定义服务器的各个方面</p>
+<p>基于套接字的服务器</p>
+<p>基于请求的服务器</p>
+<p>在进一步查看请求之前进行客户地址验证,(这实际上是一个钩子,用于任何需要在进行其他操作之前查看请求的处理)</p>
+<p>如何处理多个请求:</p>
+<p>​    同步(一次处理一个请求)</p>
+<p>​    分叉(每个请求由一个新进程处理)</p>
+<p>​    线程化(每个请求由一个新线程处理)</p>
+<p>这个模块的类喜欢编写最简单的服务器类型:一个同步的 TCP/IP 服务器.这是糟糕的设计,但是节省了一些输入.(还有一个问题是,深度类层次结构会减慢方法查找的速度)</p>
+<p>在继承关系图中有五个类,其中四个表示四种类型的同步服务器:</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fx47f81ixnj30l00coq3k.jpg" alt=""></p>
+<p>注意UnixDatagramServer 继承于 UDPServer, 而不是 UnixStreamServer–IP 和 Unix 服务器之间的唯一区别是地址族,这在两个 Unix 服务器类中都是重复的.</p>
+<p>可以使用FrokingMixIn 和ThreadingMixIn 混合类创建每种类型服务器的进程和线程版本.例如,创建一个线程 UDP 服务器如下所示:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadingUDPServer</span><span class="params">(ThreadingMixIn, UDPServer)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>混合类必须首先出现,因为它覆盖了 UDPServer 中定义的方法,设置各种成员变量还会改变底层服务器机制的行为.</p>
+<p>要实现服务,必须从 BaseRequestHandler 派生一个类,并重新定义它的 handle() 方法.然后,你可以通过将一个服务器类与请求处理程序类组合在一起来运行服务的不同版本.</p>
+<p>对于数据报或流式服务器,请求处理程序类必须是不同的.这可以通过使用请求处理程序子类 StreamRequestHandler 或 DatagramRequestHandler 类来隐藏.</p>
+<p>当然,你还得动动脑子.</p>
+<p>例如,如果服务在内存中包含可以由请求修改的状态,那么使用进程服务器是没有意义的(因为子进程中的修改永远不会达到父进程中保留并传递给每个子进程的初始状态).在这种情况下,你可以使用线程化服务器,但是你可能必须使用锁来避免几乎同时出现的两个请求,以对服务器状态应用冲突更改.</p>
+<p>另一方面,如果你正在构建一个 HTTP 服务器,其中所有数据都存储在外部(例如文件系统中),同步类本质上是在处理一个请求时使服务’听不见’,如果客户端读取其请求的所有数据很慢,那么这种情况可能会持续很长时间,在这里,线程或进程服务器是合适的.</p>
+<p>在某些情况下,同步的处理请求的一部分可能是合适的,但根据请求数据在进程子节点中完成处理可能是合适的.这可以通过使用同步服务器和在请求处理程序类 handle() 方法中执行显式进城来实现.</p>
+<p>处理多个同时请求的另一种方法既不支持线程也不支持进程的环境(这些环境太昂贵或不适合服务)是维持一个部分完成的请求的显式表和使用选择器决定下一个要处理的请求(或者是否处理新的请求)对对流服务尤为重要.每个客户端可能长时间连接的地方.(如果线程或子线程不能使用)</p>
+<p>未来的工作:</p>
+<p>​    Sun RPC 的标准类(使用 TCP 或 UDP)</p>
+<p>​    标准混合类实现各种身份验证</p>
+<p>总结: 上面的翻译是 socketserver 的注释翻译,能够是我们大致了解该模块的工作流程.那么当我们自定义自己的类是如何进行实例化得呢?</p>
+<h1 id="结合源码查看自定义类的步骤"><a href="#结合源码查看自定义类的步骤" class="headerlink" title="结合源码查看自定义类的步骤"></a>结合源码查看自定义类的步骤</h1><p>该模块分为两大类: server 类(解决连接问题)和 request 类(解决通信问题)</p>
+<p> server 类继承关系:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4aehutm8j311m0lkacr.jpg" alt=""></p>
+<p>request 类继承关系:</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4apy6id2j310u0mi76s.jpg" alt=""></p>
+<p>总结继承关系:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4awbk00xj311k0ootdl.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fx4bicao65j312o0twjwm.jpg" alt=""></p>
+<p>以下述代码为例,分析 socketserver 源码:</p>
+<p><strong>服务端</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socketserver</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FtpServer</span><span class="params">(socketserver.BaseRequestHandler)</span>:</span></span><br><span class="line">    </span><br><span class="line">    coding = <span class="string">'utf-8'</span></span><br><span class="line">    server_dir = <span class="string">'file_upload'</span></span><br><span class="line">    max_packet_size = <span class="number">1024</span></span><br><span class="line">    BASE_DIR = os.path.dirname(os.path.abspath(__file__))</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.request)</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            data = self.request.recv(<span class="number">4</span>)</span><br><span class="line">            data_len = struct.unpack(<span class="string">'i'</span>, data)[<span class="number">0</span>]</span><br><span class="line">            head_json = self.request.recv(data_len).decode(self.coding)</span><br><span class="line">            head_dic = json.loads(head_json)</span><br><span class="line">            </span><br><span class="line">            cmd = head_dic[<span class="string">'cmd'</span>]</span><br><span class="line">            <span class="keyword">if</span> hasattr(self, cmd):</span><br><span class="line">                func = getattr(self, cmd)</span><br><span class="line">                func(head_dic)</span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, args)</span>:</span></span><br><span class="line">        file_path = os.path.normpath(os.paht.join(</span><br><span class="line">        			self.BASE_DIR,</span><br><span class="line">        			self.server_dir,</span><br><span class="line">        			args[<span class="string">'filename'</span>]))</span><br><span class="line">        filesize = args[<span class="string">'filesize'</span>]</span><br><span class="line">        recv_size = <span class="number">0</span></span><br><span class="line">        print(<span class="string">'----&gt;'</span>, file_path)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> open(file_path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">while</span> recv_size &lt; filesize:</span><br><span class="line">                recv_data = self.request.recv(self.max_packet_size)</span><br><span class="line">                f.write(recv_data)</span><br><span class="line">                recv_size += len(recv_size)</span><br><span class="line">                print(<span class="string">'recvsize: %s filessize: %s'</span> % (recv_size, filesize))</span><br><span class="line"></span><br><span class="line">ftpserver = socketserver.ThreadingTCPServer((<span class="string">''</span>, <span class="number">8080</span>), FtpServer)</span><br><span class="line">ftpserver.serve_forever()</span><br></pre></td></tr></table></figure>
+<p>*<em>客户端</em>8</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTCPClient</span>:</span></span><br><span class="line">    </span><br><span class="line">    address_family = socket.AF_INET</span><br><span class="line">    socket_type = socket.SOCK_STREAM</span><br><span class="line">    allow_reuse_address = <span class="keyword">False</span></span><br><span class="line">    max_packet_size = <span class="number">8192</span></span><br><span class="line">    coding = <span class="string">'utf-8'</span></span><br><span class="line">    request_queue_size = <span class="number">5</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, server_address, connect=True)</span>:</span></span><br><span class="line">        self.server_address = server_address</span><br><span class="line">        self.socket = socket.socket(self.address_family,</span><br><span class="line">                                   self.socket_type)</span><br><span class="line">        <span class="keyword">if</span> connect:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                self.client_connect()</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                self.client_close()</span><br><span class="line">                <span class="keyword">raise</span></span><br><span class="line">            </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">client_connect</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.socket.connect(self.server_address)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">client_close</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.socket.close()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            inp = input(<span class="string">'&gt;&gt;&gt;:'</span>).strip()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> inp:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            l = inp.split()</span><br><span class="line">            cmd = l[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> hasattr(self, cmd):</span><br><span class="line">                func = getattr(self, cmd)</span><br><span class="line">                func(l)</span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, args)</span>:</span></span><br><span class="line">        cmd = args[<span class="number">0</span>]</span><br><span class="line">        filename = args[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filename):</span><br><span class="line">            print(<span class="string">'file: %s is not exist'</span> % filenam)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            filesize = os.path.getsize(filename)</span><br><span class="line">            </span><br><span class="line">        head_dic = &#123;<span class="string">'cmd'</span>: cmd, <span class="string">'filename'</span>: os.path.basename(filename), <span class="string">'filesize'</span>: filesize&#125;</span><br><span class="line">        print(head_dic)</span><br><span class="line">        head_json = json.dumps(head_dic)</span><br><span class="line">        head_json_bytes = bytes(head_json, encoding=self.coding)</span><br><span class="line">        </span><br><span class="line">        head_struct = struct.pack(<span class="string">'i'</span>, len(head_json_bytes))</span><br><span class="line">        self.scoket.send(head_struct)</span><br><span class="line">        self.socket.send(head_json_bytes)</span><br><span class="line">        send_size = <span class="number">0</span></span><br><span class="line">        <span class="keyword">with</span> open(filename, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> line im f:</span><br><span class="line">                self.socket.send(line)</span><br><span class="line">                send_size += len(line)</span><br><span class="line">                print(send_size)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">'upload successful'</span>)</span><br><span class="line">               </span><br><span class="line">client = MyTCPClient((<span class="string">''</span>, <span class="number">8080</span>))</span><br><span class="line">client.run()</span><br></pre></td></tr></table></figure>
+<p>以上述代码为例,分析 socketserver源码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ftpserver = socketserver.ThreadingTCPServer((<span class="string">''</span>, <span class="number">8080</span>))</span><br><span class="line">ftpserver.serve_forever()</span><br></pre></td></tr></table></figure>
+<p>查找属性的顺序可以从上面第三个继承图得到答案:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ThreadingTCPServer-&gt;ThreadingMixIn-&gt;TCPServer-&gt;BaseServer</span><br></pre></td></tr></table></figure>
 <ol>
-<li>服务端与客户端都需要有惟一的地址,但是服务端的地址必须固定/绑定</li>
-<li>对外一直提供服务,需要稳定运行</li>
-<li>服务端需要支持并发</li>
+<li>实例化得到 ftpserver, 先查找 ThreadingTCPServer 的初始化方法,发现左继承的 ThreadingMixIn 没有初始化方法,于是在 TCPServer 中找到,然后执行self.server_bind和 self.server_activate 方法;</li>
 </ol>
-</li>
-<li><p>网络</p>
-<p>网络建立的目的是为了数据交互(通信)</p>
-<p>如何实现通信:</p>
-<pre><code>1. 建立好底层的物理连接介质
-2. 有一套统一的通信标准,称之为互联网协议
-</code></pre></li>
-<li><p>互联网协议:就是计算机界的标准语言</p>
-</li>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4cs2psjij31340qkn2g.jpg" alt=""></p>
+<ol start="2">
+<li>初始化成功后执行ftpserver.serve_forever,发现在 ThreadingMixIn和 TCPServer 中都没有,于是只好去 BaseServer 中找到并执行 serve_forever,进而执行 self._handle_request_noblock(),该方法同样在 BaseServer 中</li>
 </ol>
-<h2 id="二-七层模型总览"><a href="#二-七层模型总览" class="headerlink" title="二 七层模型总览"></a>二 七层模型总览</h2><p>互联网的实现,总共可以分为七层.每一层都靠下一层的支持.用户接触的是第七层,也就是应用层.想要理解互联网协议,必须从最下层开始,自下而上理解每一层的功能.</p>
-<p>OSI 模型可以分为七层,五层,四层,其实都是一个道理,只不过合并了几层而已.从下而上分别为:物理层,数据链路层,网络层,传输层,会话层,表示层,应用层.</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwyjnukpjqj30ke09ojsr.jpg" alt=""></p>
-<p>每层运行常见的物理设备:</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwyjp5g9n1j30ik04vgmf.jpg" alt=""></p>
-<h2 id="三-tcp-IP-五层模型理解"><a href="#三-tcp-IP-五层模型理解" class="headerlink" title="三 tcp/IP 五层模型理解"></a>三 tcp/IP 五层模型理解</h2><p>一般讲应用层,表示层,会话层并做应用层,从 tcp/IP 五层协议的角度来阐述每层的由来和功能,搞清楚了每层的主要协议也就理解了互联网通信的原理.</p>
-<p>每层都运行特定的协议,越往上越靠近用户,越往下越靠近硬件.</p>
-<h3 id="一-物理层"><a href="#一-物理层" class="headerlink" title="一 物理层"></a>一 物理层</h3><p>物理层也可以称之为实体层.电脑想要互相通信,第一件事先要把电脑连起来,可以用光缆,电缆等方式实现通信.这就叫<strong>实体层</strong>,它就是把电脑连接起来的物理手段.它主要规定了网络的一些电器特性.它的功能室基于电器特性发送高低电压(电信号),高电压对应数字1,低电压对应数字0.</p>
-<h3 id="二-数据链路层"><a href="#二-数据链路层" class="headerlink" title="二 数据链路层"></a>二 数据链路层</h3><p>物理层单纯的传输电信号0和1没有任何意义,必须规定电信号多少位一组,每组什么意思.</p>
-<p>数据链路层的功能:定义了电信号的分组方式,这就是数据链路层的功能,它在物理层的上方,确定了0和1的分组方式.</p>
-<h4 id="1-以太网协议"><a href="#1-以太网协议" class="headerlink" title="1 以太网协议"></a>1 以太网协议</h4><p>早期的时候各个公司都有自己的分组方式,后来形成了统一的标准,即以太网协议 Ethernet.</p>
-<p>Ethernet 规定</p>
-<ul>
-<li>一组电信号构成一个数据包,也叫数据帧</li>
-<li>每一组数据帧分成:报头 head 和数据 data 两部分</li>
-</ul>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwyk0i1snvj30i2034jrh.jpg" alt=""></p>
-<p>报头包含数据包的一些说明项,比如发送者的源地址,接受者的源地址以及数据类型等等.</p>
-<ul>
-<li>发送者/源地址: 6个字节</li>
-<li>接受者/目标地址: 6个字节</li>
-<li>数据类型: 6个字节</li>
-</ul>
-<p>数据则是数据包的具体内容</p>
-<ul>
-<li>数据包最短为46字节,最长为1500字节</li>
-</ul>
-<p>所以一个数据帧的长度最短为64字节,最长1518字节,超过最大限制就分片发送.</p>
-<h4 id="2-mac-地址"><a href="#2-mac-地址" class="headerlink" title="2 mac 地址"></a>2 mac 地址</h4><p>head 中包含的源地址和目标地址的由来: Ethernet 规定接入 Internet 的设备都必须具备网卡,发送端和接收端的地址便是指网卡的地址,即MAC 地址.</p>
-<p>mac 地址:每块网卡出厂时都被烧制上世界上一个惟一的MAC 地址,长度为48位2进制,通常由12位16进制数表示(前六位是厂商编号,后六位是流水线号)</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwykh847llj31101akdwu.jpg" alt=""></p>
-<p>装了好多次虚拟机,我现在也不知道那个是我的了…</p>
-<h4 id="3-广播"><a href="#3-广播" class="headerlink" title="3 广播"></a>3 广播</h4><p>定义MAC 地址只是第一步,在一部电脑第一次接入局域网的时候,是怎么知道它的MAC 地址的呢.在局域网内通信都是通过MAC 地址来发包收包的,只要知道了对方的MAC 地址才可以互相通信.这就要靠ARP(addres resolution protocol) 协议来获取MAC 地址了,那么 arp 协议是如何解析出对方的MAC 地址呢?</p>
-<p>这里等到了网络层再来解释.</p>
-<p>注意:以太网数据包必须知道接收方的MAC 地址,才能发包.</p>
-<p>那么在同一个局域网内,知道了对方的MAC 地址,系统怎样才能把数据包准确送到接收方呢?</p>
-<p>以太网采用了一种很’原始’的方式,它并不是直接把数据包发到接收方,而是向局域网内所有的计算机发送,让每台计算机自己拆包后判断自己是否为接收方(前提知道对方MAC 地址)</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwykr499haj30jg0ergn0.jpg" alt=""></p>
-<p>上图中,1号计算机向2号计算机发送一个数据包,局域网内其他的计算机都会收到这个包.他们读取数据包的报头,找到接收方得MAC 地址,然后与自身的MAC 地址相比较,如果两者相同,就接收这个包,做进一步的处理,不相同的话就丢弃这个数据包.这种发送方式叫’广播’.</p>
-<p>有了数据包的定义,网卡的MAC 地址,广播的发送方式,数据链路层就可以在同一局域网内的计算机之间传送数据了.</p>
-<h3 id="三-网络层"><a href="#三-网络层" class="headerlink" title="三 网络层"></a>三 网络层</h3><h4 id="1-网络层的由来"><a href="#1-网络层的由来" class="headerlink" title="1 网络层的由来"></a>1 网络层的由来</h4><p>以太网协议,依靠MAC 地址发送数据,但这仅仅只能在同一个局域网内发送数据.理论上,依靠MAC 地址,是可以和全球任何一个MAC 地址发送数据的,因为MAC 地址是惟一的.但是这样做有一个致命的缺陷.</p>
-<p>以太网依靠广播方式发送数据包,而广播就意味着每个人都要发送一份,那么全球这么多的计算机,在找到对方的MAC 地址之前都要发一份无疑会造成巨大的浪费,而且效率极低,而且局限在发送者的局域网.也就是说,如果两台计算机不在同一个局域网,广播是传不过去的.这种设计是合理的,否则的话互联网上每一台计算机都会收到所有包,那会引起灾难.</p>
-<p>互联网可以想象成由无数个局域网组成的一个巨型网络,如果想要跨局域网通信必须找到另一种方式,能够区分哪些MAC 地址属于同一个局域网,哪些不属于同一个局域网.如果是同一个局域网的话,就采用广播发送(如何知道对方的MAC 地址),否则就采用’路由’的方式发送.(‘路由’的意思,就是指如何向不同局域网发送数据包)</p>
-<p>这就导致了’网络层’的诞生.它的作用是引进一套新的地址,使得我们能够区分不同的计算机是否属于同一个局域网.这套地址叫做’网络地址’,简称’网址’.</p>
-<p>于是,网络层出现以后,每台计算机有了两种地址,一种是MAC 地址,另一种是网络地址.两种地址之间没有任何联系,MAC 地址是绑定到网卡上的,网络地址则是由MAC 服务器分配的,当一台计算机第一次联网时,会向MAC 服务器发送一个包,然后MAC 服务器会分配好网络地址.</p>
-<p>网络地址帮助我们确定计算机所在的局域网,MAC 地址则将数据包发送到该局域网中的目标MAC 地址.因此从逻辑上判断,必定是先处理网络地址,然后处理MAC 地址.</p>
-<p>可以这样理解,互联网中的通信都是MAC 地址互相发送数据包,而网络地址是为了帮我们确认需要往哪个局域网里面的目标MAC 地址发送数据包,两者缺一不可.</p>
-<h4 id="2-IP-协议"><a href="#2-IP-协议" class="headerlink" title="2 IP 协议"></a>2 IP 协议</h4><p>规定网络地址的协议,叫做 IP 协议.它定义的地址,称为 IP 地址.</p>
-<p>目前,广泛采用的是 IP 协议第四版,简称 IPV4.这个版本规定,网络地址由32个二进制位组成.</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwyls7jodaj312y088425.jpg" alt=""></p>
-<p>可以看出我的 IP 地址为192.168.11.95,习惯上,用四段的十进制数表示 IP 地址,从0.0.0.0到255.255.255.255.</p>
-<p>IP 地址一般分为5类:A,B,C,D,E 类, D 和E 类为其他用途的.</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwym12dookj30z809ggmu.jpg" alt=""></p>
-<p>可以看粗来 IP 地址是有限的,而且现在的 IPV4 地址已经分完了,以后使用的就是 IPV6了,据说世界上的每一粒沙子都有一个惟一的 IP 地址.</p>
-<p>互联网上的每一台计算机,都会分配到一个 IP 地址.这个地址分为两部分,前一部分代表网络,后一部分代表主机.比如, 我的 IP 地址192.168.11.95,这是一个32位的地址,我的网络部分是前面24位192.168.11,那么主机号就是后8位.处于同一个局域网的电脑,它们 IP 地址的网络部分必定是相通的,也就是说192.168.11.95与192.168.11.49处于同一个局域网.</p>
-<p>但是我们单纯从 IP 地址是无法判断网络部分的,我为什么知道我的 IP 地址的网络号?其实没有另外一个地址的话我也不知道的.</p>
-<p>那么怎样从 IP 地址来判断计算机是否处于同一个局域网呢?这就是另外一个地址的作用了,也就是子网掩码.</p>
-<p>所谓子网掩码,就是表示子网络特征的一个参数.它在形式上等同于 IP 地址,也是一个32位二进制数字,它的网络部分全为1,主机部分全部为0.比如我的 IP192.168.11.95,因为我的网络部分为前24位,那么我的子网掩码就是255.255.255.0.</p>
-<p>知道了子网掩码,就可以判断,任意两个 IP 地址是否处于同一个局域网.方法是将两个 IP 地址与子网掩码分别进行 AND 运算(两个数位都为1,则为1,否则为0),然后比较结果是或否相同,如果相同,就表明处在同一个局域网,否则就不是,就需要通过路由协议发送数据包.</p>
-<p>IP 协议的作用主要有两个:一个是为每一台计算机分配 IP 地址,另一个是和子网掩码结合确定元 IP 与目标 IP 是否处于同一个局域网.</p>
-<h4 id="3-IP-数据包"><a href="#3-IP-数据包" class="headerlink" title="3 IP 数据包"></a>3 IP 数据包</h4><p>根据 IP 协议发送的数据,叫做 IP 数据包,不难想象,其中必定包括 IP 地址信息.</p>
-<p>但是前面说过.以太网数据包只包含MAC 地址,并没有 IP 地址的位置.那么是否需要修改数据定义在添加一个位置呢?</p>
-<p>我们可以直接把 IP 数据包放进以太网数据包的数据部分,因此完全不用修改以太网的规格.这就是互联网分层结构的好处:上层的变动完全不涉及下层的结构.</p>
-<p>具体来说, IP 数据包也分为报头和数据两个部分</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwymqivhr5j30i203ot8t.jpg" alt=""></p>
-<p>报头部分主要包括版本,长度, IP 地址等信息,数据部分则是 IP 数据包的具体内容.它放进以太网数据包后,以太网数据包就拥有了两个报头.</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwymrrfhyyj30i703t3yo.jpg" alt=""></p>
-<p>IP 数据包的报头部分的长度为20到60个字节,整个数据包的总长度最大为65535字节.因此,理论上,一个 IP 数据包的数据部分,最长为65515字节,前面说过,以太网数据包的数据部分,最长为1500字节.因此,如果 IP 数据包超过了1500字节,它就需要分割成几个以太网数据包,分开发送.</p>
-<h4 id="4-ARP-协议"><a href="#4-ARP-协议" class="headerlink" title="4 ARP 协议"></a>4 ARP 协议</h4><p>从数据链路层和网络层我们知道,想要发送一个数据包,必须知道两个地址,一个是对方的 MAC 地址,另一个是对方的 IP 地址.通常情况下,对方的 IP 地址是已知的,但是不知道对方的 MAC 地址.</p>
-<p>所以需要一种机制能够从 IP 地址得到 MAC 地址.</p>
-<p>这里可以分为两种情况:第一种情况,如果两台主机不在同一个局域网,那么事实上没办法得到对方的 MAC 地址,只能把数据包传送到两个局域网连接处的网关’ gateway’,让网关去处理.</p>
-<p>第二种情况,如果两台主机在同一个局域网,那么可以使用 ARP 协议,得到对方的 MAC 地址. ARP 协议也是发送一个数据包(包含在以太网数据包中),其中包含它索要查询主机的IP 地址,在对方 MAC 地址这个位置,填的是 FF:FF:FF:FF:FF:FF,表示这是一个广播地址.它所在局域网的每一台计算机都会收到这个数据包,从中取出IP地址，与自身的IP地址进行比较。如果两者相同，都做出回复，向对方报告自己的MAC地址，否则就丢弃这个包。</p>
-<p>总之，有了ARP协议之后，我们就可以得到同一个子网络内的主机MAC地址，可以把数据包发送到任意一台主机之上了。</p>
-<h3 id="四-传输层"><a href="#四-传输层" class="headerlink" title="四 传输层"></a>四 传输层</h3><h4 id="1-传输层的由来"><a href="#1-传输层的由来" class="headerlink" title="1 传输层的由来"></a>1 传输层的由来</h4><p>有了MAC地址和IP地址，我们已经可以在互联网上任意两台主机上建立通信。</p>
-<p>接下来的问题是，同一台主机上有许多程序都需要用到网络，比如，你一边浏览网页，一边与朋友在线聊天。当一个数据包从互联网上发来的时候，你怎么知道，它是表示网页的内容，还是表示在线聊天的内容？</p>
-<p>也就是说，我们还需要一个参数，表示这个数据包到底供哪个程序（进程）使用。这个参数就叫做”端口”（port），它其实是每一个使用网卡的程序的编号。每个数据包都发到主机的特定端口，所以不同的程序就能取到自己所需要的数据。</p>
-<p>“端口”是0到65535之间的一个整数，正好16个二进制位。0到1023的端口被系统占用，用户只能选用大于1023的端口。不管是浏览网页还是在线聊天，应用程序会随机选用一个端口，然后与服务器的相应端口联系。</p>
-<p><strong>“传输层”的功能，就是建立”端口到端口”的通信。相比之下，”网络层”的功能是建立”主机到主机”的通信。只要确定主机和端口，我们就能实现程序之间的交流。</strong>因此，Unix系统就把主机+端口，叫做”套接字”（socket）。有了它，就可以进行网络应用程序开发了。</p>
-<h4 id="2-UDP-协议"><a href="#2-UDP-协议" class="headerlink" title="2 UDP 协议"></a>2 UDP 协议</h4><p>现在，我们必须在数据包中加入端口信息，这就需要新的协议。最简单的实现叫做UDP协议，它的格式几乎就是在数据前面，加上端口号。</p>
-<p>UDP数据包，也是由”报头”和”数据”两部分组成。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwyn9g4puyj30ii042wel.jpg" alt=""></p>
-<p>“报头”部分主要定义了发出端口和接收端口，”数据”部分就是具体的内容。然后，把整个UDP数据包放入IP数据包的”数据”部分，而前面说过，IP数据包又是放在以太网数据包之中的，所以整个以太网数据包现在变成了下面这样：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwyn9ycqwhj30ha03fwen.jpg" alt=""></p>
-<h4 id="3-TCP-协议"><a href="#3-TCP-协议" class="headerlink" title="3 TCP 协议"></a>3 TCP 协议</h4><p>UDP协议的优点是比较简单，容易实现，但是缺点是可靠性较差，一旦数据包发出，无法知道对方是否收到。</p>
-<p>为了解决这个问题，提高网络可靠性，TCP协议就诞生了。这个协议非常复杂，但可以近似认为，它就是有确认机制的UDP协议，每发出一个数据包都要求确认。如果有一个数据包遗失，就收不到确认，发出方就知道有必要重发这个数据包了。</p>
-<p>因此，TCP协议能够确保数据不会遗失。它的缺点是过程复杂、实现困难、消耗较多的资源。</p>
-<p>TCP数据包和UDP数据包一样，都是内嵌在IP数据包的”数据”部分。TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。</p>
-<h3 id="五-应用层"><a href="#五-应用层" class="headerlink" title="五 应用层"></a>五 应用层</h3><p>应用程序收到”传输层”的数据，接下来就要进行解读。由于互联网是开放架构，数据来源五花八门，必须事先规定好格式，否则根本无法解读。</p>
-<p><strong>“应用层”的作用，就是规定应用程序的数据格式。</strong></p>
-<p>举例来说，TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。那么，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。</p>
-<p>这是最高的一层，直接面对用户。它的数据就放在TCP数据包的”数据”部分。因此，现在的以太网的数据包就变成下面这样。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwynjcrt45j30kp072mxv.jpg" alt=""></p>
-<p>至此，整个互联网的五层结构，自下而上全部讲完了。这是从系统的角度，解释互联网是如何构成的.</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4d9xi766j313w0o0jvs.jpg" alt=""></p>
+<ol start="3">
+<li>执行self_handle_request_noblock()进而执行 request,client_address = self.get_request(),在这里发现在 TCPServer 中有该方法,于是执行这个方法</li>
+</ol>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4df4pa37j30wq07ewf6.jpg" alt=""></p>
+<ol start="4">
+<li>执行 self.socket.accept(),发现该方法在 socket 中,然后执行 self.process_address(request, client_address)</li>
+</ol>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4dgns7uhj315e0ietd2.jpg" alt=""></p>
+<ol start="5">
+<li>在 ThreadingMixIn 中找到process_request, 开启多线程应对并发,进而执行process_request_thread,执行 self.finish_request(request, client_address)</li>
+</ol>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4ejycnb8j30ts0m80x3.jpg" alt=""></p>
+<ol start="6">
+<li>上述四部分完成了连接循环,接下来进入处理通信部分,在 BaseServer 中找到 finish_request,触发我们定义的类的实例化并初始化一个对象,因为自己定义的类中中没有该方法,则依据继承关系计算出的 MRO 列表查找属性</li>
+</ol>
+<p><strong>源码分析总结:</strong></p>
+<p>基于 TCP 的 socketserver 定义出的类:</p>
+<ol>
+<li>self.server 即套接字对象;</li>
+<li>self.request 即一个连接;</li>
+<li>self.client_address即客户端地址</li>
+</ol>
+<p>基于 UDP 的 socketserver 定义出的类:</p>
+<ol>
+<li>self.request 是一个元祖(第一个元素是客户端发来的数据,第二部分是服务端的 udp 套接字对象),如(b’musibii’, &lt;socket.socket fd=200, family=AddressFamily.AF_INET, type=SocketKind.SOCK_DGRAM, proto=0, laddr=(‘127.0.0.1’, 8080)&gt;);</li>
+<li>self.client_address 即客户端地址.</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本文查看了一下 socketserver 模块的源码,大致的实例化对象的步骤和主要运行流程差不多搞清楚了,但是有些地方还是需要仔细琢磨的,比如第五步怎么一下就到开启多线程实现并发了.</p>
+<p>总的来说,查看源码还是有点用的,而且该模块的继承也对之前学习的继承知识进行了补充,特别是根据继承解析出来的( MRO)列表,这个列表是类中属性的查找顺序表,和是否直接继承没有关系.</p>
 
       
     </div>
@@ -602,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/01/异常处理/" rel="next" title="异常处理">
-                <i class="fa fa-chevron-left"></i> 异常处理
+              <a href="/2018/11/11/并发编程-一/" rel="next" title="并发编程(一)">
+                <i class="fa fa-chevron-left"></i> 并发编程(一)
               </a>
             
           </div>
@@ -611,10 +579,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/06/网络编程-二/" rel="prev" title="网络编程(二)">
-                网络编程(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -777,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-客户端-服务端架构"><span class="nav-number">1.</span> <span class="nav-text">一 客户端/服务端架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-七层模型总览"><span class="nav-number">2.</span> <span class="nav-text">二 七层模型总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-tcp-IP-五层模型理解"><span class="nav-number">3.</span> <span class="nav-text">三 tcp/IP 五层模型理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-物理层"><span class="nav-number">3.1.</span> <span class="nav-text">一 物理层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-数据链路层"><span class="nav-number">3.2.</span> <span class="nav-text">二 数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-以太网协议"><span class="nav-number">3.2.1.</span> <span class="nav-text">1 以太网协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-mac-地址"><span class="nav-number">3.2.2.</span> <span class="nav-text">2 mac 地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-广播"><span class="nav-number">3.2.3.</span> <span class="nav-text">3 广播</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-网络层"><span class="nav-number">3.3.</span> <span class="nav-text">三 网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-网络层的由来"><span class="nav-number">3.3.1.</span> <span class="nav-text">1 网络层的由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-IP-协议"><span class="nav-number">3.3.2.</span> <span class="nav-text">2 IP 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-IP-数据包"><span class="nav-number">3.3.3.</span> <span class="nav-text">3 IP 数据包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ARP-协议"><span class="nav-number">3.3.4.</span> <span class="nav-text">4 ARP 协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-传输层"><span class="nav-number">3.4.</span> <span class="nav-text">四 传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-传输层的由来"><span class="nav-number">3.4.1.</span> <span class="nav-text">1 传输层的由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-UDP-协议"><span class="nav-number">3.4.2.</span> <span class="nav-text">2 UDP 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-TCP-协议"><span class="nav-number">3.4.3.</span> <span class="nav-text">3 TCP 协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-应用层"><span class="nav-number">3.5.</span> <span class="nav-text">五 应用层</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socketserver-源码分析"><span class="nav-number">2.</span> <span class="nav-text">socketserver 源码分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结合源码查看自定义类的步骤"><span class="nav-number">3.</span> <span class="nav-text">结合源码查看自定义类的步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
