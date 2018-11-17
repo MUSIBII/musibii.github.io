@@ -87,17 +87,17 @@
 <meta property="og:description" content="前言经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码. 那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口. python 进程Pro">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxa6rs7loog30dc064npg.gif">
-<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181116211024312.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxb1y1zgtbj30yu0g0wi7.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxauq74fldg30dc064qv5.gif">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxatnjxgd8j30wa06y74y.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxav9ty4mkj314w04yjsn.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxav6zykv4j315a05675l.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxavk7l036j315804wdgm.jpg">
-<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181117110113666.png">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxb1zr8r3ij315e04o3z8.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxax05vxqyj315i06kabk.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxax8s8o5aj315a06i402.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxaxox6dqtj315i07mmyc.jpg">
-<meta property="og:updated_time" content="2018-11-17T05:30:00.110Z">
+<meta property="og:updated_time" content="2018-11-17T06:41:55.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发编程(三)">
 <meta name="twitter:description" content="前言经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码. 那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口. python 进程Pro">
@@ -359,7 +359,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-17T13:30:00+08:00" content="2018-11-17">
+    <time itemprop="dateUpdated" datetime="2018-11-17T14:41:55+08:00" content="2018-11-17">
       2018-11-17
     </time>
   </span>
@@ -467,7 +467,7 @@
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxa6rs7loog30dc064npg.gif" alt=""></p>
 <p>翻译 Process 类的注释:进程对象表示在隔开的进程中运行的活动,这个类和 threading.Thread 同义.(因为最开始的计算机都是单核,多进程是后面才出来的)</p>
 <p>那么很显然,因为 Process 是个类,那么想要创建一个进程就是实例化一个 Process 类的对象.查看<strong> init</strong>方法:</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181116211024312.png" alt="image-20181116211024312"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxb1y1zgtbj30yu0g0wi7.jpg" alt="image-20181116211024312"></p>
 <p>哇,参数好多啊,不过大部分都可以使用默认值,第一个参数是 group, 看后面有一句注释: group 参数当前必须为 None, 好了可以不用理会了;第二个参数很重要,表示创建的进程将要进行的任务,必须要传参数(函数名);第三个是名字,可以自定义进程名;第四个是可变长参数,参数会在创建进程的时候传进 target 中;第五个为关键词参数,也是给 target 传的.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> group <span class="keyword">is</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
 <p>断言,只有该表达式值为 True 才会运行下面的代码.很显然不用管就行.</p>
@@ -503,7 +503,7 @@
 <p>运行结果:</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxavk7l036j315804wdgm.jpg" alt=""></p>
 <p>可以得出即使在子进程中global x了,修改的也是子进程内存空间里面的名称,这和之前讲的子进程将父进程的代码重新加载了一遍,所以这里面的 x 是两个不同的 x.</p>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181117110113666.png" alt="image-20181117110113666"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxb1zr8r3ij315e04o3z8.jpg" alt="image-20181117110113666"></p>
 <p>为什么进程的内存空间需要切必须要互相隔离呢?</p>
 <p>进程隔离是为保护操作系统中进程互不干扰而设计的一组不同硬件和软件的技术.这个技术是为了避免A 进程写入 B 进程的情况发生.进程的隔离实现,使用了虚拟地址空间.进程 A 的虚拟地址和进程 B 的虚拟地址不同,这样就防止进程 A 将数据信息写入进程 B,总的来说就是为了数据安全,但也有办法可以实现进程间通信,稍后再谈.</p>
 <h3 id="父子进程执行顺序与-join-方法"><a href="#父子进程执行顺序与-join-方法" class="headerlink" title="父子进程执行顺序与 join 方法"></a>父子进程执行顺序与 join 方法</h3><p>在上面的代码中实例一个进程对象然后执行 start 方法,会创建出一个子进程然后去执行任务,其实 python 只是调用了操作系统提供的接口,在上一篇博客说到,类 Unix 是调用了操作系统的 fork 函数, windows 是 CreateProcess 函数,所以是通过操作系统来调用并创建一个进程的,而创建进程需要一些必要的资源,那么在操作系统分配这些资源的过程中,主进程代码的执行应该进行完成了,所以运行结果会先出现主进程代码执行完,后子进程的代码执行完.</p>
@@ -570,6 +570,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/17/并发编程-四/" rel="prev" title="并发编程(四)">
+                并发编程(四) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -655,7 +659,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -766,7 +770,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">70.8k</span>
+    <span title="Site words total count">73.5k</span>
   
 </div>
 

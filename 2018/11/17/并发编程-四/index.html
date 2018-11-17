@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="异常之问  什么是异常?  异常就是程序运行时发生错误的信号(在程序出现错误时,则会产生一个异常,若程序没有处理它,则会抛出该异常,程序的运行也随之终止)在Python 中,错误触发的异常如下:   Traceback 为异常的追踪信息 NameError 为异常的类型 name ‘a’ is not defined 为异常值  在 Python 中的错误分为两种:  语法错误:这种错误,通过不了">
+<meta name="description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异常处理">
-<meta property="og:url" content="http://yoursite.com/2018/11/01/异常处理/index.html">
+<meta property="og:title" content="并发编程(四)">
+<meta property="og:url" content="http://yoursite.com/2018/11/17/并发编程-四/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="异常之问  什么是异常?  异常就是程序运行时发生错误的信号(在程序出现错误时,则会产生一个异常,若程序没有处理它,则会抛出该异常,程序的运行也随之终止)在Python 中,错误触发的异常如下:   Traceback 为异常的追踪信息 NameError 为异常的类型 name ‘a’ is not defined 为异常值  在 Python 中的错误分为两种:  语法错误:这种错误,通过不了">
+<meta property="og:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwskfsqgjzj315i0agwfy.jpg">
-<meta property="og:updated_time" content="2018-11-01T09:05:00.005Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg">
+<meta property="og:updated_time" content="2018-11-17T09:23:13.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异常处理">
-<meta name="twitter:description" content="异常之问  什么是异常?  异常就是程序运行时发生错误的信号(在程序出现错误时,则会产生一个异常,若程序没有处理它,则会抛出该异常,程序的运行也随之终止)在Python 中,错误触发的异常如下:   Traceback 为异常的追踪信息 NameError 为异常的类型 name ‘a’ is not defined 为异常值  在 Python 中的错误分为两种:  语法错误:这种错误,通过不了">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwskfsqgjzj315i0agwfy.jpg">
+<meta name="twitter:title" content="并发编程(四)">
+<meta name="twitter:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/01/异常处理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/17/并发编程-四/"/>
 
 
 
 
 
-  <title>异常处理 | MUSIBII</title>
+  <title>并发编程(四) | MUSIBII</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/01/异常处理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/并发编程-四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">异常处理</h1>
+          <h1 class="post-title" itemprop="name headline">并发编程(四)</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T14:48:01+08:00">
-                2018-11-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T13:31:47+08:00">
+                2018-11-17
               </time>
             
 
@@ -349,8 +349,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-01T17:05:00+08:00" content="2018-11-01">
-      2018-11-01
+    <time itemprop="dateUpdated" datetime="2018-11-17T17:23:13+08:00" content="2018-11-17">
+      2018-11-17
     </time>
   </span>
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/并发编程/" itemprop="url" rel="index">
+                    <span itemprop="name">并发编程</span>
                   </a>
                 </span>
 
@@ -386,8 +386,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/01/异常处理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/01/异常处理/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/并发编程-四/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/并发编程-四/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1kword
+                  2.7kword
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3min
+                  9min
                 </span>
               
             </div>
@@ -451,52 +451,52 @@
       
 
       
-        <p><strong>异常之问</strong></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程.</p>
+<p>守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束.</p>
+<p>本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的)</p>
+<p>#守护进程介绍</p>
+<p><strong>以下介绍摘自百度百科</strong></p>
+<p>守护进程是一个在后台运行并且不受任何终端控制的进程. Unix 操作系统有很多典型的守护进程,他们在后台运行,执行不同的管理任务.</p>
+<p>用户使守护进程独立于所有终端是因为,在守护进程从一个终端启动的情况下,这同一个终端可能被其他的用户使用.例如,用户从一个终端启动守护进程后退出,然后另一个人也登陆到这个终端.用户不希望后者在使用该终端的过程中,接收到守护进程的任何错误信息.同样,由终端键入的任何信号(例如中断信号)也不应该影响先前在该终端启动的任何守护进程的运行.虽然让服务器后台运行很容易(只要shell 命令行以&amp;结尾),但用户还应该做些工作,让程序本身能够自动进入后台,且不依赖于任何终端.</p>
+<p>守护进程没有控制终端,因此当某些情况发生时,不管是一般的报告性信息,还是由管理员处理的紧急信息,都需要以某种方式输出. Syslog 函数就是输出这些信息的标准方法,它把信息发送给 syslogd 守护进程.</p>
+<h1 id="创建守护进程步骤"><a href="#创建守护进程步骤" class="headerlink" title="创建守护进程步骤"></a>创建守护进程步骤</h1><p>在不同 Unix环境下,守护进程的具体变成细节并不一致.但所幸的是,守护进程的编程原则都一样,区别仅在于具体的实现细节不同,这个原则就是要满足守护进程的特性.编程规则如下:</p>
+<h3 id="在后台运行"><a href="#在后台运行" class="headerlink" title="在后台运行"></a>在后台运行</h3><p>为避免挂起控制终端,要将守护进程放入后台运行,其方法是在父进程中调用 fork 使父进程终止,让子进程在后台执行,使得程序在 shell 终端里造成一个已经运行完毕的假象.之后所有的工作都在子进程中完成,而用户在 shell 终端里则可以执行其他命令,从而使得程序以僵尸进程运行,在形式上做到了与控制终端的隔离.具体就是 fork 产生子进程后,调用 exit 使父进程终止.</p>
+<h3 id="脱离控制终端-登陆会话和进程组"><a href="#脱离控制终端-登陆会话和进程组" class="headerlink" title="脱离控制终端,登陆会话和进程组"></a>脱离控制终端,登陆会话和进程组</h3><p>登陆回话可以包含多个进程组,这些进程组共享一个控制终端,这个控制终端通常是创建进程的登陆终端,控制终端,登陆回话和进程组通常都是从父进程继承下来的.目的就是要脱离这些继承的东西,不受它们的影响.</p>
+<p>这就要使用 setsid 函数使进程成为会话组长.</p>
+<p><strong>setsid</strong></p>
+<p>setsid 命令 子进程从父进程继承了: Session ID, 进程组 ID 合打开的终端.子进程如果要脱离这些,代码中可通过调用 setsid 来实现.而命令行或脚本中可以通过命令setsid 来实现. setsid 帮助一个进程脱离从父进程继承而来的已打开的终端,会话和进程组.</p>
+<p>需要说明的是,当进程是会话组长时, setsid 调用会失败,大第一点已经保证进程不是会话组长.setsid 调用成功后,进程会成为新的会话组长和新的进程组长,并与原来的登陆会话和进程组脱离,由于会话过程对控制终端的独占性,进程同时与控制终端脱离.</p>
+<p>具体操作就是:</p>
 <ol>
-<li>什么是异常?</li>
+<li>成为新会话的首进程;</li>
+<li>成为一个新进程组的首进程;</li>
+<li>没有控制终端.</li>
 </ol>
-<p>异常就是程序运行时发生错误的信号(在程序出现错误时,则会产生一个异常,若程序没有处理它,则会抛出该异常,程序的运行也随之终止)在Python 中,错误触发的异常如下:</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwskfsqgjzj315i0agwfy.jpg" alt=""></p>
+<h3 id="禁止进程重新打开控制终端"><a href="#禁止进程重新打开控制终端" class="headerlink" title="禁止进程重新打开控制终端"></a>禁止进程重新打开控制终端</h3><p>现在进程已经成为无终端的会话组长,但它可以重新申请打开一个控制终端.可以通过是进程不再成为会话组长来禁止进程重新打开控制终端.</p>
+<h3 id="关闭打开的文件描述符"><a href="#关闭打开的文件描述符" class="headerlink" title="关闭打开的文件描述符"></a>关闭打开的文件描述符</h3><p>进程从创建它的父进程那里继承了打开的文件描述符.如果不关闭,会造成资源浪给,造成进程所在地文件系统无法卸下以及产生无法预料的错误.一般来说,必要的是关闭0,1,2三个文件描述符,即标准输入,标准输出,标准错误.因为一般希望守护进程自己有一套信息输出,输入的体系,而不是把所有的东西都发送到终端屏幕上.所以需要调用 fclose 来关闭文件描述符.</p>
+<h3 id="改变当前工作目录"><a href="#改变当前工作目录" class="headerlink" title="改变当前工作目录"></a>改变当前工作目录</h3><p>将当前工作目录更改为根目录,从父进程继承过来的当前工作目录可能在一个装配的文件系统中.因为守护进程通常在系统引导之前是一直存在的,所以如果守护进程的当前工作目录在一个装配文件系统中,那么该文件系统就不能被拆卸.</p>
+<p>另外,某些守护进程可能会把当前工作目录更改到某个指定位置,在此位置做它们的工作.例如,行式打印机守护进程常常将工作目录更改到 spool 目录上.可以调用 chdir 更改工作目录.</p>
+<h3 id="重设文件创建掩码"><a href="#重设文件创建掩码" class="headerlink" title="重设文件创建掩码"></a>重设文件创建掩码</h3><p>文件创建掩码是指屏蔽掉文件创建时的对应为.由于使用 fork 后函数新建的子进程继承了父进程的文件创建掩码,这就给该子进程使用文件带来了诸多麻烦.因此,把文件创建掩码设置为0,可以大大增强该守护进程的灵活性.设置文件创建掩码的函数是 umask, 通常的使用方法为umask(0).</p>
+<h3 id="处理-SIGCHLD-信号"><a href="#处理-SIGCHLD-信号" class="headerlink" title="处理 SIGCHLD 信号"></a>处理 SIGCHLD 信号</h3><p>处理 SIGCHLD 信号并不是必需的.但是对于某些守护进程,特别是服务器进程往往在请求到来时生产子进程出来请求.如果父进程不等待子进程结束,子进程将成为僵尸进程而占用系统资源.如果父进程等待子进程结束,将增加父进程的负担,影响服务器进程的并发性能.在系统下可以简单的将 SIGCHLD 信号的操作设为 SIG-IGN:</p>
+<p><code>signal(SIGCHLD,SIG_IGN)</code></p>
+<p>这样,内核在子进程结束后不会产生僵尸进程,这一点与 BSD4不同,杂 iBSD4下必须显式等待子进程结束后才能释放僵尸进程.</p>
+<p>#python守护进程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initDaemon</span><span class="params">(stdoutfd, stderrfd=None, basePath=None)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    初始化为 daemon 进程</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    basePath = <span class="string">'/'</span> <span class="keyword">if</span> basePath <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> basePath</span><br><span class="line">    curTimeStr = time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        stdoutfd.write(<span class="string">'Start on %s, '</span> % curTimeStr)</span><br><span class="line">        stdoutfd.flush()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> os.fork() &gt; <span class="number">0</span>:</span><br><span class="line">            os._exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        <span class="keyword">raise</span> OSError(<span class="string">'fork error'</span>)</span><br><span class="line">        </span><br><span class="line">    os.chdir(basePath)</span><br><span class="line">    os.setsid()</span><br><span class="line">    sys.stdout = stdoutfd</span><br><span class="line">    sys.stderr = stdoutfd <span class="keyword">if</span> stderrfd <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> stderrfd</span><br><span class="line">    sys.stdin = open(<span class="string">'/dev/nu,,'</span>, <span class="string">'r'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> os.fork() &gt; <span class="number">0</span>:</span><br><span class="line">            os._exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        <span class="keyword">raise</span> OSError(<span class="string">'fork 2 error'</span>)</span><br><span class="line">        </span><br><span class="line">    pid = int(os.getpid())</span><br><span class="line">    stdoutfd.write(<span class="string">'pid=%s\n'</span> % pid)</span><br><span class="line">    stdoutfd.flush()</span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<p>##守护进程运行方式</p>
+<h3 id="独立运行的守护进程"><a href="#独立运行的守护进程" class="headerlink" title="独立运行的守护进程"></a>独立运行的守护进程</h3><p>独立运行的守护进程有 init 脚本负责管理,所有独立运行的守护进程的脚本在/etc/rc和/etc/init.d 目录下.系统服务都是独立运行的守护进程包括 syslogd 和 cron 等.服务器监听一个特定的端口上等待客户端的连接.如果客户端产生一个连接请求,守护进程就创建一个子服务器响应这个连接,而主服务器继续监听.以保持多个子服务器池等待下一个客户端请求连接.</p>
+<h3 id="由-xinetd-管理的守护进程"><a href="#由-xinetd-管理的守护进程" class="headerlink" title="由 xinetd 管理的守护进程"></a>由 xinetd 管理的守护进程</h3><p>从守护进程的概念可以看出,系统所运行的每一种服务,都必须运行一个监听某个端口连接所发生的守护进程,这通常意味着资源浪费.为了解决这个问题, Linux 引进了’网络守护进程服务程序’的概念. CentOS6.4使用的网络守护进程是 xinted(eXtendedInterNET services daemon).</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg" alt=""></p>
+<p>上图是 ubuntu18.04使用的网络守护进程服务程序, xinted 能够同时监听多个指定的端口,在接受用户请求时,它能够根据用户请求的端口不同,启动不同的网络服务进程来处理这些用户请求.可以把 xinted 看做一个管理启动服务的管理服务器,它决定把一个客户请求交给那个程序处理,然后启动相应的守护进程.</p>
+<p>##守护进程分类</p>
+<p>按照服务类型分为如下几个:</p>
 <ul>
-<li>Traceback 为异常的追踪信息</li>
-<li>NameError 为异常的类型</li>
-<li>name ‘a’ is not defined 为异常值</li>
+<li>系统守护进程: syslogd,login,crond,at 等</li>
+<li>网络守护进程: sendmail,httpd,xinetd 等</li>
+<li>独立启动的守护进程: httpd,named,xinetd 等</li>
+<li>被动守护进程(由 xinetd 启动):telnet,finger,ktalk 等</li>
 </ul>
-<p>在 Python 中的错误分为两种:</p>
-<ul>
-<li>语法错误:这种错误,通过不了 python 的语法检测,这种错误也捕捉不了,必须在程序执行前改正.</li>
-<li>逻辑异常:语法没问题,通过了 Python的语法检测,但因为对 python 数据类型的错误使用导致出错.</li>
-</ul>
-<ol start="2">
-<li>异常的种类</li>
-</ol>
-<p>在 Python 中不同的异常可以用不同的类型( python 中统一了类与类型,类型即类)去标识,一个异常标识一种错误.</p>
-<p>常用异常:</p>
-<p><code>AttributeError 试图访问一个对象没有的属性</code></p>
-<p><code>IOError 输入/输出异常;通常为无法打开文件</code></p>
-<p><code>ImportError 无法引入模块或包;基本上是路径问题或名称错误</code></p>
-<p><code>IndentationError 语法错误的子类;代码没有正确对其</code></p>
-<p><code>IndexError 下标索引超出序列边界</code></p>
-<p><code>KeyError 试图访问字典中不存在的键</code></p>
-<p><code>KeyboardInterrupt 键盘终止,通常为 Ctrl+C 同时被按下</code></p>
-<p><code>NameError 使用一个还未被赋予对象的变量</code></p>
-<p><code>SyntaxError python 代码非法,代码不能编译</code></p>
-<p><code>TypeError 传入对象类型与要求的不符合</code></p>
-<p><code>UnboundLocalError 试图访问一个还未被赋值的局部变量,基本是由于另有一个同名的全局变量,导致你以为正在访问它</code></p>
-<p><code>ValueError 传入一个调用者不期望的值,即使值得类型是正确的</code></p>
-<p>更多异常:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">ArithmeticError</span><br><span class="line">AssertionError</span><br><span class="line">AttributeError</span><br><span class="line">BaseException</span><br><span class="line">BufferError</span><br><span class="line">BytesWarning</span><br><span class="line">DeprecationWarning</span><br><span class="line">EnvironmentError</span><br><span class="line">EOFError</span><br><span class="line">Exception</span><br><span class="line">FloatingPointError</span><br><span class="line">FutureWarning</span><br><span class="line">GeneratorExit</span><br><span class="line">ImportError</span><br><span class="line">ImportWarning</span><br><span class="line">IndentationError</span><br><span class="line">IndexError</span><br><span class="line">IOError</span><br><span class="line">KeyboardInterrupt</span><br><span class="line">KeyError</span><br><span class="line">LookupError</span><br><span class="line">MemoryError</span><br><span class="line">NameError</span><br><span class="line">NotImplementedError</span><br><span class="line">OSError</span><br><span class="line">OverflowError</span><br><span class="line">PendingDeprecationWarning</span><br><span class="line">ReferenceError</span><br><span class="line">RuntimeError</span><br><span class="line">RuntimeWarning</span><br><span class="line">StandardError</span><br><span class="line">StopIteration</span><br><span class="line">SyntaxError</span><br><span class="line">SyntaxWarning</span><br><span class="line">SystemError</span><br><span class="line">SystemExit</span><br><span class="line">TabError</span><br><span class="line">TypeError</span><br><span class="line">UnboundLocalError</span><br><span class="line">UnicodeDecodeError</span><br><span class="line">UnicodeEncodeError</span><br><span class="line">UnicodeError</span><br><span class="line">UnicodeTranslateError</span><br><span class="line">UnicodeWarning</span><br><span class="line">UserWarning</span><br><span class="line">ValueError</span><br><span class="line">Warning</span><br><span class="line">ZeroDivisionError</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>异常处理</li>
-</ol>
-<p>为了保证程序的健壮性与容错性,即在遇到错误时程序不会崩溃,我们需要对异常进行处理.如果错误发生的条件是可预知的,需要用 if 进行处理:在错误发生之前进行预防;如果错误的发生条件不可预知,则需要用 try…except: 在错误发生之后进行处理.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本语法</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    被检测的代码块</span><br><span class="line"><span class="keyword">except</span> 异常类型:</span><br><span class="line">    <span class="keyword">try</span> 中一旦检测到异常,就执行这个位置的逻辑</span><br></pre></td></tr></table></figure>
-<p>几个栗子:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 异常类只能用来处理指定的异常情况,如果非指定异常则无法处理</span></span><br><span class="line">s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    int(s1)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e: <span class="comment"># 捕获异常失败,报错</span></span><br><span class="line">    print(e)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 多分支</span></span><br><span class="line">s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    int(s1)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> KeyError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 万能异常 Exception</span></span><br><span class="line">s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    int(s1)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 多分支异常与万能异常</span></span><br><span class="line"><span class="comment"># 如果想要的效果是:无论出现什么异常,我们统一丢弃,或者使用同一段代码逻辑去处理它们,那么一个 Exception 就够了.</span></span><br><span class="line"><span class="comment"># 如果想要对不同的异常使用不同的处理逻辑,那么就需要用到多分支异常.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了防止对异常类型判断错误,可以在多分支后面跟上 Exception</span></span><br><span class="line">s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    int(s1)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> KeyError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 异常的其他结构</span></span><br><span class="line">s1 = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    int(s1)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> KeyError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'没有产生异常则执行'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'无论异常与否,都会执行该代码'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 主动触发异常</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">raise</span> TypeError(<span class="string">'类型错误'</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义异常</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExceptionMusibii</span><span class="params">(BaseException)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, msg)</span>:</span></span><br><span class="line">        self.msg = msg</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.msg</span><br><span class="line">    </span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">raise</span> ExceptionMusibii(<span class="string">'类型错误'</span>)</span><br><span class="line"><span class="keyword">except</span> ExceptionMusibii <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断言: assert 条件</span></span><br><span class="line"><span class="keyword">assert</span> <span class="number">1</span> == <span class="number">1</span></span><br><span class="line"><span class="keyword">assert</span> <span class="number">2</span> == <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 总结:try...except</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 把错误处理和真正的工作分开来;</span></span><br><span class="line"><span class="comment"># 2. 代码更易组织,更清晰,复杂的工作任务更容易实现;</span></span><br><span class="line"><span class="comment"># 3. 代码更加健壮,不易崩溃.</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>什么时候用异常处理</li>
-</ol>
-<p>只有在错误发生的条件无法预知的情况下才应该加上 try…except</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>对于一个操作系统来说,为了执行不同的管理任务,需要守护进程来协助管理.对于守护进程最重要的来说是需要在后台运行.其次,守护进程必须与其运行前的环境隔离开来.这些环境包括未关闭的文件描述符,控制终端,会话和进程组,工作目录以及文件创建掩码等.这些环境通常是守护进程从执行它的父进程(特别是 shell)继承下来的.最后守护进程的启动方式有其特殊之处.它可以在 Linux 系统启动时从启动脚本/etc/rc. d中启动,也可以由作业控制进程 crond 启动,还可以由用户终端(通常是 shell)执行.</p>
+<p>除这几点之外,守护进程与普通进程基本上没什么区别.因此,编写守护进程实际上是把一个普通进程按照上述的守护进程的特性改造成为守护进程.</p>
 
       
     </div>
@@ -521,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/31/热河/" rel="next" title="热河">
-                <i class="fa fa-chevron-left"></i> 热河
+              <a href="/2018/11/16/并发编程-三/" rel="next" title="并发编程(三)">
+                <i class="fa fa-chevron-left"></i> 并发编程(三)
               </a>
             
           </div>
@@ -530,10 +530,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/02/网络编程-一/" rel="prev" title="网络编程(一)">
-                网络编程(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -590,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -677,6 +682,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建守护进程步骤"><span class="nav-number">2.</span> <span class="nav-text">创建守护进程步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在后台运行"><span class="nav-number">2.0.1.</span> <span class="nav-text">在后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离控制终端-登陆会话和进程组"><span class="nav-number">2.0.2.</span> <span class="nav-text">脱离控制终端,登陆会话和进程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止进程重新打开控制终端"><span class="nav-number">2.0.3.</span> <span class="nav-text">禁止进程重新打开控制终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭打开的文件描述符"><span class="nav-number">2.0.4.</span> <span class="nav-text">关闭打开的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变当前工作目录"><span class="nav-number">2.0.5.</span> <span class="nav-text">改变当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重设文件创建掩码"><span class="nav-number">2.0.6.</span> <span class="nav-text">重设文件创建掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理-SIGCHLD-信号"><span class="nav-number">2.0.7.</span> <span class="nav-text">处理 SIGCHLD 信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立运行的守护进程"><span class="nav-number">2.0.8.</span> <span class="nav-text">独立运行的守护进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由-xinetd-管理的守护进程"><span class="nav-number">2.0.9.</span> <span class="nav-text">由 xinetd 管理的守护进程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
