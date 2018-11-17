@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="内置模块," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,20 +79,29 @@
 
 
 
-<meta name="description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
-<meta name="keywords" content="内置模块">
+<meta name="description" content="前言经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码. 那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口. python 进程Pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python模块之time与datetime">
-<meta property="og:url" content="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/index.html">
+<meta property="og:title" content="并发编程(三)">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/并发编程-三/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
+<meta property="og:description" content="前言经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码. 那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口. python 进程Pro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
-<meta property="og:updated_time" content="2018-10-17T08:55:16.813Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxa6rs7loog30dc064npg.gif">
+<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181116211024312.png">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxauq74fldg30dc064qv5.gif">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxatnjxgd8j30wa06y74y.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxav9ty4mkj314w04yjsn.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxav6zykv4j315a05675l.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxavk7l036j315804wdgm.jpg">
+<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181117110113666.png">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxax05vxqyj315i06kabk.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxax8s8o5aj315a06i402.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxaxox6dqtj315i07mmyc.jpg">
+<meta property="og:updated_time" content="2018-11-17T05:30:00.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python模块之time与datetime">
-<meta name="twitter:description" content="python常用模块系列（一）：time模块与datetime time模块是python内置查看当前时间戳的一个模块；  datetime模块是用来对日期和时间进行操作的一个模块。 一 time1 获得时间戳时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是float类型。 123import t">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg">
+<meta name="twitter:title" content="并发编程(三)">
+<meta name="twitter:description" content="前言经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码. 那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口. python 进程Pro">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxa6rs7loog30dc064npg.gif">
 
 
 
@@ -122,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/并发编程-三/"/>
 
 
 
 
 
-  <title>Python模块之time与datetime | MUSIBII</title>
+  <title>并发编程(三) | MUSIBII</title>
   
 
 
@@ -308,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/Python常用模块之time与datetime/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/并发编程-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -325,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python模块之time与datetime</h1>
+          <h1 class="post-title" itemprop="name headline">并发编程(三)</h1>
         
 
         <div class="post-meta">
@@ -337,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T14:48:09+08:00">
-                2018-10-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T19:50:28+08:00">
+                2018-11-16
               </time>
             
 
@@ -350,8 +359,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-17T16:55:16+08:00" content="2018-10-17">
-      2018-10-17
+    <time itemprop="dateUpdated" datetime="2018-11-17T13:30:00+08:00" content="2018-11-17">
+      2018-11-17
     </time>
   </span>
 
@@ -369,8 +378,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/并发编程/" itemprop="url" rel="index">
+                    <span itemprop="name">并发编程</span>
                   </a>
                 </span>
 
@@ -387,8 +396,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/16/Python常用模块之time与datetime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/16/Python常用模块之time与datetime/" itemprop="commentCount"></span>
+                <a href="/2018/11/16/并发编程-三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/并发编程-三/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -415,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  589word
+                  2.4kword
                 </span>
               
 
@@ -431,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2min
+                  8min
                 </span>
               
             </div>
@@ -452,53 +461,82 @@
       
 
       
-        <p><strong>python常用模块系列（一）：time模块与datetime</strong></p>
-<p>time模块是python内置查看当前时间戳的一个模块；</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwa4yic9hqj31g401mq36.jpg" alt=""></p>
-<p>datetime模块是用来对日期和时间进行操作的一个模块。</p>
-<h1 id="一-time"><a href="#一-time" class="headerlink" title="一 time"></a>一 time</h1><h3 id="1-获得时间戳"><a href="#1-获得时间戳" class="headerlink" title="1 获得时间戳"></a>1 获得时间戳</h3><p>时间戳：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行‘’type(time.time())‘’，返回的是<strong>float</strong>类型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.time())</span><br><span class="line"><span class="comment"># 运行结果 1539678307.779871</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-结构化时间字符串"><a href="#2-结构化时间字符串" class="headerlink" title="2 结构化时间字符串"></a>2 结构化时间字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime()) <span class="comment"># 返回一个元祖对象，里面是每个时间的值(东八区)</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=48, tm_sec=4, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime().tm_year) <span class="comment"># 单独获取某个时间属性</span></span><br><span class="line"><span class="comment"># 运行结果 2018</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.gmtime()) <span class="comment"># 世界统一时间，比北京时间晚8小时</span></span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=8, tm_min=51, tm_sec=16, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-格式化的字符串时间"><a href="#3-格式化的字符串时间" class="headerlink" title="3 格式化的字符串时间"></a>3 格式化的字符串时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time </span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>))</span><br><span class="line">print(time.strftime(<span class="string">'%Y-%m-%d %X %p'</span>))</span><br><span class="line"><span class="comment"># 运行结果 </span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br><span class="line"><span class="comment"># 2018-10-16 16:54:56 PM</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-三种格式之间的相互转换"><a href="#4-三种格式之间的相互转换" class="headerlink" title="4 三种格式之间的相互转换"></a>4 三种格式之间的相互转换</h3><ol>
-<li>时间戳转为结构化</li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>经过前一篇博客的学习了解了 Unix 和 Windows 系统创建进程的方式了,对于 Unix系统来说,会把父进程的数据直接拷贝一份到子进程的内存空间;而 Windows 系统会重新加载一遍父进程的代码.</p>
+<p>那么在 python 中怎么创建进程呢?其实也是调用了操作系统提供的接口,像 Unix 是 fork 接口, Windows 是 CreateProcess 接口.</p>
+<h1 id="python-进程"><a href="#python-进程" class="headerlink" title="python 进程"></a>python 进程</h1><h3 id="Process-源码探析"><a href="#Process-源码探析" class="headerlink" title="Process 源码探析"></a>Process 源码探析</h3><p>首先不管怎么创建进程都是调用了一个multiprocessing模块里面的 Process 类,学习一个模块第一件事就是查看源码.(ps: 对我来说看源码很爽😋)因为 python3看不到源码,所以用 python2可以看到:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxa6rs7loog30dc064npg.gif" alt=""></p>
+<p>翻译 Process 类的注释:进程对象表示在隔开的进程中运行的活动,这个类和 threading.Thread 同义.(因为最开始的计算机都是单核,多进程是后面才出来的)</p>
+<p>那么很显然,因为 Process 是个类,那么想要创建一个进程就是实例化一个 Process 类的对象.查看<strong> init</strong>方法:</p>
+<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181116211024312.png" alt="image-20181116211024312"></p>
+<p>哇,参数好多啊,不过大部分都可以使用默认值,第一个参数是 group, 看后面有一句注释: group 参数当前必须为 None, 好了可以不用理会了;第二个参数很重要,表示创建的进程将要进行的任务,必须要传参数(函数名);第三个是名字,可以自定义进程名;第四个是可变长参数,参数会在创建进程的时候传进 target 中;第五个为关键词参数,也是给 target 传的.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> group <span class="keyword">is</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<p>断言,只有该表达式值为 True 才会运行下面的代码.很显然不用管就行.</p>
+<p>然后下面的都是一些类属性,需要关注的是 self._target,sekf._popen.</p>
+<p>查看 process 模块的注释:</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxauq74fldg30dc064qv5.gif" alt=""></p>
+<p>翻译可知:</p>
+<p>模块提供 Process 类是模拟于’ threading.Thread’</p>
+<p>再分配和使用的源代码和二进制形式，无论有无修改,但必须符合下列的情况:</p>
+<p>1.源代码的再分发必须保留上述版权声明，此条件列表和以下免责声明。 </p>
+<p>2.二进制形式的再分发必须在随分发提供的文档和/或其他材料中复制上述版权声明，此条件列表和以下免责声明。</p>
+<p>3.未经事先书面许可，不得使用作者姓名或任何贡献者的姓名来认可或宣传本软件衍生的产品。(ps: 这注释怎么和 process 一点关系没有😲)</p>
+<h3 id="开启进程的两种方式"><a href="#开启进程的两种方式" class="headerlink" title="开启进程的两种方式"></a>开启进程的两种方式</h3><ol>
+<li>实例化 Process 类</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime(time.time()))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=16, tm_hour=16, tm_min=57, tm_sec=18, tm_wday=1, tm_yday=289, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<p>创建一个子进程的 demo 如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,current_process</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'子'</span>, current_process)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Process(target=task)</span><br><span class="line">    p.start() <span class="comment"># 启动一个进程</span></span><br><span class="line">    print(<span class="string">'主'</span>, current_process)</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>:创建进程的代码为什么要放在 mian 下面?</p>
+<p>这是因为在 windows 系统下创建进程会重新加载一遍父进程的代码,如果不放在 main 判断下面的话会重复执行创建进程的代码.在 类linux 系统下就不用了.创建进程后执行start方法其实就是运行传入的 task 函数:</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxatnjxgd8j30wa06y74y.jpg" alt=""></p>
+<p>这个类方法的注释含义为:运行在子进程中的方法,可以在子类中重写.</p>
+<p>看看创建的子进程的运行结果:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxav9ty4mkj314w04yjsn.jpg" alt=""></p>
+<p>结果会打印出主进程和子进程.</p>
 <ol start="2">
-<li>结构化转字符串</li>
+<li>新建一个继承自 Process 类的子类并改写 run 方法</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">"%Y-%m-%d"</span>,time.localtime(time.time())))</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>字符串转结构化</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.strftime(<span class="string">'2018-10-16'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line"><span class="comment"># 运行结果 time.struct_time(tm_year=2018, tm_mon=10, tm_mday=15, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=0, tm_yday=288, tm_isdst=-1)</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>结构化转时间戳</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.mktime(time.strptime(<span class="string">'2018-10-15'</span>, <span class="string">'%Y-%m-%d'</span>)))</span><br><span class="line"><span class="comment"># 运行结果 1539532800.0</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>格林威治时间</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.asctime(time.localtime()))</span><br><span class="line">print(time.ctime())</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># Tue Oct 16 17:12:34 2018</span></span><br><span class="line"><span class="comment"># Fri Jan  2 08:00:00 1970</span></span><br></pre></td></tr></table></figure>
-<h1 id="二-datetime"><a href="#二-datetime" class="headerlink" title="二 datetime"></a>二 datetime</h1><p>datetime是一个包，里面包含对时间的处理和日期的处理</p>
+<p>demo 如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,current_process</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyProcess</span><span class="params">(Process)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'子'</span>, current_process())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = MyProcess()</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">'主'</span>, current_process())</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxav6zykv4j315a05675l.jpg" alt=""></p>
+<h3 id="进程之间内存空间互相隔离"><a href="#进程之间内存空间互相隔离" class="headerlink" title="进程之间内存空间互相隔离"></a>进程之间内存空间互相隔离</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"></span><br><span class="line">x = <span class="number">100</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> x</span><br><span class="line">    x = <span class="number">1</span></span><br><span class="line">    print(<span class="string">'子'</span>, x)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Process(target=task)</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">'主'</span>, x)</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxavk7l036j315804wdgm.jpg" alt=""></p>
+<p>可以得出即使在子进程中global x了,修改的也是子进程内存空间里面的名称,这和之前讲的子进程将父进程的代码重新加载了一遍,所以这里面的 x 是两个不同的 x.</p>
+<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181117110113666.png" alt="image-20181117110113666"></p>
+<p>为什么进程的内存空间需要切必须要互相隔离呢?</p>
+<p>进程隔离是为保护操作系统中进程互不干扰而设计的一组不同硬件和软件的技术.这个技术是为了避免A 进程写入 B 进程的情况发生.进程的隔离实现,使用了虚拟地址空间.进程 A 的虚拟地址和进程 B 的虚拟地址不同,这样就防止进程 A 将数据信息写入进程 B,总的来说就是为了数据安全,但也有办法可以实现进程间通信,稍后再谈.</p>
+<h3 id="父子进程执行顺序与-join-方法"><a href="#父子进程执行顺序与-join-方法" class="headerlink" title="父子进程执行顺序与 join 方法"></a>父子进程执行顺序与 join 方法</h3><p>在上面的代码中实例一个进程对象然后执行 start 方法,会创建出一个子进程然后去执行任务,其实 python 只是调用了操作系统提供的接口,在上一篇博客说到,类 Unix 是调用了操作系统的 fork 函数, windows 是 CreateProcess 函数,所以是通过操作系统来调用并创建一个进程的,而创建进程需要一些必要的资源,那么在操作系统分配这些资源的过程中,主进程代码的执行应该进行完成了,所以运行结果会先出现主进程代码执行完,后子进程的代码执行完.</p>
+<p><strong>创建进程的具体时间</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">()</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    print(<span class="string">'子进程运行时间'</span>)</span><br><span class="line">    print(time.time() - start_time)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    start_time = time.time()</span><br><span class="line"></span><br><span class="line">    p = Process(target=task)</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">'创建子进程'</span>, time.time() - start_time)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'主'</span>, time.time() - start_time)</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxax05vxqyj315i06kabk.jpg" alt=""></p>
+<p>可以得出创建子进程几乎花了总程序运行时间的90%以上,所以主进程先运行结束就很正常了.</p>
+<p><strong>join 方法</strong></p>
+<p>那么如何可以让主进程等待子进程运行结束主进程才结束呢?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">()</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    print(<span class="string">'子进程运行时间'</span>)</span><br><span class="line">    print(time.time() - start_time)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    start_time = time.time()</span><br><span class="line"></span><br><span class="line">    p = Process(target=task)</span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">'创建子进程'</span>, time.time() - start_time)</span><br><span class="line">    p.join()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'主'</span>, time.time() - start_time)</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxax8s8o5aj315a06i402.jpg" alt=""></p>
+<p>这样主进程就会等待子进程运行结束才会结束.</p>
+<p>join 方法:主进程等待子进程运行完毕,即主进程在原地阻塞而不影响子进程的运行.</p>
+<h3 id="进程对象相关属性和方法"><a href="#进程对象相关属性和方法" class="headerlink" title="进程对象相关属性和方法"></a>进程对象相关属性和方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> os,time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">'start'</span>, name)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    print(<span class="string">'stop'</span>, name)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Process(target=task, args=(<span class="string">'musibii'</span>,), name=<span class="string">'musibii_Process'</span>)</span><br><span class="line">    p.start()</span><br><span class="line">    </span><br><span class="line">    print(p.name) <span class="comment"># 获取进程名,可以自定义</span></span><br><span class="line">    print(p.pid) <span class="comment"># 获取进程 pid</span></span><br><span class="line">    p.terminate() <span class="comment"># 结束子进程</span></span><br><span class="line">    print(p.is_alive()) <span class="comment"># 判断进程是否存活,布尔值</span></span><br><span class="line">    </span><br><span class="line">    print(os.getpid()) <span class="comment"># 当前主进程 pid</span></span><br><span class="line">    print(os.getppid()) <span class="comment"># 执行 py 文件的进程,当前为 pycharm 进程pid</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxaxox6dqtj315i07mmyc.jpg" alt=""></p>
+<p>为什么在 terminate 之后判断子进程是否存活,结果为 True 呢?</p>
+<p>因为在执行终结子进程命令后需要操作系统来结束子进程,而完全终结子进程需要一定的时间,而代码执行速度很快,所以会是 True.</p>
+<h3 id="僵尸进程与孤儿进程以及守护进程"><a href="#僵尸进程与孤儿进程以及守护进程" class="headerlink" title="僵尸进程与孤儿进程以及守护进程"></a>僵尸进程与孤儿进程以及守护进程</h3><h4 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h4><p>在类 Unix 系统中,僵尸进程是指完成执行(通过 exit 系统调用,或运行时发生致命错误或收到终止信号所致)但在操作系统的进程表中仍然有一个表项(进程控制块 PCB),处于’终止状态’的进程.</p>
+<h4 id="孤儿进程"><a href="#孤儿进程" class="headerlink" title="孤儿进程"></a>孤儿进程</h4><p>在操作系统中,孤儿进程指的是在其父进程执行完成或被终止后仍继续运行的一类进程,这类进程由操作系统进行管理和回收.</p>
+<h4 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h4><p>在一个多工的电脑作业系统中,守护进程是一种在后台执行的电脑程序.此类程序会被以进程的形式初始化.守护进程程序的名称通常以’ d’结尾:例如 syslogd 就是指管理系统日志的守护进程.</p>
+<p>详解:</p>
 <ol>
-<li>获取当前详细时间</li>
+<li>一般情况下,子进程是由父进程创建的,而子进程和父进程的退出是无顺序的,两者之间都不知道谁先退出.正常情况下父进程先结束则会调用 wait 或者 waitpid 函数等待子进程完成再退出,而一旦父进程不等待直接退出,则剩下的子进程会被 init(pid=1)进程接收,成被孤儿进程.(进程树种除了 init 都会有父进程)</li>
+<li>如果子进程先退出,父进程还未结束并且没有调用 wait 或者 waitpid 函数获取子进程的状态信息,则子进程残留的状态信息(task_struct 结构和少量系统资源信息)会变成僵尸进程.</li>
+<li>守护进程是指在后台运行,没有控制终端与之相连的进程.它独立于控制终端,通常周期性的执行某种任务.(特别的,守护进程不能有子进程)守护进程脱离于终端是为了避免进程在执行过程中的信息在任何终端上显示并且进程也不会被任何终端所产生的终端信息所打断.</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now())</span><br><span class="line"><span class="comment"># 运行结果 2018-10-16 17:25:16.186114</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>获取时间的某一部分</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now().hour) <span class="comment"># 分钟、年份等同理</span></span><br><span class="line"><span class="comment"># 运行结果 17</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>替换时间的某一部分</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t1 = date.datetime.now()</span><br><span class="line">t1 = t1.replace(year=<span class="number">2019</span>)</span><br><span class="line">print(t1)</span><br><span class="line"><span class="comment"># 运行结果 2019-10-16 18:36:42.166986</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>时间差对象</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">t2 = datetime.timedelta(weeks=<span class="number">1</span>)</span><br><span class="line">t3 = datetime.datetime.now()</span><br><span class="line">print(t2 + t3)</span><br><span class="line"><span class="comment"># 运行结果 2018-10-23 18:40:10.481854</span></span><br></pre></td></tr></table></figure>
+<p>产生的危害</p>
+<p>孤儿进程结束后会被 init 进程管理并处理后事,并没有危害,而僵尸进程则会一直占着进程号,操作系统的进程数量有限则会受影响.</p>
+<p>解决办法:</p>
+<p>一般僵尸进程的产生都是因为父进程的原因,则可以通过kill 父进程解决,这时候僵尸进程就变成了孤儿进程,被 init 进程管理.</p>
 
       
     </div>
@@ -514,12 +552,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/内置模块/" rel="tag"># 内置模块</a>
-          
-        </div>
-      
 
       
       
@@ -529,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/文件目录规范/" rel="next" title="文件目录规范">
-                <i class="fa fa-chevron-left"></i> 文件目录规范
+              <a href="/2018/11/16/并发编程-二/" rel="next" title="并发编程(二)">
+                <i class="fa fa-chevron-left"></i> 并发编程(二)
               </a>
             
           </div>
@@ -538,10 +570,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/17/Python常用模块之sys与os/" rel="prev" title="python模块之sys与os">
-                python模块之sys与os <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -704,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-time"><span class="nav-number">1.</span> <span class="nav-text">一 time</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-获得时间戳"><span class="nav-number">1.0.1.</span> <span class="nav-text">1 获得时间戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-结构化时间字符串"><span class="nav-number">1.0.2.</span> <span class="nav-text">2 结构化时间字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-格式化的字符串时间"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 格式化的字符串时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-三种格式之间的相互转换"><span class="nav-number">1.0.4.</span> <span class="nav-text">4 三种格式之间的相互转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-datetime"><span class="nav-number">2.</span> <span class="nav-text">二 datetime</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-进程"><span class="nav-number">2.</span> <span class="nav-text">python 进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-源码探析"><span class="nav-number">2.0.1.</span> <span class="nav-text">Process 源码探析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启进程的两种方式"><span class="nav-number">2.0.2.</span> <span class="nav-text">开启进程的两种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程之间内存空间互相隔离"><span class="nav-number">2.0.3.</span> <span class="nav-text">进程之间内存空间互相隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父子进程执行顺序与-join-方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">父子进程执行顺序与 join 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程对象相关属性和方法"><span class="nav-number">2.0.5.</span> <span class="nav-text">进程对象相关属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#僵尸进程与孤儿进程以及守护进程"><span class="nav-number">2.0.6.</span> <span class="nav-text">僵尸进程与孤儿进程以及守护进程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#僵尸进程"><span class="nav-number">2.0.6.1.</span> <span class="nav-text">僵尸进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#孤儿进程"><span class="nav-number">2.0.6.2.</span> <span class="nav-text">孤儿进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#守护进程"><span class="nav-number">2.0.6.3.</span> <span class="nav-text">守护进程</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
