@@ -87,7 +87,7 @@
 <meta property="og:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg">
-<meta property="og:updated_time" content="2018-11-17T09:23:13.756Z">
+<meta property="og:updated_time" content="2018-11-17T15:17:31.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发编程(四)">
 <meta name="twitter:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
@@ -349,7 +349,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-17T17:23:13+08:00" content="2018-11-17">
+    <time itemprop="dateUpdated" datetime="2018-11-17T23:17:31+08:00" content="2018-11-17">
       2018-11-17
     </time>
   </span>
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.7kword
+                  2.8kword
                 </span>
               
 
@@ -495,6 +495,9 @@
 <li>独立启动的守护进程: httpd,named,xinetd 等</li>
 <li>被动守护进程(由 xinetd 启动):telnet,finger,ktalk 等</li>
 </ul>
+<h2 id="python守护进程使用"><a href="#python守护进程使用" class="headerlink" title="python守护进程使用"></a>python守护进程使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">'子进程'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Process(target=task)</span><br><span class="line">    <span class="comment"># 将该进程设为父进程的守护进程</span></span><br><span class="line">    p.daemon = <span class="keyword">True</span></span><br><span class="line">    p.start()</span><br><span class="line">    print(<span class="string">'主进程'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<p>设置守护进程必须在启动进程之前执行.</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>对于一个操作系统来说,为了执行不同的管理任务,需要守护进程来协助管理.对于守护进程最重要的来说是需要在后台运行.其次,守护进程必须与其运行前的环境隔离开来.这些环境包括未关闭的文件描述符,控制终端,会话和进程组,工作目录以及文件创建掩码等.这些环境通常是守护进程从执行它的父进程(特别是 shell)继承下来的.最后守护进程的启动方式有其特殊之处.它可以在 Linux 系统启动时从启动脚本/etc/rc. d中启动,也可以由作业控制进程 crond 启动,还可以由用户终端(通常是 shell)执行.</p>
 <p>除这几点之外,守护进程与普通进程基本上没什么区别.因此,编写守护进程实际上是把一个普通进程按照上述的守护进程的特性改造成为守护进程.</p>
 
@@ -530,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/17/并发编程-五/" rel="prev" title="并发编程(五)">
+                并发编程(五) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -615,7 +622,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建守护进程步骤"><span class="nav-number">2.</span> <span class="nav-text">创建守护进程步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在后台运行"><span class="nav-number">2.0.1.</span> <span class="nav-text">在后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离控制终端-登陆会话和进程组"><span class="nav-number">2.0.2.</span> <span class="nav-text">脱离控制终端,登陆会话和进程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止进程重新打开控制终端"><span class="nav-number">2.0.3.</span> <span class="nav-text">禁止进程重新打开控制终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭打开的文件描述符"><span class="nav-number">2.0.4.</span> <span class="nav-text">关闭打开的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变当前工作目录"><span class="nav-number">2.0.5.</span> <span class="nav-text">改变当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重设文件创建掩码"><span class="nav-number">2.0.6.</span> <span class="nav-text">重设文件创建掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理-SIGCHLD-信号"><span class="nav-number">2.0.7.</span> <span class="nav-text">处理 SIGCHLD 信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立运行的守护进程"><span class="nav-number">2.0.8.</span> <span class="nav-text">独立运行的守护进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由-xinetd-管理的守护进程"><span class="nav-number">2.0.9.</span> <span class="nav-text">由 xinetd 管理的守护进程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建守护进程步骤"><span class="nav-number">2.</span> <span class="nav-text">创建守护进程步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在后台运行"><span class="nav-number">2.0.1.</span> <span class="nav-text">在后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离控制终端-登陆会话和进程组"><span class="nav-number">2.0.2.</span> <span class="nav-text">脱离控制终端,登陆会话和进程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止进程重新打开控制终端"><span class="nav-number">2.0.3.</span> <span class="nav-text">禁止进程重新打开控制终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭打开的文件描述符"><span class="nav-number">2.0.4.</span> <span class="nav-text">关闭打开的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变当前工作目录"><span class="nav-number">2.0.5.</span> <span class="nav-text">改变当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重设文件创建掩码"><span class="nav-number">2.0.6.</span> <span class="nav-text">重设文件创建掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理-SIGCHLD-信号"><span class="nav-number">2.0.7.</span> <span class="nav-text">处理 SIGCHLD 信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立运行的守护进程"><span class="nav-number">2.0.8.</span> <span class="nav-text">独立运行的守护进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由-xinetd-管理的守护进程"><span class="nav-number">2.0.9.</span> <span class="nav-text">由 xinetd 管理的守护进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python守护进程使用"><span class="nav-number">2.1.</span> <span class="nav-text">python守护进程使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +733,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">73.5k</span>
+    <span title="Site words total count">77.2k</span>
   
 </div>
 
