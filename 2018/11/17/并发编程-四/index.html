@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
+<meta name="description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) 守护进程介绍以下介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并发编程(四)">
 <meta property="og:url" content="http://yoursite.com/2018/11/17/并发编程-四/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
+<meta property="og:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) 守护进程介绍以下介绍">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg">
-<meta property="og:updated_time" content="2018-11-17T15:17:31.304Z">
+<meta property="og:updated_time" content="2018-11-18T01:45:47.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发编程(四)">
-<meta name="twitter:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) #守护进程介绍 以下">
+<meta name="twitter:description" content="前言上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程. 守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束. 本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的) 守护进程介绍以下介绍">
 <meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb66jw9q7j31c00u07v9.jpg">
 
 
@@ -349,8 +349,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-17T23:17:31+08:00" content="2018-11-17">
-      2018-11-17
+    <time itemprop="dateUpdated" datetime="2018-11-18T09:45:47+08:00" content="2018-11-18">
+      2018-11-18
     </time>
   </span>
 
@@ -454,8 +454,7 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上篇博客介绍了进程的创建,进程的相关属性以及三种特殊进程:僵尸进程,孤儿进程和守护进程.</p>
 <p>守护进程是一个在后台运行并且不受任何终端控制的进程,用于执行特定的系统任务.很多守护进程在系统引导的时候启动,并且一直运行直到系统关闭.另一些只在需要的时候才启动,完成任务后就自动结束.</p>
 <p>本篇博客详细介绍守护进程的产生原因以及作用.(因为我觉得守护进程对操作系统的正常运行还蛮重要的)</p>
-<p>#守护进程介绍</p>
-<p><strong>以下介绍摘自百度百科</strong></p>
+<h1 id="守护进程介绍"><a href="#守护进程介绍" class="headerlink" title="守护进程介绍"></a>守护进程介绍</h1><p><strong>以下介绍摘自百度百科</strong></p>
 <p>守护进程是一个在后台运行并且不受任何终端控制的进程. Unix 操作系统有很多典型的守护进程,他们在后台运行,执行不同的管理任务.</p>
 <p>用户使守护进程独立于所有终端是因为,在守护进程从一个终端启动的情况下,这同一个终端可能被其他的用户使用.例如,用户从一个终端启动守护进程后退出,然后另一个人也登陆到这个终端.用户不希望后者在使用该终端的过程中,接收到守护进程的任何错误信息.同样,由终端键入的任何信号(例如中断信号)也不应该影响先前在该终端启动的任何守护进程的运行.虽然让服务器后台运行很容易(只要shell 命令行以&amp;结尾),但用户还应该做些工作,让程序本身能够自动进入后台,且不依赖于任何终端.</p>
 <p>守护进程没有控制终端,因此当某些情况发生时,不管是一般的报告性信息,还是由管理员处理的紧急信息,都需要以某种方式输出. Syslog 函数就是输出这些信息的标准方法,它把信息发送给 syslogd 守护进程.</p>
@@ -699,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建守护进程步骤"><span class="nav-number">2.</span> <span class="nav-text">创建守护进程步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在后台运行"><span class="nav-number">2.0.1.</span> <span class="nav-text">在后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离控制终端-登陆会话和进程组"><span class="nav-number">2.0.2.</span> <span class="nav-text">脱离控制终端,登陆会话和进程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止进程重新打开控制终端"><span class="nav-number">2.0.3.</span> <span class="nav-text">禁止进程重新打开控制终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭打开的文件描述符"><span class="nav-number">2.0.4.</span> <span class="nav-text">关闭打开的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变当前工作目录"><span class="nav-number">2.0.5.</span> <span class="nav-text">改变当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重设文件创建掩码"><span class="nav-number">2.0.6.</span> <span class="nav-text">重设文件创建掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理-SIGCHLD-信号"><span class="nav-number">2.0.7.</span> <span class="nav-text">处理 SIGCHLD 信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立运行的守护进程"><span class="nav-number">2.0.8.</span> <span class="nav-text">独立运行的守护进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由-xinetd-管理的守护进程"><span class="nav-number">2.0.9.</span> <span class="nav-text">由 xinetd 管理的守护进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python守护进程使用"><span class="nav-number">2.1.</span> <span class="nav-text">python守护进程使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#守护进程介绍"><span class="nav-number">2.</span> <span class="nav-text">守护进程介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建守护进程步骤"><span class="nav-number">3.</span> <span class="nav-text">创建守护进程步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在后台运行"><span class="nav-number">3.0.1.</span> <span class="nav-text">在后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离控制终端-登陆会话和进程组"><span class="nav-number">3.0.2.</span> <span class="nav-text">脱离控制终端,登陆会话和进程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止进程重新打开控制终端"><span class="nav-number">3.0.3.</span> <span class="nav-text">禁止进程重新打开控制终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭打开的文件描述符"><span class="nav-number">3.0.4.</span> <span class="nav-text">关闭打开的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变当前工作目录"><span class="nav-number">3.0.5.</span> <span class="nav-text">改变当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重设文件创建掩码"><span class="nav-number">3.0.6.</span> <span class="nav-text">重设文件创建掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理-SIGCHLD-信号"><span class="nav-number">3.0.7.</span> <span class="nav-text">处理 SIGCHLD 信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立运行的守护进程"><span class="nav-number">3.0.8.</span> <span class="nav-text">独立运行的守护进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由-xinetd-管理的守护进程"><span class="nav-number">3.0.9.</span> <span class="nav-text">由 xinetd 管理的守护进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python守护进程使用"><span class="nav-number">3.1.</span> <span class="nav-text">python守护进程使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -733,7 +732,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.2k</span>
+    <span title="Site words total count">77.3k</span>
   
 </div>
 

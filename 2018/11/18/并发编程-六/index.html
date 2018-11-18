@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Linux Python Vim Git">
+<meta name="description" content="前言前面两篇介绍了进程理论,创建进程的两种方式,互斥锁以及进程间通信的三种方式还有生产着消费者模型.除了进程间通信线程里面没有(因为线程间数据共享)其他的几乎没什么两样,而且在多进程模块里面的Process 类介绍也说了 The class is analagous to &amp;#39;threading.Thread&amp;#39; 大意就是说进程类和线程类类似,所以很多用法都一样. 线程线程理论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并发编程(六)">
 <meta property="og:url" content="http://yoursite.com/2018/11/18/并发编程-六/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="Linux Python Vim Git">
+<meta property="og:description" content="前言前面两篇介绍了进程理论,创建进程的两种方式,互斥锁以及进程间通信的三种方式还有生产着消费者模型.除了进程间通信线程里面没有(因为线程间数据共享)其他的几乎没什么两样,而且在多进程模块里面的Process 类介绍也说了 The class is analagous to &amp;#39;threading.Thread&amp;#39; 大意就是说进程类和线程类类似,所以很多用法都一样. 线程线程理论">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-17T16:13:58.209Z">
+<meta property="og:updated_time" content="2018-11-17T16:34:03.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并发编程(六)">
-<meta name="twitter:description" content="Linux Python Vim Git">
+<meta name="twitter:description" content="前言前面两篇介绍了进程理论,创建进程的两种方式,互斥锁以及进程间通信的三种方式还有生产着消费者模型.除了进程间通信线程里面没有(因为线程间数据共享)其他的几乎没什么两样,而且在多进程模块里面的Process 类介绍也说了 The class is analagous to &amp;#39;threading.Thread&amp;#39; 大意就是说进程类和线程类类似,所以很多用法都一样. 线程线程理论">
 
 
 
@@ -347,12 +347,34 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-18T00:13:58+08:00" content="2018-11-18">
+    <time itemprop="dateUpdated" datetime="2018-11-18T00:34:03+08:00" content="2018-11-18">
       2018-11-18
     </time>
   </span>
 
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/并发编程/" itemprop="url" rel="index">
+                    <span itemprop="name">并发编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0word
+                  135word
                 </span>
               
 
@@ -427,7 +449,10 @@
       
 
       
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面两篇介绍了进程理论,创建进程的两种方式,互斥锁以及进程间通信的三种方式还有生产着消费者模型.除了进程间通信线程里面没有(因为线程间数据共享)其他的几乎没什么两样,而且在多进程模块里面的Process 类介绍也说了</p>
+<p><code>The class is analagous to &#39;threading.Thread&#39;</code></p>
+<p>大意就是说进程类和线程类类似,所以很多用法都一样.</p>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h3 id="线程理论"><a href="#线程理论" class="headerlink" title="线程理论"></a>线程理论</h3>
       
     </div>
     
@@ -516,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +638,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程"><span class="nav-number">2.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程理论"><span class="nav-number">2.0.1.</span> <span class="nav-text">线程理论</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -631,7 +681,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.2k</span>
+    <span title="Site words total count">77.3k</span>
   
 </div>
 
