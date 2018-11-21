@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxeuerr9gjj31z60c0aev.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxew6drxv7j311k0s0jy5.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxewfp5mj1j312004qab3.jpg">
-<meta property="og:updated_time" content="2018-11-21T09:07:21.081Z">
+<meta property="og:updated_time" content="2018-11-21T10:23:56.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库(二)">
 <meta name="twitter:description" content="前言本篇博客学习数据库的详细建表语句，数据库数据类型以及约束条件。 详细建表语句在介绍建表语句之前需要了解一下存储引擎。 存储引擎MySQL 支持的存储引擎有以下几种：  以后我们使用的就只有 InnoDB 引擎，可以看到默认情况下存储引擎就是 InnoDB，建立一个表的时候，可以看看在文件夹里发生了什么。 1mysql&amp;gt; create table t1(id int, name char)">
@@ -357,7 +357,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-21T17:07:21+08:00" content="2018-11-21">
+    <time itemprop="dateUpdated" datetime="2018-11-21T18:23:56+08:00" content="2018-11-21">
       2018-11-21
     </time>
   </span>
@@ -527,7 +527,7 @@
 <p>char 使用频率更高。</p>
 <p>mysql 会在存储数据时自动将数据末尾的空格去掉，如果必须要存空格，需要修改 sql_mode 增加PAD_CHAR_TO_FULL_LENGTH 意思是把空格当做有效数据。</p>
 <p>由于自动去除空格这个机制，在使用等于符号和 like 时有区别：</p>
-<p>​    select * from t1 where name = ‘yh’; </p>
+<p>​    select * from t1 where name = ‘yh  ‘; </p>
 <p>​    会自动去除空格</p>
 <p>​    select * from t1 where name like ‘yh’;</p>
 <p>​    like 用于模糊匹配，使用%表示0或任意个字符</p>
@@ -622,6 +622,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/11/21/数据库（三）/" rel="prev" title="数据库（三）">
+                数据库（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -706,7 +710,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -817,7 +821,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.7k</span>
+    <span title="Site words total count">88.3k</span>
   
 </div>
 

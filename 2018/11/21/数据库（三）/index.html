@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="模块," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,24 +79,17 @@
 
 
 
-<meta name="description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
-<meta name="keywords" content="模块">
+<meta name="description" content="前言本篇博客主要内容为表之间的关系、多表关联、复制表；查询如单表查询、多表关联查询 表之间关系为什么要分表？假如现在有两种数据，一种是部门数据一种是员工数据，如果两中数据放在同一张表中则会造成：  数据重复 结构混乱 扩展维护性差 需要分表  所以需要把表中会造成混乱的数据分出来，分成两张表。 1mysql&amp;gt; create table dept(id int primary key auto">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python模块之sys与os">
-<meta property="og:url" content="http://yoursite.com/2018/10/17/Python常用模块之sys与os/index.html">
+<meta property="og:title" content="数据库（三）">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/数据库（三）/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
+<meta property="og:description" content="前言本篇博客主要内容为表之间的关系、多表关联、复制表；查询如单表查询、多表关联查询 表之间关系为什么要分表？假如现在有两种数据，一种是部门数据一种是员工数据，如果两中数据放在同一张表中则会造成：  数据重复 结构混乱 扩展维护性差 需要分表  所以需要把表中会造成混乱的数据分出来，分成两张表。 1mysql&amp;gt; create table dept(id int primary key auto">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwb8y1ib7fj31kw0ql45b.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwb936i1inj315s0k4mz4.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb96w50gvj30yo0hwad3.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwb98j1xnvj30t00h4412.jpg">
-<meta property="og:updated_time" content="2018-10-17T10:34:11.141Z">
+<meta property="og:updated_time" content="2018-11-21T13:23:04.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python模块之sys与os">
-<meta name="twitter:description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg">
+<meta name="twitter:title" content="数据库（三）">
+<meta name="twitter:description" content="前言本篇博客主要内容为表之间的关系、多表关联、复制表；查询如单表查询、多表关联查询 表之间关系为什么要分表？假如现在有两种数据，一种是部门数据一种是员工数据，如果两中数据放在同一张表中则会造成：  数据重复 结构混乱 扩展维护性差 需要分表  所以需要把表中会造成混乱的数据分出来，分成两张表。 1mysql&amp;gt; create table dept(id int primary key auto">
 
 
 
@@ -126,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/17/Python常用模块之sys与os/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/21/数据库（三）/"/>
 
 
 
 
 
-  <title>python模块之sys与os | MUSIBII</title>
+  <title>数据库（三） | MUSIBII</title>
   
 
 
@@ -312,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/Python常用模块之sys与os/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/数据库（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -329,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python模块之sys与os</h1>
+          <h1 class="post-title" itemprop="name headline">数据库（三）</h1>
         
 
         <div class="post-meta">
@@ -341,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T15:04:07+08:00">
-                2018-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T18:05:28+08:00">
+                2018-11-21
               </time>
             
 
@@ -354,8 +347,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-17T18:34:11+08:00" content="2018-10-17">
-      2018-10-17
+    <time itemprop="dateUpdated" datetime="2018-11-21T21:23:04+08:00" content="2018-11-21">
+      2018-11-21
     </time>
   </span>
 
@@ -373,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -391,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/17/Python常用模块之sys与os/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/17/Python常用模块之sys与os/" itemprop="commentCount"></span>
+                <a href="/2018/11/21/数据库（三）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/21/数据库（三）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1kword
+                  1.7kword
                 </span>
               
 
@@ -435,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4min
+                  6min
                 </span>
               
             </div>
@@ -456,135 +449,69 @@
       
 
       
-        <p><strong>python常用模块系列（二）：sys模块与os模块</strong></p>
-<p>sys模块是python解释器和环境有关的一个模块；</p>
-<p>os是python用来和操作系统进行交互的一个模块。</p>
-<h1 id="一-sys"><a href="#一-sys" class="headerlink" title="一 sys"></a>一 sys</h1><ol>
-<li>查看当前环境变量</li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇博客主要内容为表之间的关系、多表关联、复制表；查询如单表查询、多表关联查询</p>
+<h1 id="表之间关系"><a href="#表之间关系" class="headerlink" title="表之间关系"></a>表之间关系</h1><h2 id="为什么要分表？"><a href="#为什么要分表？" class="headerlink" title="为什么要分表？"></a>为什么要分表？</h2><p>假如现在有两种数据，一种是部门数据一种是员工数据，如果两中数据放在同一张表中则会造成：</p>
+<ul>
+<li>数据重复</li>
+<li>结构混乱</li>
+<li>扩展维护性差</li>
+<li>需要分表</li>
+</ul>
+<p>所以需要把表中会造成混乱的数据分出来，分成两张表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table dept(id int primary key auto_increment,name char(20),job char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table emp(id int primary key auto_increment,name char(20),gender char,age int,salary float,d_id int);</span><br></pre></td></tr></table></figure>
+<p>什么时候需要分表？</p>
+<p>当出现大量重复数据时，当一条记录中的数据不属于同一类时需要分表。</p>
+<p>分表之后产生的问题，员工表可以存储一个不存在的部门编号，这样的数据是不完整的无效数据，必须找到一种方法可以在物理层面建立关联关系。</p>
+<p>以上建表语句可以建立逻辑上的关联关系，这有建表的人才明白其中的关系，而 mysql 并不知道关系，所以需要通过外键来进行约束，说明这两张表的关联关系。</p>
+<p>##外键的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table 表名(字段名 类型(长度),foreign key(外键的字段名) references 要关联表名(主键名));</span><br></pre></td></tr></table></figure>
+<p>使用外键时必须分清主从关系，也就是要分清先键那张表，因为在使用外键关联表时，需要知道对方表的表名，所以要关联的表应该是主表，应该先建主表，这样才能关联起来。</p>
+<h3 id="外键的第一个约束"><a href="#外键的第一个约束" class="headerlink" title="外键的第一个约束"></a>外键的第一个约束</h3><p>先键主表，再建从表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table dept(id int primary key auto_increment,name char(20),job char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table emp(id int primary key auto_increment,name char(20),d_id int,foreign key(d_id) references dept(id));</span><br></pre></td></tr></table></figure>
+<h3 id="外键的第二个约束"><a href="#外键的第二个约束" class="headerlink" title="外键的第二个约束"></a>外键的第二个约束</h3><p>数据先插入主表，再插入从表数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into dept values(1,&apos;hr&apos;,&apos;招聘&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into emp values(1,&apos;张无忌&apos;,1);</span><br></pre></td></tr></table></figure>
+<h3 id="外键的第三个约束"><a href="#外键的第三个约束" class="headerlink" title="外键的第三个约束"></a>外键的第三个约束</h3><p>删除数据时先删从表，再删主表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; delete from emp where name = &apos;张无忌&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; delete from dept where id = 1;</span><br></pre></td></tr></table></figure>
+<h3 id="外键的第四个约束"><a href="#外键的第四个约束" class="headerlink" title="外键的第四个约束"></a>外键的第四个约束</h3><p>从表更新外键时必须保证外键是存在的。</p>
+<h3 id="外键的第五个约束"><a href="#外键的第五个约束" class="headerlink" title="外键的第五个约束"></a>外键的第五个约束</h3><p>更新主表的 id 时，要么先删除从表关联的数据，或者把关联数据关联到其他的主表 id。</p>
+<p>有了这几种约束后，可以保证数据的完整性。相应的受到外键约束，主表的删除和更新操作受到限制，很多情况下，删除主表某个数据需要至少两条sql 语句，会很麻烦。</p>
+<h3 id="外键的第六个约束"><a href="#外键的第六个约束" class="headerlink" title="外键的第六个约束"></a>外键的第六个约束</h3><p>删除主表时，要先删除从表。</p>
+<h3 id="级联操作"><a href="#级联操作" class="headerlink" title="级联操作"></a>级联操作</h3><h4 id="删除级联"><a href="#删除级联" class="headerlink" title="删除级联"></a>删除级联</h4><p>当主表删除时，从表相关联的记录同步删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table emp(id int primary key auto_increment,name char(20),d_id int,foreign key(d_id) references dept(id) on delete cascade);</span><br></pre></td></tr></table></figure>
+<h4 id="更新级联"><a href="#更新级联" class="headerlink" title="更新级联"></a>更新级联</h4><p>当主表 id 时，从表相关联的记录通步更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table emp(id int primary key auto_increment,name char(20),d_id int,foreign key(d_id) references dept(id) on update cascade);</span><br></pre></td></tr></table></figure>
+<p>级联方向只能是主表级联从表，可以在操作主表时自动操作从表。（单箱操作，主表变化是级联操作从表，从表的变化不会影响主表）</p>
+<h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><p>一对一的关系只需要加一个外键来关联即可，但是需要给外键加上唯一约束。有主从关系的都需要先建主表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create customer(c_id int primary key auto_increment,name char(20),phonenum char(11),addr char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create student(s_id int primary key auto_increment,name char(20),class char(11),number char(20),housenum char(20),c_id int unique,foreign key(c_id) references customer(c_id));</span><br></pre></td></tr></table></figure>
+<p>一对一的另一种使用场景，当一个表的字段太多，而常用的字段不多时，可以采取垂直分表的方式来提高效率，比如个人信息有身份证、性别、年龄、地址等，可以拆分为基础信息和细节信息；也有另一种提升效率的方式，水平分表，当一个表中的数据记录太多时，效率会降低，可以采取水平分表，字段完全相同。</p>
+<h2 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h2><p>假如有两张表，一张表存的是老师，另一张表存的是学生。因为一个老师可以教多个学生，一个学生也可以有多个老师，所以这是双向多对一的关系，也就是多对多的关系。那么应该怎么存储数据呢？</p>
+<p>可以通过增加一个中间表来存储两张表的关系，然后其他两张表分别用一个字段作为外键来关联中间表。（只要是多对多关系都是靠中间表来存储两张表之间的关系）除了中间表，另外两张都是主表，具体先建哪种主表没有先后顺序。多对多关系至少需要三张表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table stu(id int primary key auto_increment,name char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table tea(id int primary key auto_increment,name char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table tsr(id int primary key auto_increment，t_id int,s_id int,foreign key(t_id) references tea(id),foreign key(s_id) references stu(id));</span><br></pre></td></tr></table></figure>
+<p>因为老师和学生都是主表，关系表是从表，所以需要先插入老师和学生的数据，接着插入中间表的数据。</p>
+<p>多对多关系表中因为已经有了 id 为主键，所以可以重复存入相同的学生和老师关系数据，可以通过联合主键改变。</p>
+<h2 id="多对一关系"><a href="#多对一关系" class="headerlink" title="多对一关系"></a>多对一关系</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table dept(id int primary key auto_increment,name char(20),job char(20));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table emp(id int primary key auto_increment,name char(20),d_id int,foreign key(d_id) references dept(id));</span><br></pre></td></tr></table></figure>
+<h1 id="复制表"><a href="#复制表" class="headerlink" title="复制表"></a>复制表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table 新表名 select * from 被复制的表名;</span><br></pre></td></tr></table></figure>
+<p>注意不会复制主键和约束条件，数据结构都可以复制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table 新表名 select * from 源表名 where 1 = 2;</span><br></pre></td></tr></table></figure>
+<p>当where 后面条件不成立时，只会复制表结构。</p>
+<h2 id="蠕虫复制"><a href="#蠕虫复制" class="headerlink" title="蠕虫复制"></a>蠕虫复制</h2><p>自我复制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into 表名 select * from 表名;</span><br></pre></td></tr></table></figure>
+<p>如果有主键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into 表名(其他字段) select 其他字段 from 表名;</span><br></pre></td></tr></table></figure>
+<p><strong>在日常开发中，如果对性能要求很高，不应该使用外键</strong></p>
+<ol>
+<li>效率降低</li>
+<li>耦合 关系多起来会造成管理麻烦</li>
 </ol>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg" alt=""></p>
-<ol start="2">
-<li>查看已经加载的模块</li>
-</ol>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwb8y1ib7fj31kw0ql45b.jpg" alt=""></p>
-<p>可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。</p>
-<ol start="3">
-<li>获取终端调用时的参数</li>
-</ol>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwb936i1inj315s0k4mz4.jpg" alt=""></p>
-<p>终端输入的参数为argv[1]，默认当前文件名为第一个参数。</p>
-<ol start="4">
-<li>获取解释器的版本信息</li>
-</ol>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb96w50gvj30yo0hwad3.jpg" alt=""></p>
-<ol start="5">
-<li>获取当前运行平台名称（windows为nt，macOS为darwin）</li>
-</ol>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwb98j1xnvj30t00h4412.jpg" alt=""></p>
-<ol start="6">
-<li>退出信号</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.exit(<span class="number">0</span>) <span class="comment"># 正常退出</span></span><br><span class="line">sys.exit(<span class="number">1</span>) <span class="comment"># 错误退出</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>接口版本</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(sys.api_version)</span><br><span class="line"><span class="comment"># 运行结果 1013</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>了解</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(sys.maxsize)</span><br><span class="line">print(sys.maxunicode)</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># 9223372036854775807</span></span><br><span class="line"><span class="comment"># 1114111</span></span><br></pre></td></tr></table></figure>
-<h1 id="二-os"><a href="#二-os" class="headerlink" title="二 os"></a>二 os</h1><ol>
-<li>获取当前的工作目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.getcwd())</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>切换工作目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.chdir(<span class="string">'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br><span class="line">print(os.getcwd())</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>获取当前目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.curdir)</span><br><span class="line"><span class="comment"># 运行结果 .</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>获取上级目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line">print(os.pardir)</span><br><span class="line"><span class="comment"># 运行结果 ..</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>获取系统的环境变量</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.environ)</span><br><span class="line"><span class="comment"># environ(&#123;'PATH': '/Users/jingxing/.nvm/versions/node/v4.9.1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/python_study/mongodb/bin://Volumes/python_study/mongodb/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/python_study/Applications/mongodb-osx-x86_64-3.6.3/bin::/usr/local/mysql/bin', 'COMMAND_MODE': 'unix2003', 'VERSIONER_PYTHON_VERSION': '2.7', 'LS_OPTIONS': '--color=auto', 'LOGNAME': 'jingxing', 'XPC_SERVICE_NAME': 'com.apple.xpc.launchd.oneshot.0x10000004.pycharm', 'PWD': '/Users/jingxing/PycharmProjects/python全栈/day20/代码', 'PYCHARM_HOSTED': '1', 'NODE_PATH': '/Users/jingxing/.nvm/versions/node/v4.9.1/lib/node_modules', 'PYCHARM_MATPLOTLIB_PORT': '49379', 'PYTHONPATH': '/Applications/PyCharm.app/Contents/helpers/pycharm_matplotlib_backend:/Users/jingxing/PycharmProjects/python全栈', 'NVM_CD_FLAGS': '', 'NVM_DIR': '/Users/jingxing/.nvm', 'SHELL': '/bin/bash', 'LSCOLORS': 'CxfxcxdxbxegedabagGxGx', 'PYTHONIOENCODING': 'UTF-8', 'SECURITYSESSIONID': '186a7', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'USER': 'jingxing', 'CLICOLOR': 'Yes', 'TMPDIR': '/var/folders/yl/3drd7wf93f90sfkgpc2zg9cr0000gn/T/', 'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.bIB1b2eyOD/Listeners', 'XPC_FLAGS': '0x0', 'PYTHONUNBUFFERED': '1', '__CF_USER_TEXT_ENCODING': '0x1F5:0x19:0x34', 'Apple_PubSub_Socket_Render': '/private/tmp/com.apple.launchd.bHuC64fYdd/Render', 'LC_CTYPE': 'zh_CN.UTF-8', 'NVM_BIN': '/Users/jingxing/.nvm/versions/node/v4.9.1/bin', 'HOME': '/Users/jingxing', '__PYVENV_LAUNCHER__': '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3'&#125;)</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>创建多级目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="string">'a/b/c'</span>)</span><br><span class="line"><span class="comment"># 会在当前文件路径创建多级目录</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>创建一个目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.mkdir(<span class="string">'aa'</span>)</span><br><span class="line"><span class="comment"># 能且仅能创建一个目录</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>递归删除</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.removedirs(<span class="string">'a/b/c'</span>)</span><br><span class="line"><span class="comment"># 递归删除，只能删除空目录</span></span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>删除一个目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rmdir(<span class="string">'aa'</span>)</span><br><span class="line"><span class="comment"># 删除一个目录</span></span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>删除文件</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.remove(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>)</span><br><span class="line"><span class="comment"># 删除文件</span></span><br></pre></td></tr></table></figure>
-<ol start="11">
-<li>列出当前目录所有的文件及文件夹</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.listdir(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>获取当前平台路径分隔符</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.seq)</span><br><span class="line"><span class="comment"># 运行结果 /</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>获取当前平台换行符</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.lineseq, end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="三-os下的path模块"><a href="#三-os下的path模块" class="headerlink" title="三 os下的path模块"></a>三 os下的path模块</h1><ol>
-<li>返回绝对路径</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.abspath(<span class="string">'a/b/c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码/a/b/c</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>将路径拆分为文件夹路径和文件名（返回元祖）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.split(<span class="string">'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 ('/Users/jingxing/PycharmProjects/python全栈/day20/代码', '5.os下path模块.py')</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>获取路径中的上一级</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.dirname(__file__))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>获取路径的最后一级名称</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.basename(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 5.os下path模块.py</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>判断路径是否存在（返回布尔值）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">print</span> path.exists(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>)</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>判断是否为绝对路径（返回布尔值）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.isabs(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>路径拼接</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.join(<span class="string">'/Users/jingxing/PycharmProjects/'</span>, <span class="string">'day20'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/day20</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>获取文件的大小</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.getsize(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>大写变小写，斜杠根据当前平台修改</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normcase(<span class="string">r'a/\b/\c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/\b/\c</span></span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>斜杠会修改为当前平台的分隔符，执行..来返回上一级</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normpath(<span class="string">'a/b/c/../c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/b/c</span></span><br></pre></td></tr></table></figure>
+<p>这时候关系只是逻辑关系很有可能产生错误数据。</p>
 
       
     </div>
@@ -600,12 +527,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/模块/" rel="tag"># 模块</a>
-          
-        </div>
-      
 
       
       
@@ -615,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/Python常用模块之time与datetime/" rel="next" title="Python模块之time与datetime">
-                <i class="fa fa-chevron-left"></i> Python模块之time与datetime
+              <a href="/2018/11/20/数据库-二/" rel="next" title="数据库(二)">
+                <i class="fa fa-chevron-left"></i> 数据库(二)
               </a>
             
           </div>
@@ -624,10 +545,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/17/python模块之random/" rel="prev" title="python模块之random">
-                python模块之random <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -790,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-sys"><span class="nav-number">1.</span> <span class="nav-text">一 sys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-os"><span class="nav-number">2.</span> <span class="nav-text">二 os</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-os下的path模块"><span class="nav-number">3.</span> <span class="nav-text">三 os下的path模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表之间关系"><span class="nav-number">2.</span> <span class="nav-text">表之间关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要分表？"><span class="nav-number">2.1.</span> <span class="nav-text">为什么要分表？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第一个约束"><span class="nav-number">2.1.1.</span> <span class="nav-text">外键的第一个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第二个约束"><span class="nav-number">2.1.2.</span> <span class="nav-text">外键的第二个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第三个约束"><span class="nav-number">2.1.3.</span> <span class="nav-text">外键的第三个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第四个约束"><span class="nav-number">2.1.4.</span> <span class="nav-text">外键的第四个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第五个约束"><span class="nav-number">2.1.5.</span> <span class="nav-text">外键的第五个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键的第六个约束"><span class="nav-number">2.1.6.</span> <span class="nav-text">外键的第六个约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#级联操作"><span class="nav-number">2.1.7.</span> <span class="nav-text">级联操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除级联"><span class="nav-number">2.1.7.1.</span> <span class="nav-text">删除级联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新级联"><span class="nav-number">2.1.7.2.</span> <span class="nav-text">更新级联</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一对一关系"><span class="nav-number">2.2.</span> <span class="nav-text">一对一关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多对多关系"><span class="nav-number">2.3.</span> <span class="nav-text">多对多关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多对一关系"><span class="nav-number">2.4.</span> <span class="nav-text">多对一关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制表"><span class="nav-number">3.</span> <span class="nav-text">复制表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#蠕虫复制"><span class="nav-number">3.1.</span> <span class="nav-text">蠕虫复制</span></a></li></ol></li></ol></div>
             
 
           </div>
