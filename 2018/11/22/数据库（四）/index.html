@@ -116,8 +116,8 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxhab7zdm0j310u05yn1d.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxhae0gzekj311405saef.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxho696xe5j31240b048o.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxho7slslpj310s0aywoh.jpg">
-<meta property="og:image" content="http://yoursite.com/Users/jingxing/Library/Application%20Support/typora-user-images/image-20181123080537034.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxiye445ycj310s0aydin.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxiylnpbiej30yy0b012j.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxhob2x9qbj30z40awwo7.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxhofaqsmsj30w0062tda.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxh2n9lmibj30yu0aewme.jpg">
@@ -146,7 +146,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxibhl4gg7j313i07479t.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxivxo028nj30zy0detlb.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxixq62cxaj312w08k117.jpg">
-<meta property="og:updated_time" content="2018-11-24T02:23:20.986Z">
+<meta property="og:updated_time" content="2018-11-24T02:49:03.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库（四）">
 <meta name="twitter:description" content="前言昨天学习了表与表之间的关系、多表关联、复制表、单表查询的知识，今天学习的内容是单表查询与关键词的执行顺序、正则表达式以及最重要的多表查询。 数据库增删改增1insert [into] 表名[(可选字段名)] values(一组值1),(一组值2),...; into 可以省略，表名后的字段可选，如果写了后面的 values 中的值必须与表名后的字段意义对应，如果没写后面的 values 中的值">
@@ -408,7 +408,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-24T10:23:20+08:00" content="2018-11-24">
+    <time itemprop="dateUpdated" datetime="2018-11-24T10:49:03+08:00" content="2018-11-24">
       2018-11-24
     </time>
   </span>
@@ -622,9 +622,9 @@
 <h3 id="按照工资排序"><a href="#按照工资排序" class="headerlink" title="按照工资排序"></a>按照工资排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from emp order by salary;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxho696xe5j31240b048o.jpg" alt="image-20181123080220263"></p>
 <h3 id="按照工资降序排序"><a href="#按照工资降序排序" class="headerlink" title="按照工资降序排序"></a>按照工资降序排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from emp order by salary desc;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxho7slslpj310s0aywoh.jpg" alt="image-20181123080343839"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxiye445ycj310s0aydin.jpg" alt="image-20181123080343839"></p>
 <h3 id="按照工资升序-id-降序排序"><a href="#按照工资升序-id-降序排序" class="headerlink" title="按照工资升序 id 降序排序"></a>按照工资升序 id 降序排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from emp order by salary,id desc;</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/jingxing/Library/Application Support/typora-user-images/image-20181123080537034.png" alt="image-20181123080537034"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxiylnpbiej30yy0b012j.jpg" alt="image-20181123080537034"></p>
 <h3 id="按照工资升序-id-升序排序"><a href="#按照工资升序-id-升序排序" class="headerlink" title="按照工资升序 id 升序排序"></a>按照工资升序 id 升序排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from emp order by salary,id;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxhob2x9qbj30z40awwo7.jpg" alt="image-20181123080658050"></p>
 <h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><p>指定获取数据条数</p>
