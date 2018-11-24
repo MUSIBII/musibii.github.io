@@ -92,9 +92,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxdhd0ghk1j30w80cwad3.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxdjrsdo9dj313g0j4grf.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxdjul70tkj311f0u0tfc.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxdlod6n42j31400u0dm9.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxdn3t6wcij30zc06a40a.jpg">
-<meta property="og:updated_time" content="2018-11-20T07:52:37.318Z">
+<meta property="og:updated_time" content="2018-11-24T03:44:05.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库(一)">
 <meta name="twitter:description" content="前言OK, 经过网络编程和并发编程的学习,现在到了学习数据库愉快之旅了👽.感觉到一丝丝的兴奋,学习新知识的开始总是能够给人动力,何况还是学习数据库,一看就显得高大上,而且几乎都是命令行操作,黑客既视感有没有… 数据库介绍什么是数据库简单来说,数据库( DataBase)就是用来存放数据的仓库,就像 github 仓库一样是用来存放数据的,这个仓库是按照一定的数据结构(数据结构是指数据的组织形式或">
@@ -356,8 +354,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-20T15:52:37+08:00" content="2018-11-20">
-      2018-11-20
+    <time itemprop="dateUpdated" datetime="2018-11-24T11:44:05+08:00" content="2018-11-24">
+      2018-11-24
     </time>
   </span>
 
@@ -421,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.1kword
+                  4.5kword
                 </span>
               
 
@@ -437,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  25min
+                  16min
                 </span>
               
             </div>
@@ -733,54 +731,6 @@
 </ol>
 <h3 id="修改默认配置"><a href="#修改默认配置" class="headerlink" title="修改默认配置"></a>修改默认配置</h3><p>配置文件放在安装路径根目录中就是和 bin 同级，名称必须叫my.ini（mac 的不一样）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 客户端的配置</span><br><span class="line">[mysql]</span><br><span class="line">user = root</span><br><span class="line">password = password</span><br><span class="line">default-character-set = utf8</span><br><span class="line"># 服务端的配置</span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server = utf8</span><br></pre></td></tr></table></figure>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="MySQL语句的执行过程"><a href="#MySQL语句的执行过程" class="headerlink" title="MySQL语句的执行过程"></a>MySQL语句的执行过程</h2><p>下面是 MySQL 的基本架构示意图,从中可以很清楚的看到 SQL 语句在 MySQL 的各个功能模块中的执行过程.</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxdlod6n42j31400u0dm9.jpg" alt=""></p>
-<p>大体来说, MySQL 可以分为 Server 层和存储引擎两部分.<br>Server 层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数字和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。<br>而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持 InnoDB、MylSAM、Memory等多个存储引擎。现在最常用的存储引擎是 InnoDB，它从 MySQL5.5.5版本开始成为了默认存储引擎。<br>也就是说，你在执行 create table 建表的时候，如果不指定引擎类型，默认使用的就是 InnoDB。不过，可以通过指定存储引擎的类型来选择其他的引擎，比如在 create table 语句中使用 engine=memeory，来指定使用内存引擎创建表。不同存储引擎的表数据存取方式不同，支持的功能也不同。<br>从上图中可以看出，不同的存储引擎共用一个 Server 层，也就是从连接器到执行期的部分。</p>
-<h3 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h3><p>第一步，你会先连接到这个数据库上，这时候接待你的就是连接器。连接器负责跟客户端建立连接、获取权限、维持和馆里连接。这时候命令是这么写的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h$ip -P$port -u$user -p</span><br></pre></td></tr></table></figure>
-<p>输完命令后，就需要在交互对话中输入密码。<br>连接命令中的 mysql 是客户端工具，用来根服务端建立连接。在完成经典的 TCP 握手后，连接器就开始认证身份，这个时候用的就是你输入的用户名和密码。</p>
-<ul>
-<li><p>如果用户名或密码不对，会返回’Access denied for user’的错误，然后客户端程序结束。</p>
-</li>
-<li><p>如果用户名密码认证通过，连接器会到权限表里面查看用户拥有的权限。之后，这个链接里面的权限判断逻辑，都依赖于此时读到的权限。这意味着修改权限不会立马有效，需要重新连接服务器才会生效。</p>
-<p>连接完成后，如果没有后续的动作，这个链接就处于空闲状态，你可以在 show processlist 命令中看到它。如下所示，其中的 Command 列显示为Query，表示现在系统里面有一个查询链接。</p>
-</li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxdn3t6wcij30zc06a40a.jpg" alt=""></p>
-<p>客户端如果太长时间不活跃，连接器就会自动断开连接。这个时间由参数 wiait_timeout 控制，默认为8小时。<br>如果连接断开，客户端再次发送请求时，会收到错误提醒：Lost connection to MySQL server during query。这时候如果要继续连接，就需要重连，然后执行查询。<br>数据库里面，长连接是指连接成功后，如果客户端持续有请求，则一直使用同一个连接。短连接则是指每次执行完很少的几次查询就断开连接，下次查询重建一个。<br>建立连接的过程通常是比较复杂的，所以在使用中尽量减少建立连接的动作，也就是尽量使用长连接。<br>但是全部使用长连接后，会发现 MySQL 占用内存涨的特别快，这是因为 MySQL 在执行过程中临时使用的内存是管理在连接对象里面的。这些资源会在连接断开才会释放，所以如果大量的长连接积累的话，会导致内存占用太大，被系统强行杀掉（OOM），从现象看就是 MySQL 异常重启了。<br>怎么解决这个问题呢？有两种方案。</p>
-<ol>
-<li>定期断开长连接。使用一段时间，或者程序里面判断执行过占用内存的大查询后，断开连接，之后要查询再连接。</li>
-<li>如果使用的是5.7及以后的版本，可以在每次执行一个比较大的操作后，通过执行 mysql_reset_connection 来重新初始化连接资源。这个过程不需要重连和重新做权限验证，但是会将连接回复到刚刚创建完时的状态。</li>
-</ol>
-<h3 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h3><p>连接建立完成后，你就可以执行 select 语句了。执行逻辑就会来到第二步：查询缓存。<br>MySQL 拿到一个查询请求后，会先到查询内存查看，之前是否执行过这条语句。之前执行过的语句及其结果可能会以 key-value 的形式存储在内存中。key 是查询的语句，value 是查询的结果。如果你的查询能够直接在这个缓存中找到 key，那么这个 value 就会直接返回给客户端。<br>如果之前没有执行过这条语句，就会执行后面的执行阶段。执行完成后，执行结果会存入查询缓存。这样的优点是，如果查询缓存命中，不需要执行后面的复杂操作，就可以直接返回结果，效率会极大地提高。<br><strong>但是大多数情况不建议使用查询缓存，因为查询缓存往往利大于弊。</strong><br>查询缓存的失效非常频繁，只要有对一个表的更新，这个表上所有的查询缓存都会被清空。因此很可能费劲存储的缓存，还没使用就被一个更新全清空了。对于更新压力大的数据库来说，查询缓存的命中率会非常低。除非所有的业务是一张静态表，很长时间更新一次。比如一个系统配置表，那这张表上的查询才适合使用查询缓存。<br>好在 MySQL 提供了按需使用的方式。可以将参数query_cache_type 设置成 DEMAND，这样对于默认的 SQL 语句都不使用查询缓存。而对于你确定要使用查询缓存的语句，可以用 SQL_CACHE 显示指定，像下面这个语句一样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select SQL_CACHE * from T where ID=10;</span><br></pre></td></tr></table></figure>
-<p>不过在最新的8.0版本这功能被删了。</p>
-<h3 id="分析器"><a href="#分析器" class="headerlink" title="分析器"></a>分析器</h3><p>如果没有命中查询缓存，就要开始真正的执行语句了。首先，MySQL 需要知道你要做什么，因此需要对 SQL 语句做解析。<br>分析器首先会做‘’词法分析‘’，你输入的是由多个字符串和空格组成的一条 SQL 语句，MySQL需要识别出里面的字符串分别是什么，代表什么。<br>MySQL 从你输入的‘’select‘’这个关键词识别出来，这是一个查询语句。它也要把字符串‘’T‘’识别成‘’表名T‘’，把字符串‘’ID‘’识别成‘’列 ID‘’。<br>做完了这些识别以后，就要做‘’语法分析‘’。根据此法分析的结果，语法分析器会根据语法规则，判断你输入的这个 SQL 语句是否满足 MySQL 语法。<br>如果你的语句不对，就会收到‘’You have an error in your SQL syntax‘’的错误提醒。<br>一般语法错误会提示第一个出现错误的位置，所以你要关注的是紧接‘’use near‘’的内容。</p>
-<h3 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h3><p>经过了分析器，MySQL 就知道要做什么了。在开始执行之前，还要经过优化器的处理。<br>优化器是在表里面有多个索引的时候，决定使用哪个索引；或者在一个语句有多表关联（join）的时候，决定各个表的连接顺序。比如下面这个语句，是执行两个表的 join：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t1 join t2 using(ID) where t1.c=10 and t2.d=20;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>既可以先从表 t1中取出 c=10 记录的ID 值，在根据 ID 值关联到表 t2，再判断 t2里面 d 的值是否等于20。</p>
-</li>
-<li><p>也可以先从表 t2里面取出 d=20记录的 ID 值，在根据 ID 值关联到 t1，再判断 t1里面 c 的值是否等于10。</p>
-<p>这两种执行方案的逻辑结果是一样的，但是效率会有不同，而优化器的作用就是决定选择使用哪个方案。</p>
-<p>优化器阶段完成后，这个语句的执行方案就确定下来了，然后进入执行器阶段。</p>
-</li>
-</ul>
-<h3 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h3><p>MySQL 通过分析器知道了要做什么，通过了优化器知道怎么做，于是就进入了执行器阶段，开始执行语句。<br>开始执行的时候，需要先判断用户对表 T 是否拥有查询权限，如果没有，就会返回没有权限的错误。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from T where ID=10;</span><br><span class="line">ERROR 1142 (42000): SELECT command denied to user &apos;b&apos;@&apos;localhost&apos; for table &apos;T&apos;</span><br></pre></td></tr></table></figure>
-<p>如果有权限，就打开表继续执行。打开表的时候，执行器会根据表的引擎定义，去使用该引擎提供的接口。<br>比如表 T 中，ID 字段么有索引，那么执行期的执行流程是这样的：</p>
-<ol>
-<li><p>调用 InnoDB 引擎接口取该表的第一行，判断 ID 值是否为10，如果不是则跳过，如果是则将这行存在结果集中；</p>
-</li>
-<li><p>调用引擎接口取‘’下一行‘’，重复相同的判断逻辑，直到取到这个表的最后一行。</p>
-</li>
-<li><p>执行器将上述遍历过程中所有满足条件的行组成的记录集作为结果集返回给客户端。</p>
-<p>至此，该语句执行结束。</p>
-<p>对于有索引的表，执行的逻辑差不多。第一次调用的是‘’取满足条件的第一行‘’这个接口，之后循环取‘’满足条件的下一行‘’这个接口，这些接口都是引擎中已经定义好的。</p>
-<p>你会在数据库的慢查询日志中看到一个 rows_examined 的字段，表示这个语句执行过程中扫描了多少行。这个值就是在执行器每次调用引擎获取数据行的时候累加的。</p>
-<p>在某些场景下，执行器调用一次，在引擎内部则扫描了多行，因此引擎扫描行数跟rows_examined 并不是完全相同的。</p>
-</li>
-</ol>
 
       
     </div>
@@ -980,7 +930,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库介绍"><span class="nav-number">1.1.</span> <span class="nav-text">数据库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据库"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库之前"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库之前</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文本模型"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">文本模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次模型"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">层次模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网状模型"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">网状模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系模型"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">关系模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的作用"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">数据库的作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库相关概念"><span class="nav-number">1.2.</span> <span class="nav-text">数据库相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库分类及优缺点"><span class="nav-number">1.3.</span> <span class="nav-text">数据库分类及优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系型数据"><span class="nav-number">1.3.1.</span> <span class="nav-text">关系型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非关系数据库"><span class="nav-number">1.3.2.</span> <span class="nav-text">非关系数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体分类"><span class="nav-number">1.3.3.</span> <span class="nav-text">具体分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关系型数据库"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL 数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-的安装"><span class="nav-number">2.1.</span> <span class="nav-text">Mysql 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC-版安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">MAC 版安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-安装"><span class="nav-number">2.1.2.</span> <span class="nav-text">Windows 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有界面安装"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">有界面安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无界面安装"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">无界面安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改密码"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用到的系统指令"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">用到的系统指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6和5-7的区别"><span class="nav-number">2.1.3.</span> <span class="nav-text">5.6和5.7的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-语句"><span class="nav-number">2.2.</span> <span class="nav-text">SQL 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-SQL"><span class="nav-number">2.2.1.</span> <span class="nav-text">什么是 SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的-sql-语句"><span class="nav-number">2.2.2.</span> <span class="nav-text">简单的 sql 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#针对库的相关操作"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">针对库的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对表的相关操作"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">针对表的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对记录的相关操作"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">针对记录的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名规范"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">命名规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改默认配置"><span class="nav-number">2.2.3.</span> <span class="nav-text">修改默认配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL语句的执行过程"><span class="nav-number">3.1.</span> <span class="nav-text">MySQL语句的执行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接器"><span class="nav-number">3.1.1.</span> <span class="nav-text">连接器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询缓存"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析器"><span class="nav-number">3.1.3.</span> <span class="nav-text">分析器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化器"><span class="nav-number">3.1.4.</span> <span class="nav-text">优化器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行器"><span class="nav-number">3.1.5.</span> <span class="nav-text">执行器</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库介绍"><span class="nav-number">1.1.</span> <span class="nav-text">数据库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据库"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库之前"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库之前</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文本模型"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">文本模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次模型"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">层次模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网状模型"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">网状模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系模型"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">关系模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的作用"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">数据库的作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库相关概念"><span class="nav-number">1.2.</span> <span class="nav-text">数据库相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库分类及优缺点"><span class="nav-number">1.3.</span> <span class="nav-text">数据库分类及优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系型数据"><span class="nav-number">1.3.1.</span> <span class="nav-text">关系型数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非关系数据库"><span class="nav-number">1.3.2.</span> <span class="nav-text">非关系数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体分类"><span class="nav-number">1.3.3.</span> <span class="nav-text">具体分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关系型数据库"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL 数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-的安装"><span class="nav-number">2.1.</span> <span class="nav-text">Mysql 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC-版安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">MAC 版安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-安装"><span class="nav-number">2.1.2.</span> <span class="nav-text">Windows 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有界面安装"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">有界面安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无界面安装"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">无界面安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改密码"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用到的系统指令"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">用到的系统指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6和5-7的区别"><span class="nav-number">2.1.3.</span> <span class="nav-text">5.6和5.7的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-语句"><span class="nav-number">2.2.</span> <span class="nav-text">SQL 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-SQL"><span class="nav-number">2.2.1.</span> <span class="nav-text">什么是 SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的-sql-语句"><span class="nav-number">2.2.2.</span> <span class="nav-text">简单的 sql 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#针对库的相关操作"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">针对库的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对表的相关操作"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">针对表的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对记录的相关操作"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">针对记录的相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名规范"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">命名规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改默认配置"><span class="nav-number">2.2.3.</span> <span class="nav-text">修改默认配置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1014,7 +964,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">91.9k</span>
+    <span title="Site words total count">92.5k</span>
   
 </div>
 
