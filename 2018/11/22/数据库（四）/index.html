@@ -146,7 +146,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxibhl4gg7j313i07479t.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxivxo028nj30zy0detlb.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxixq62cxaj312w08k117.jpg">
-<meta property="og:updated_time" content="2018-11-24T02:49:03.597Z">
+<meta property="og:updated_time" content="2018-11-24T10:59:35.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库（四）">
 <meta name="twitter:description" content="前言昨天学习了表与表之间的关系、多表关联、复制表、单表查询的知识，今天学习的内容是单表查询与关键词的执行顺序、正则表达式以及最重要的多表查询。 数据库增删改增1insert [into] 表名[(可选字段名)] values(一组值1),(一组值2),...; into 可以省略，表名后的字段可选，如果写了后面的 values 中的值必须与表名后的字段意义对应，如果没写后面的 values 中的值">
@@ -408,7 +408,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-24T10:49:03+08:00" content="2018-11-24">
+    <time itemprop="dateUpdated" datetime="2018-11-24T18:59:35+08:00" content="2018-11-24">
       2018-11-24
     </time>
   </span>
@@ -473,7 +473,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.6kword
+                  3.7kword
                 </span>
               
 
@@ -489,7 +489,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15min
+                  16min
                 </span>
               
             </div>
@@ -640,7 +640,7 @@
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxh2q62u5vj30xy0a676p.jpg" alt=""></p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxh2rlvp6oj30ye0a8abz.jpg" alt=""></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxhahcbo70j311405saef.jpg" alt="image-20181123000847643"></p>
-<h2 id="完整的select语句"><a href="#完整的select语句" class="headerlink" title="完整的select语句"></a>完整的select语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select [distinct] * from 表名</span><br><span class="line">	   [where</span><br><span class="line">	   group by</span><br><span class="line">	   having</span><br><span class="line">	   order by</span><br><span class="line">	   limit];</span><br></pre></td></tr></table></figure>
+<h2 id="完整的select语句"><a href="#完整的select语句" class="headerlink" title="完整的select语句"></a>完整的select语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select [distinct] 查询字段1、查询字段2…… from 表名</span><br><span class="line">	   [where 查询之前的过滤条件</span><br><span class="line">	   group by 分组依据</span><br><span class="line">	   having 分组之后的过滤条件</span><br><span class="line">	   order by 排序字段</span><br><span class="line">	   limit]; 显示条数</span><br></pre></td></tr></table></figure>
 <p><strong>注意在书写时，必须按照这个顺序来写</strong></p>
 <h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h3 id="匹配字段名称以’张’开头的数据"><a href="#匹配字段名称以’张’开头的数据" class="headerlink" title="^ 匹配字段名称以’张’开头的数据"></a>^ 匹配字段名称以’张’开头的数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from emp where name regexp &apos;^张&apos;;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxhor3ub9ij310205kwh6.jpg" alt="image-20181123082232417"></p>
@@ -862,7 +862,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -973,7 +973,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.5k</span>
+    <span title="Site words total count">92.6k</span>
   
 </div>
 
