@@ -79,17 +79,29 @@
 
 
 
-<meta name="description" content="前言">
+<meta name="description" content="前言本篇博客学习 mysql 的用户管理和使用 python 操作 mysql 的一个模块 pymysql。 mysql 用户管理因为数据安全对于互联网公司来说是最重要的，不可能随便分配 root 账户，应该按照不同开发岗位分配不同的账户和权限。 用户管理相关表12mysql&amp;gt; use mysql;mysql&amp;gt; show tables;  用户对数据库的权限顺序mysql 将与用户相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库（六）">
 <meta property="og:url" content="http://yoursite.com/2018/11/24/数据库（六）/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="前言">
+<meta property="og:description" content="前言本篇博客学习 mysql 的用户管理和使用 python 操作 mysql 的一个模块 pymysql。 mysql 用户管理因为数据安全对于互联网公司来说是最重要的，不可能随便分配 root 账户，应该按照不同开发岗位分配不同的账户和权限。 用户管理相关表12mysql&amp;gt; use mysql;mysql&amp;gt; show tables;  用户对数据库的权限顺序mysql 将与用户相关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-24T08:36:52.859Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxkbj170zij30xj0u01h2.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxkc38kdtnj30u00vxqss.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcdfbx1vj30u00yxjxg.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcgi41gdj30u00vg7ak.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcks9fejj30u00v2wkr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxkdkrsvnqj313408g44n.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxkdnf888gj30z008ydgy.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxkdy8lvbxj30uj0u0tes.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxkeot0sdmj30ym0q6781.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxkexdo53kj30yn0u0n2g.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxkf4yyg45j31me0u07hk.jpg">
+<meta property="og:updated_time" content="2018-11-25T09:07:29.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库（六）">
-<meta name="twitter:description" content="前言">
+<meta name="twitter:description" content="前言本篇博客学习 mysql 的用户管理和使用 python 操作 mysql 的一个模块 pymysql。 mysql 用户管理因为数据安全对于互联网公司来说是最重要的，不可能随便分配 root 账户，应该按照不同开发岗位分配不同的账户和权限。 用户管理相关表12mysql&amp;gt; use mysql;mysql&amp;gt; show tables;  用户对数据库的权限顺序mysql 将与用户相关">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxkbj170zij30xj0u01h2.jpg">
 
 
 
@@ -347,8 +359,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-24T16:36:52+08:00" content="2018-11-24">
-      2018-11-24
+    <time itemprop="dateUpdated" datetime="2018-11-25T17:07:29+08:00" content="2018-11-25">
+      2018-11-25
     </time>
   </span>
 
@@ -412,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2word
+                  1.1kword
                 </span>
               
 
@@ -428,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  4min
                 </span>
               
             </div>
@@ -449,7 +461,66 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇博客学习 mysql 的用户管理和使用 python 操作 mysql 的一个模块 pymysql。</p>
+<h1 id="mysql-用户管理"><a href="#mysql-用户管理" class="headerlink" title="mysql 用户管理"></a>mysql 用户管理</h1><p>因为数据安全对于互联网公司来说是最重要的，不可能随便分配 root 账户，应该按照不同开发岗位分配不同的账户和权限。</p>
+<h2 id="用户管理相关表"><a href="#用户管理相关表" class="headerlink" title="用户管理相关表"></a>用户管理相关表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxkbj170zij30xj0u01h2.jpg" alt="image-20181125150125323"></p>
+<h3 id="用户对数据库的权限顺序"><a href="#用户对数据库的权限顺序" class="headerlink" title="用户对数据库的权限顺序"></a>用户对数据库的权限顺序</h3><p>mysql 将与用户相关的数据放在 mysql库中，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-&gt;db-&gt;tables_priv-&gt;columns_priv</span><br></pre></td></tr></table></figure>
+<p>如果用户拥有对所有库的访问权，则存储在 user 中；</p>
+<p>如果用户拥有对部分库的使用权，则存储在 db 中；</p>
+<p>如果用户拥有对部分表的使用权，则存储在 tables_priv 中；</p>
+<p>如果用户拥有对表中某些字段的使用权，则存储在 columns_priv 中。</p>
+<h2 id="用户授权设置"><a href="#用户授权设置" class="headerlink" title="用户授权设置"></a>用户授权设置</h2><h3 id="创建新账户"><a href="#创建新账户" class="headerlink" title="创建新账户"></a>创建新账户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user 用户名@ip identified by &apos;密码&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user musibii@127.0.0.1 identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p>创建成功后会在 user 表中查看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from user\G;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxkc38kdtnj30u00vxqss.jpg" alt="image-20181125152053447"></p>
+<p>这样创建的账户是没有任何权限的，可以看出关于权限字段的值全为 N，接下来需要给 musibii 账号分配权限了。</p>
+<h3 id="授予用户最高权限"><a href="#授予用户最高权限" class="headerlink" title="授予用户最高权限"></a>授予用户最高权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on *.* to musibii@127.0.0.1 identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p>如果 musibii 账号不存在，那么会在授予权限的时候自动创建账号。</p>
+<p>现在查看一下 musibii 账号的权限关系：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcdfbx1vj30u00yxjxg.jpg" alt=""></p>
+<h3 id="授予授予权限"><a href="#授予授予权限" class="headerlink" title="授予授予权限"></a>授予授予权限</h3><p>现在除了 grant_priv 权限其他权限都有了，这个权限是授权权限。通过 root 账户授予：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on *.* to musibii@127.0.0.1 identified by &apos;123&apos; with grant option;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcgi41gdj30u00vg7ak.jpg" alt=""></p>
+<p>现在可以说这个账号就是一个 root 账户，但是只能在本机登陆。</p>
+<h3 id="授予在任何地方登陆权限"><a href="#授予在任何地方登陆权限" class="headerlink" title="授予在任何地方登陆权限"></a>授予在任何地方登陆权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on *.* to musibii@&apos;%&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxkcks9fejj30u00v2wkr.jpg" alt=""></p>
+<p>现在 host 字段对应的值变为了%，意味着可以在任何主机登陆该数据库了。</p>
+<h3 id="设置只能访问某个库"><a href="#设置只能访问某个库" class="headerlink" title="设置只能访问某个库"></a>设置只能访问某个库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on day46 to eureka@&apos;%&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p>这样设置的用户权限信息存储在 db 中，但是不知道为什么在 db 中没有账户信息。。。</p>
+<h3 id="设置能能访问某个库中的某个表"><a href="#设置能能访问某个库中的某个表" class="headerlink" title="设置能能访问某个库中的某个表"></a>设置能能访问某个库中的某个表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on day46.emp to thales@&apos;%&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxkdkrsvnqj313408g44n.jpg" alt="image-20181125161233216"></p>
+<h3 id="设置只能增删查改权限"><a href="#设置只能增删查改权限" class="headerlink" title="设置只能增删查改权限"></a>设置只能增删查改权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant select(name) on day46.emp to thales@&apos;%&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxkdnf888gj30z008ydgy.jpg" alt=""></p>
+<p>这样 thales 用户就只能对 emp 表中的 name 字段进行查询操作了。</p>
+<h2 id="用户收权设置"><a href="#用户收权设置" class="headerlink" title="用户收权设置"></a>用户收权设置</h2><h3 id="收回某个账号的所有权限"><a href="#收回某个账号的所有权限" class="headerlink" title="收回某个账号的所有权限"></a>收回某个账号的所有权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; revoke all privileges [column] on db.table from user@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; revoke all privileges on *.* from musibii@&apos;127.0.0.1&apos;;</span><br></pre></td></tr></table></figure>
+<p>查询 user 表中的权限信息，发现除了授权权限其他权限都没有了：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxkdy8lvbxj30uj0u0tes.jpg" alt=""></p>
+<p>不过在修改权限之后需要刷新权限表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：如何授予权限就应该如何收回权限，因为不同的权限存储在不同的表中</strong></p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop user 用户名@主机;</span><br></pre></td></tr></table></figure>
+<p><strong>当你在云服务器部署了 mysql 环境时，你的程序无法直接连击服务器，需要授予在任意一台电脑登陆的权限</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; grant all on *.* to 用户名@&apos;%&apos; identified by 密码 with grant option;</span><br></pre></td></tr></table></figure>
+<h1 id="pymysql"><a href="#pymysql" class="headerlink" title="pymysql"></a>pymysql</h1><h3 id="pymysql-连接数据库"><a href="#pymysql-连接数据库" class="headerlink" title="pymysql 连接数据库"></a>pymysql 连接数据库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(</span><br><span class="line">    host=<span class="string">'127.0.0.1'</span>,</span><br><span class="line">    port=<span class="number">3306</span>,</span><br><span class="line">	user=<span class="string">'root'</span>,</span><br><span class="line">	password=<span class="string">'123'</span>,</span><br><span class="line">	database=<span class="string">'day46'</span>,</span><br><span class="line">	charset=<span class="string">'utf8'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>cursor 游标对象，负责执行 sql 语句，获取返回的数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cursor = conn.cursor()</span><br><span class="line">sql = <span class="string">'select *from emp'</span></span><br><span class="line">res = cursor.execute(sql) <span class="comment"># 返回值是本次查询的记录条数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一条记录</span></span><br><span class="line">print(cursor.fetchone())</span><br><span class="line"><span class="comment"># 接着获取</span></span><br><span class="line">print(cursor.fetchone())</span><br><span class="line"><span class="comment"># 提取所有结果</span></span><br><span class="line">print(cursor.fetchall())</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxkeot0sdmj30ym0q6781.jpg" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(fetchamany(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<p>((3, ‘关羽’, ‘男’, ‘市场’, ‘员工’, 4000.0), (4, ‘孙权’, ‘男’, ‘行政’, ‘总监’, 6000.0), (5, ‘周瑜’, ‘男’, ‘行政’, ‘员工’, 5000.0))</p>
+<p>参数是指定获取的数据条数。</p>
+<h3 id="控制游标位置"><a href="#控制游标位置" class="headerlink" title="控制游标位置"></a>控制游标位置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cursor.scroll(<span class="number">1</span>,mode=<span class="string">'relative) # 游标从当前位置往后移动一条记录</span></span><br><span class="line"><span class="string">cursor.scroll(1,mode='</span>absolute<span class="string">') # 游标从开始位置往后移动一条记录</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取结果使用字典表示"><a href="#获取结果使用字典表示" class="headerlink" title="获取结果使用字典表示"></a>获取结果使用字典表示</h3><p>指定使用字典类型的游标，默认是元祖类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor = conn.cursor(pymysql.cursor.DictCursor)</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxkexdo53kj30yn0u0n2g.jpg" alt=""></p>
+<p>#sql 注入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(</span><br><span class="line">    host=<span class="string">'127.0.0.1'</span>,</span><br><span class="line">    port=<span class="number">3306</span>,</span><br><span class="line">	user=<span class="string">'root'</span>,</span><br><span class="line">	password=<span class="string">'password'</span>,</span><br><span class="line">	database=<span class="string">'day46'</span>,</span><br><span class="line">    charset=<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cursor = conn.cursor(pymysql.cursors.DictCursor)</span><br><span class="line"></span><br><span class="line">name = input(<span class="string">'用户名'</span>)</span><br><span class="line">pwd = input(<span class="string">'密码'</span>)</span><br><span class="line"></span><br><span class="line">sql = <span class="string">'select * from user where name = "%s" and pwd = "%s"'</span> % (name, password)</span><br><span class="line"></span><br><span class="line">res = cursor.execute(sql)</span><br><span class="line"><span class="keyword">if</span> res:</span><br><span class="line">    print(<span class="string">'登陆成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'登陆失败'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="注入写法"><a href="#注入写法" class="headerlink" title="注入写法"></a>注入写法</h3><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxkf4yyg45j31me0u07hk.jpg" alt=""></p>
+
       
     </div>
     
@@ -644,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-用户管理"><span class="nav-number">2.</span> <span class="nav-text">mysql 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理相关表"><span class="nav-number">2.1.</span> <span class="nav-text">用户管理相关表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户对数据库的权限顺序"><span class="nav-number">2.1.1.</span> <span class="nav-text">用户对数据库的权限顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户授权设置"><span class="nav-number">2.2.</span> <span class="nav-text">用户授权设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新账户"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建新账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授予用户最高权限"><span class="nav-number">2.2.2.</span> <span class="nav-text">授予用户最高权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授予授予权限"><span class="nav-number">2.2.3.</span> <span class="nav-text">授予授予权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授予在任何地方登陆权限"><span class="nav-number">2.2.4.</span> <span class="nav-text">授予在任何地方登陆权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置只能访问某个库"><span class="nav-number">2.2.5.</span> <span class="nav-text">设置只能访问某个库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置能能访问某个库中的某个表"><span class="nav-number">2.2.6.</span> <span class="nav-text">设置能能访问某个库中的某个表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置只能增删查改权限"><span class="nav-number">2.2.7.</span> <span class="nav-text">设置只能增删查改权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户收权设置"><span class="nav-number">2.3.</span> <span class="nav-text">用户收权设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#收回某个账号的所有权限"><span class="nav-number">2.3.1.</span> <span class="nav-text">收回某个账号的所有权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除用户"><span class="nav-number">2.3.2.</span> <span class="nav-text">删除用户</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pymysql"><span class="nav-number">3.</span> <span class="nav-text">pymysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pymysql-连接数据库"><span class="nav-number">3.0.1.</span> <span class="nav-text">pymysql 连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据库"><span class="nav-number">3.0.2.</span> <span class="nav-text">操作数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制游标位置"><span class="nav-number">3.0.3.</span> <span class="nav-text">控制游标位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取结果使用字典表示"><span class="nav-number">3.0.4.</span> <span class="nav-text">获取结果使用字典表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入写法"><span class="nav-number">3.0.5.</span> <span class="nav-text">注入写法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -678,7 +749,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.6k</span>
+    <span title="Site words total count">93.7k</span>
   
 </div>
 
