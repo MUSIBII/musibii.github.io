@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxiyz6ongbj307k0753z9.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxdlod6n42j31400u0dm9.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxdn3t6wcij30zc06a40a.jpg">
-<meta property="og:updated_time" content="2018-11-24T08:36:42.589Z">
+<meta property="og:updated_time" content="2018-11-26T01:10:06.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库（五）">
 <meta name="twitter:description" content="前言经过几天数据库的学习，总感觉自己只是会敲写增删查改语句而已，对数据库的内部执行情况并不了解，以及执行顺序，查询原理等，所以想对 MySQL 内部的一些原理加深一下了解。 MySQL 语句执行顺序MySQL 语句一共分为11不，如下图所示，最先执行的永远是 FROM，最后执行的是 LIMIT 操作。其中每一个操作都会产生一张虚拟的表（虚拟表想要在下次查询使用需要取别名），这个虚拟的表作为一个处理">
@@ -351,8 +351,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-24T16:36:42+08:00" content="2018-11-24">
-      2018-11-24
+    <time itemprop="dateUpdated" datetime="2018-11-26T09:10:06+08:00" content="2018-11-26">
+      2018-11-26
     </time>
   </span>
 
@@ -458,15 +458,15 @@
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxiyz6ongbj307k0753z9.jpg" alt=""></p>
 <h2 id="来分析以下具体查询的每一个阶段"><a href="#来分析以下具体查询的每一个阶段" class="headerlink" title="来分析以下具体查询的每一个阶段"></a>来分析以下具体查询的每一个阶段</h2><ol>
 <li><strong>from：</strong>对 from 左边的表和右边的表计算笛卡尔积。产生虚拟表 VT1；</li>
-<li><strong>on：</strong>对虚拟表 VT1进行 on 筛选，只有那么符合<join-condition>的行才会被记录在虚拟表 VT2中；</join-condition></li>
+<li><strong>on：</strong>对虚拟表 VT1进行 on 筛选，只有符合\&lt;join-condition>的行才会被记录在虚拟表 VT2中；</li>
 <li><strong>join：</strong>如果指定了 OUTER JOIN（比如 left join、right join），那么保留表中未匹配的行就会作为外部行添加到虚拟表 VT2中，产生虚拟表 VT3，rug from 子句中包含两个以上的表的话，那么就会对上一个 join 连接产生的结果 VT3和下一个表重复执行步骤1~3这三个步骤，一直处理完所有的表为止；</li>
-<li><strong>where：</strong>对虚拟表 VT3进行 where 条件过滤。只有符合<where-condition>的记录才会被插入到虚拟表 VT4中；</where-condition></li>
+<li><strong>where：</strong>对虚拟表 VT3进行 where 条件过滤。只有符合\&lt;where-condition>的记录才会被插入到虚拟表 VT4中；</li>
 <li><strong>group by：</strong>根据 group by 子句中的列，对 VT4中的记录进行分组操作，产生 VT5；</li>
 <li><strong>cube|rollup：</strong>对虚拟表 VT5进行 cube 或 rollup 操作，产生虚拟表 VT6；</li>
-<li><strong>having：</strong>对虚拟表 VT6应用 having 过滤，只有符合<having-condition>的记录才会被插入到虚拟表 VT7中；</having-condition></li>
+<li><strong>having：</strong>对虚拟表 VT6应用 having 过滤，只有符合\&lt;having-condition>的记录才会被插入到虚拟表 VT7中；</li>
 <li><strong>select：</strong>执行 select 操作，选择指定的列，插入到虚拟表 VT8中；</li>
 <li><strong>distinct：</strong>对 VT8中的记录进行去重，产生虚拟表 VT9；</li>
-<li><strong>order by：</strong>对虚拟表 VT9中的记录按照<order-by-list>进行排序操作，产生虚拟表 VT10；</order-by-list></li>
+<li><strong>order by：</strong>对虚拟表 VT9中的记录按照\&lt;order-by-list>进行排序操作，产生虚拟表 VT10；</li>
 <li><strong>limit：</strong>取出指定行的记录，产生虚拟表 VT11，并将结果返回。</li>
 </ol>
 <h2 id="MySQL-语句执行过程"><a href="#MySQL-语句执行过程" class="headerlink" title="MySQL 语句执行过程"></a>MySQL 语句执行过程</h2><p>下面是 MySQL 的基本架构示意图,从中可以很清楚的看到 SQL 语句在 MySQL 的各个功能模块中的执行过程.</p>
