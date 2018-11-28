@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="模块," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,24 +79,22 @@
 
 
 
-<meta name="description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
-<meta name="keywords" content="模块">
+<meta name="description" content="前言本篇博客内容为索引，索引是为了提高数据库的查询效率。 索引什么是索引？索引就相当于书的目录，是 mysql 中一种专门的数据结构，称为 key，索引的本质原理就是通过不断地缩小查询范围，来降低 io 次数从而提升查询性能。强调：一旦为表创建了索引，以后的查询都会先查索引，再根据索引定位的结果去找数据。 为什么要用索引？对于一个应用来说，对数据库的读写比例基本上是10：1，即读多写少。而且对于写">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python模块之sys与os">
-<meta property="og:url" content="http://yoursite.com/2018/10/17/Python常用模块之sys与os/index.html">
+<meta property="og:title" content="数据库（八）">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/数据库（八）/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
+<meta property="og:description" content="前言本篇博客内容为索引，索引是为了提高数据库的查询效率。 索引什么是索引？索引就相当于书的目录，是 mysql 中一种专门的数据结构，称为 key，索引的本质原理就是通过不断地缩小查询范围，来降低 io 次数从而提升查询性能。强调：一旦为表创建了索引，以后的查询都会先查索引，再根据索引定位的结果去找数据。 为什么要用索引？对于一个应用来说，对数据库的读写比例基本上是10：1，即读多写少。而且对于写">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwb8y1ib7fj31kw0ql45b.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fwb936i1inj315s0k4mz4.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb96w50gvj30yo0hwad3.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fwb98j1xnvj30t00h4412.jpg">
-<meta property="og:updated_time" content="2018-10-17T10:34:11.141Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxn1a70qkoj30f808xab9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxn1jeu1wyj30hc08cdgv.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxo14l2kddj30lo0eijth.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxo19x714bj30g50cugnf.jpg">
+<meta property="og:updated_time" content="2018-11-28T12:34:23.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python模块之sys与os">
-<meta name="twitter:description" content="python常用模块系列（二）：sys模块与os模块 sys模块是python解释器和环境有关的一个模块； os是python用来和操作系统进行交互的一个模块。 一 sys 查看当前环境变量    查看已经加载的模块   可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。  获取终端调用时的参数   终端输入的参数为argv[1]，默认当前文件名为第一">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg">
+<meta name="twitter:title" content="数据库（八）">
+<meta name="twitter:description" content="前言本篇博客内容为索引，索引是为了提高数据库的查询效率。 索引什么是索引？索引就相当于书的目录，是 mysql 中一种专门的数据结构，称为 key，索引的本质原理就是通过不断地缩小查询范围，来降低 io 次数从而提升查询性能。强调：一旦为表创建了索引，以后的查询都会先查索引，再根据索引定位的结果去找数据。 为什么要用索引？对于一个应用来说，对数据库的读写比例基本上是10：1，即读多写少。而且对于写">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxn1a70qkoj30f808xab9.jpg">
 
 
 
@@ -126,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/17/Python常用模块之sys与os/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/数据库（八）/"/>
 
 
 
 
 
-  <title>python模块之sys与os | MUSIBII</title>
+  <title>数据库（八） | MUSIBII</title>
   
 
 
@@ -312,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/Python常用模块之sys与os/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/数据库（八）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -329,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python模块之sys与os</h1>
+          <h1 class="post-title" itemprop="name headline">数据库（八）</h1>
         
 
         <div class="post-meta">
@@ -341,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T15:04:07+08:00">
-                2018-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T08:54:46+08:00">
+                2018-11-27
               </time>
             
 
@@ -354,8 +352,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-17T18:34:11+08:00" content="2018-10-17">
-      2018-10-17
+    <time itemprop="dateUpdated" datetime="2018-11-28T20:34:23+08:00" content="2018-11-28">
+      2018-11-28
     </time>
   </span>
 
@@ -373,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -391,8 +389,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/17/Python常用模块之sys与os/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/17/Python常用模块之sys与os/" itemprop="commentCount"></span>
+                <a href="/2018/11/27/数据库（八）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/27/数据库（八）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1kword
+                  4.3kword
                 </span>
               
 
@@ -435,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4min
+                  15min
                 </span>
               
             </div>
@@ -456,136 +454,93 @@
       
 
       
-        <p><strong>python常用模块系列（二）：sys模块与os模块</strong></p>
-<p>sys模块是python解释器和环境有关的一个模块；</p>
-<p>os是python用来和操作系统进行交互的一个模块。</p>
-<h1 id="一-sys"><a href="#一-sys" class="headerlink" title="一 sys"></a>一 sys</h1><ol>
-<li>查看当前环境变量</li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇博客内容为索引，索引是为了提高数据库的查询效率。</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="什么是索引？"><a href="#什么是索引？" class="headerlink" title="什么是索引？"></a>什么是索引？</h2><p>索引就相当于书的目录，是 mysql 中一种专门的数据结构，称为 key，索引的本质原理就是通过不断地缩小查询范围，来降低 io 次数从而提升查询性能。强调：一旦为表创建了索引，以后的查询都会先查索引，再根据索引定位的结果去找数据。</p>
+<h2 id="为什么要用索引？"><a href="#为什么要用索引？" class="headerlink" title="为什么要用索引？"></a>为什么要用索引？</h2><p>对于一个应用来说，对数据库的读写比例基本上是10：1，即读多写少。而且对于写来说极少出现性能问题，大多数性能问题都是慢查询提到加速查，这时候就必须用到索引。</p>
+<h2 id="索引的影响"><a href="#索引的影响" class="headerlink" title="索引的影响"></a>索引的影响</h2><ol>
+<li>在表中有大量数据的前提下，创建索引速度会很慢；</li>
+<li>在索引创建完毕后，对表的查询性能会大幅度提升，但是写性能会降低。</li>
 </ol>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb8v0z9nyj312g0r80vy.jpg" alt=""></p>
+<h2 id="磁盘-IO-与预读"><a href="#磁盘-IO-与预读" class="headerlink" title="磁盘 IO 与预读"></a>磁盘 IO 与预读</h2><p>磁盘读取数据靠的是机械运动，每次读取数据花费的时间可以分为寻道时间、旋转延迟、传输时间三个部分，寻道时间指的是磁臂移动到指定磁道所需要的时间，主流磁盘一般在5ms 以下；旋转延迟就是磁盘转速花费的时间，比如一个磁盘7200转，表示每分钟能转7200次，也就是一秒钟能转120次，旋转延迟就是1/120/2=4.17ms；传输时间指的是从磁盘读出或将数据写入磁盘的时间，一般在零点几毫秒，相对于前两个时间来说可以忽略不计。那么访问一次磁盘的时间，即一次磁盘 IO 的时间约等于5+4.17=9ms 左右，看起来还挺短的，但是对于现在的计算机来说，一秒钟可以执行5亿条指令，执行一次 IO 的时间可以执行约450万条指令，数据库动辄十万百万乃至千万级别数据，每次9毫秒的时间，很显然会造成大量的等待时间。下图是计算机硬件延迟的对比图：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxn1a70qkoj30f808xab9.jpg" alt=""></p>
+<p>考虑到磁盘 IO 是非常高昂的操作，计算机操作系统做了一些优化，当一次 IO 时，不光把当前地址的数据，而是把相邻的数据也都读取到内存缓冲区，因为局部预读性原理告诉我们，当计算机访问一个地址的数据的时候，与其相邻的数据也会很快被访问到。每一次 IO 读取的数据称之为一页（page）。具体一页有多大数据跟操作系统有关，一般为4k 或8k，也就是我们读取一页内的数据时候才发生了一次 IO。</p>
+<h2 id="索引的数据结构"><a href="#索引的数据结构" class="headerlink" title="索引的数据结构"></a>索引的数据结构</h2><p>对于索引来说，它的目的就是降低查找数据时产生的磁盘 IO 数量级，最好是常数数量级。索引使用的是 B+树（B+树是通过二叉查找树，再由平衡二叉树，B 树演化而来）。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxn1jeu1wyj30hc08cdgv.jpg" alt=""></p>
+<p>如上图，是一颗 B+数，浅蓝色的块称之为一个磁块，可以看到每个人磁块包含几个数据项（深蓝色所示）和指针（黄色所示），如磁盘快1包含数据项17和35，包含指针 P1、P2、P3，P1表示小于17的磁盘块，P2表示在17和35之间的磁盘块，P3表示大于35的磁盘块。真实数据存在于叶子节点即3、5、9、10、13、15、28、29、36、60、75、79、90、99。非叶子节点只不过存储真实的数据，只存储指引搜索方向的数据项，如17、35并不真实存在于数据表中。</p>
+<h3 id="B-树查找过程"><a href="#B-树查找过程" class="headerlink" title="B+树查找过程"></a>B+树查找过程</h3><p>如果所示，如果要查找数据项29，那么首先会把磁盘块1由磁盘加载到内存，此时发生一次 IO，在内存中用二分法查找确定29在17和35之间，锁定磁盘块1的 P2指针，内存时间因为非常短（相比磁盘 IO）可以忽略不计，通过磁盘块1的 P2指针的磁盘地址把磁盘块3由磁盘加载到内存，发生第三次 IO，同时内存中做二分查找找到29，结束查询，总计三次 IO。真实情况是，3层的 B+数可以表示上百万的数据，如果上百万的数据查找只需要三次 IO，性能提升将是巨大的，如果没有索引，每个数据项都要发生一次 IO，那么总共需要百万次的 IO，显然成本非常非常高。</p>
+<h3 id="B-数性质"><a href="#B-数性质" class="headerlink" title="B+数性质"></a>B+数性质</h3><ol>
+<li><strong>索引字段要尽量的小：</strong>IO 次数取决于 B+树的高度 h，假设当前数据表的数据为 N，每次磁盘块的数据项的数量是 m，则有 h=log(m+1)N，当数据量 N 一定的情况下，m 越大，h 越小；而 m=磁盘块的大小/数据项的大小，磁盘块的大小也是一个数据页的大小，是固定的，如果数据项占的空间越小，数据项的数量越多，树的高度越低。这就是为什么每个数据项，即索引字段要尽量的小，比如 int 占4字节，要比 bigint 8字节少一半。这也是为什么 B+树要求把真实的数据放在叶子节点而不是内层节点，一旦放到内层节点，磁盘块的数据项会大幅度下降，导致树增高。当数据项等于1时将会退化成线性表。</li>
+<li><strong>索引的最左匹配特性：</strong>当B+树的数据项是复合的数据结构，比如(name,age,sex)的时候，B+数是按照从左到右的顺序来建立搜索树的，比如当(张三,20,F)这样的数据来检索的时候，B+树会优先比较name来确定下一步的所搜方向，如果name相同再依次比较age和sex，最后得到检索的数据；但当(20,F)这样的没有name的数据来的时候，B+树就不知道下一步该查哪个节点，因为建立搜索树的时候name就是第一个比较因子，必须要先根据name来搜索才能知道下一步去哪里查询。比如当(张三,F)这样的数据来检索时，B+树可以用name来指定搜索方向，但下一个字段age的缺失，所以只能把名字等于张三的数据都找到，然后再匹配性别是F的数据了， 这个是非常重要的性质，即索引的最左匹配特性。</li>
+</ol>
+<h2 id="聚集索引与辅助索引"><a href="#聚集索引与辅助索引" class="headerlink" title="聚集索引与辅助索引"></a>聚集索引与辅助索引</h2><p><strong>在数据库中，B+树的高度一般都在2~4层，这也就是说查找某一个键值的行记录时最多只需要2到4次IO，这倒不错。因为当前一般的机械硬盘每秒至少可以做100次IO，2~4次的IO意味着查询时间只需要0.02~0.04秒。</strong></p>
+<p><strong>数据库中的B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index），</strong></p>
+<p><strong>聚集索引与辅助索引相同的是：不管是聚集索引还是辅助索引，其内部都是B+树的形式，即高度是平衡的，叶子结点存放着所有的数据。</strong></p>
+<p><strong>聚集索引与辅助索引不同的是：</strong>叶子节点存放的是否是一条完整的记录。</p>
+<h3 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">InnoDB存储引擎表示索引组织表，即表中数据按照主键顺序存放。而聚集索引（clustered index）就是按照每张表的主键构造一棵B+树，同时叶子结点存放的即为整张表的行记录数据，也将聚集索引的叶子结点称为数据页。聚集索引的这个特性决定了索引组织表中数据也是索引的一部分。同B+树数据结构一样，每个数据页都通过一个双向链表来进行链接。</span><br><span class="line">    </span><br><span class="line">如果未定义主键，MySQL取第一个唯一索引（unique）而且只含非空列（NOT NULL）作为主键，InnoDB使用它作为聚簇索引。</span><br><span class="line">    </span><br><span class="line">如果没有这样的列，InnoDB就自己产生一个这样的ID值，它有六个字节，而且是隐藏的，使其作为聚簇索引。</span><br><span class="line"></span><br><span class="line">由于实际的数据页只能按照一棵B+树进行排序，因此每张表只能拥有一个聚集索引。在这种情况下，查询优化器倾向于采用聚集索引。因为聚集索引能够在B+树索引的叶子节点上直接找到数据。此外由于定义了数据的逻辑顺序，聚集索引能够特别快地访问针对范围值得查询。</span><br></pre></td></tr></table></figure>
+<h4 id="聚集索引优点"><a href="#聚集索引优点" class="headerlink" title="聚集索引优点"></a>聚集索引优点</h4><ol>
+<li>它对主键的排序查找和范围查找速度非常快，叶子节点的数据就是用户所要查询的数据。如用户需要查找一张表，查询最后的10位用户信息，由于 B+树索引是双向链表，所以用户可以快速找到最后一个数据页，并取出10条记录。</li>
+<li>范围查询，即如果要查找某一范围内的数据，通过叶子节点的上层节点就可以得到页的范围，之后直接读取数据页即可。</li>
+</ol>
+<h3 id="辅助索引"><a href="#辅助索引" class="headerlink" title="辅助索引"></a>辅助索引</h3><p>表中除了聚集索引外其他索引都是辅助索引，也称为非聚集索引，与聚集索引的区别是：辅助索引的叶子节点不包含行记录的全部数据。</p>
+<p>叶子节点除了包含键值以外，每个叶子节点中的索引行中还包含一个书签。该书签用来告诉 InnoDB 存储引擎去哪里可以找到与索引相对应的行数据。</p>
+<p>由于 InnoDB 存储引擎是索引组织表，因此 InnoDB 存储引擎的辅助索引的书签就是相应行数据的聚集索引键。如下图：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxo14l2kddj30lo0eijth.jpg" alt=""></p>
+<p>辅助索引的存在并不影响数据再聚集索引中的组织，因此每张表中可以有多个辅助索引，但只能有一个聚集索引。当通过辅助索引来寻找数据时，InnoDB存储引擎会遍历辅助索引并通过叶子级别的指针获得指向主键索引的主键，然后通过主键索引来找到一个完整的行记录。</p>
+<p>举例来说，如果在一棵高度为3的辅助索引树种查找数据，那需要对这个辅助索引树遍历3次找到指定主键，如果聚集索引树的高度同样为3，那么还需要对聚集索引树进行三次查找，最终找到一个完整的行数据所在的页，因此一共需要6次 IO 访问才能得到最终的一个数据页。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxo19x714bj30g50cugnf.jpg" alt=""></p>
+<h2 id="MySQL-索引管理"><a href="#MySQL-索引管理" class="headerlink" title="MySQL 索引管理"></a>MySQL 索引管理</h2><h3 id="索引的功能"><a href="#索引的功能" class="headerlink" title="索引的功能"></a>索引的功能</h3><ol>
+<li>索引的功能就是加速查找</li>
+<li>mysql 中的 primary key、unique，联合唯一都是索引，这些索引除了加速查找以外，还有约束的功能。</li>
+</ol>
+<h3 id="MySQL-常用索引"><a href="#MySQL-常用索引" class="headerlink" title="MySQL 常用索引"></a>MySQL 常用索引</h3><ul>
+<li>普通索引：index 加速查找</li>
+<li>唯一索引：<ul>
+<li>主键索引 primary key：加速查找+约束（不能为空，不能重复）</li>
+<li>唯一索引 unique：加速查找+约束（不能重复）</li>
+</ul>
+</li>
+<li>联合索引：<ul>
+<li>primary key(id,name)：联合主键索引</li>
+<li>unique(id,name)：联合唯一索引</li>
+<li>index(id,name)：联合普通索引</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建-删除索引"><a href="#创建-删除索引" class="headerlink" title="创建/删除索引"></a>创建/删除索引</h3><ol>
+<li>创建表时</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table 表名(</span><br><span class="line">	   字段名1 数据类型 [完整性约束条件...],</span><br><span class="line">	   字段名2 数据类型 [完整性约束条件...],</span><br><span class="line">	   [unique | fulltext | spatial] index | key</span><br><span class="line">	   [索引名] (字段名[(长度)] [asc | desc]));</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>查看已经加载的模块</li>
+<li>在已存在的表上创建索引</li>
 </ol>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwb8y1ib7fj31kw0ql45b.jpg" alt=""></p>
-<p>可以看出sys.modules是一个字典，key为加载模块的名字，values为加载模块的路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create [unique | fulltext | spatial ] index 索引名</span><br><span class="line">	   on 表名 (字段名[(长度)] [asc | desc]);</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>获取终端调用时的参数</li>
+<li>Alter table在已存在的表上创建索引</li>
 </ol>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwb936i1inj315s0k4mz4.jpg" alt=""></p>
-<p>终端输入的参数为argv[1]，默认当前文件名为第一个参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter table 表名 add [unique | fulltext | spatial ] index</span><br><span class="line">	   索引名(字段名[(长度)] [asc | desc]);</span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li>获取解释器的版本信息</li>
+<li>删除索引</li>
 </ol>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb96w50gvj30yo0hwad3.jpg" alt=""></p>
-<ol start="5">
-<li>获取当前运行平台名称（windows为nt，macOS为darwin）</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop index 索引名 on 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. 一定是为搜索条件的字段创建索引，比如select * from s1 where id = 333;就需要为id加上索引</span><br><span class="line"></span><br><span class="line">2. 在表中已经有大量数据的情况下，建索引会很慢，且占用硬盘空间，建完后查询速度加快</span><br><span class="line">比如create index idx on s1(id);会扫描表中所有的数据，然后以id为数据项，创建索引结构，存放于硬盘的表中。</span><br><span class="line">建完以后，再查询就会很快了。</span><br><span class="line"></span><br><span class="line">3. 需要注意的是：innodb表的索引会存放于s1.ibd文件中，而myisam表的索引则会有单独的索引文件table1.MYI</span><br><span class="line"></span><br><span class="line">MySAM索引文件和数据文件是分离的，索引文件仅保存数据记录的地址。而在innodb中，表数据文件本身就是按照B+Tree（BTree即Balance True）组织的一个索引结构，这棵树的叶节点data域保存了完整的数据记录。这个索引的key是数据表的主键，因此innodb表数据文件本身就是主索引。</span><br><span class="line">因为inndob的数据文件要按照主键聚集，所以innodb要求表必须要有主键（Myisam可以没有），如果没有显式定义，则mysql系统会自动选择一个可以唯一标识数据记录的列作为主键，如果不存在这种列，则mysql会自动为innodb表生成一个隐含字段作为主键，这字段的长度为6个字节，类型为长整型.</span><br></pre></td></tr></table></figure>
+<h2 id="正确使用索引"><a href="#正确使用索引" class="headerlink" title="正确使用索引"></a>正确使用索引</h2><p>并不是说创建了索引就一定会加快查询速度，若想利用索引达到预期的提高查询速度的效果，我们在添加索引时，必须考虑以下问题：</p>
+<ol>
+<li><p>范围问题，或者说条件不明确，条件中出现这些符号：&gt;、&gt;=、&lt;、&lt;=、!=、between and、like</p>
+</li>
+<li><p>尽量选择区分度高的列作为索引，区分度的公式是 count(distinct col)/count(*)，表示字段不重复的比例，比例越大我们扫描的记录越少，唯一键的区分度是1，而一些状态、性别字段可能在数据量特别大的地方就是0，一般需要 join 的字段要求都是0.1以上，即平均1次扫描10条记录</p>
+</li>
+<li>=和 in 可以乱序，比如 a=1 and c=3建立(a,b,c)索引可以任意顺序，mysql 的查询优化器会优化成索引可以识别的形式</li>
+<li>索引列不能参与计算，保持列“干净”，比如from_unixtime(create_time) = ’2014-05-29’就不能使用到索引，原因很简单，b+树中存的都是数据表中的字段值，但进行检索时，需要把所有元素都应用函数才能比较，显然成本太大。所以语句应该写成create_time = unix_timestamp(’2014-05-29’)</li>
+<li>and/or</li>
 </ol>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwb98j1xnvj30t00h4412.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1、and与or的逻辑</span><br><span class="line">    条件1 and 条件2:所有条件都成立才算成立，但凡要有一个条件不成立则最终结果不成立</span><br><span class="line">    条件1 or 条件2:只要有一个条件成立则最终结果就成立</span><br><span class="line"></span><br><span class="line">2、and的工作原理</span><br><span class="line">    条件：</span><br><span class="line">        a = 10 and b = &apos;xxx&apos; and c &gt; 3 and d =4</span><br><span class="line">    索引：</span><br><span class="line">        制作联合索引(d,a,b,c)</span><br><span class="line">    工作原理:</span><br><span class="line">        对于连续多个and：mysql会按照联合索引，从左到右的顺序找一个区分度高的索引字段(这样便可以快速锁定很小的范围)，加速查询，即按照d—&gt;a-&gt;b-&gt;c的顺序</span><br><span class="line"></span><br><span class="line">3、or的工作原理</span><br><span class="line">    条件：</span><br><span class="line">        a = 10 or b = &apos;xxx&apos; or c &gt; 3 or d =4</span><br><span class="line">    索引：</span><br><span class="line">        制作联合索引(d,a,b,c)</span><br><span class="line">        </span><br><span class="line">    工作原理:</span><br><span class="line">        对于连续多个or：mysql会按照条件的顺序，从左到右依次判断，即a-&gt;b-&gt;c-&gt;d</span><br><span class="line">在左边条件成立但是索引字段的区分度低的情况下(name 与 gender 均属于这种情况)，会依次往右找到一个区分度高的索引字段，加速查询</span><br></pre></td></tr></table></figure>
 <ol start="6">
-<li>退出信号</li>
+<li><p>最左前缀匹配原则，非常重要的原则，对于组合索引mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配(指的是范围大了，有索引速度也慢)，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
+</li>
+<li><p>其他情况</p>
+</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.exit(<span class="number">0</span>) <span class="comment"># 正常退出</span></span><br><span class="line">sys.exit(<span class="number">1</span>) <span class="comment"># 错误退出</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>接口版本</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(sys.api_version)</span><br><span class="line"><span class="comment"># 运行结果 1013</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>了解</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(sys.maxsize)</span><br><span class="line">print(sys.maxunicode)</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="comment"># 9223372036854775807</span></span><br><span class="line"><span class="comment"># 1114111</span></span><br></pre></td></tr></table></figure>
-<h1 id="二-os"><a href="#二-os" class="headerlink" title="二 os"></a>二 os</h1><ol>
-<li>获取当前的工作目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.getcwd())</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>切换工作目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.chdir(<span class="string">'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br><span class="line">print(os.getcwd())</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>获取当前目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.curdir)</span><br><span class="line"><span class="comment"># 运行结果 .</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>获取上级目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line">print(os.pardir)</span><br><span class="line"><span class="comment"># 运行结果 ..</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>获取系统的环境变量</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.environ)</span><br><span class="line"><span class="comment"># environ(&#123;'PATH': '/Users/jingxing/.nvm/versions/node/v4.9.1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/python_study/mongodb/bin://Volumes/python_study/mongodb/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/python_study/Applications/mongodb-osx-x86_64-3.6.3/bin::/usr/local/mysql/bin', 'COMMAND_MODE': 'unix2003', 'VERSIONER_PYTHON_VERSION': '2.7', 'LS_OPTIONS': '--color=auto', 'LOGNAME': 'jingxing', 'XPC_SERVICE_NAME': 'com.apple.xpc.launchd.oneshot.0x10000004.pycharm', 'PWD': '/Users/jingxing/PycharmProjects/python全栈/day20/代码', 'PYCHARM_HOSTED': '1', 'NODE_PATH': '/Users/jingxing/.nvm/versions/node/v4.9.1/lib/node_modules', 'PYCHARM_MATPLOTLIB_PORT': '49379', 'PYTHONPATH': '/Applications/PyCharm.app/Contents/helpers/pycharm_matplotlib_backend:/Users/jingxing/PycharmProjects/python全栈', 'NVM_CD_FLAGS': '', 'NVM_DIR': '/Users/jingxing/.nvm', 'SHELL': '/bin/bash', 'LSCOLORS': 'CxfxcxdxbxegedabagGxGx', 'PYTHONIOENCODING': 'UTF-8', 'SECURITYSESSIONID': '186a7', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'USER': 'jingxing', 'CLICOLOR': 'Yes', 'TMPDIR': '/var/folders/yl/3drd7wf93f90sfkgpc2zg9cr0000gn/T/', 'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.bIB1b2eyOD/Listeners', 'XPC_FLAGS': '0x0', 'PYTHONUNBUFFERED': '1', '__CF_USER_TEXT_ENCODING': '0x1F5:0x19:0x34', 'Apple_PubSub_Socket_Render': '/private/tmp/com.apple.launchd.bHuC64fYdd/Render', 'LC_CTYPE': 'zh_CN.UTF-8', 'NVM_BIN': '/Users/jingxing/.nvm/versions/node/v4.9.1/bin', 'HOME': '/Users/jingxing', '__PYVENV_LAUNCHER__': '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3'&#125;)</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>创建多级目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="string">'a/b/c'</span>)</span><br><span class="line"><span class="comment"># 会在当前文件路径创建多级目录</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>创建一个目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.mkdir(<span class="string">'aa'</span>)</span><br><span class="line"><span class="comment"># 能且仅能创建一个目录</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>递归删除</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.removedirs(<span class="string">'a/b/c'</span>)</span><br><span class="line"><span class="comment"># 递归删除，只能删除空目录</span></span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>删除一个目录</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rmdir(<span class="string">'aa'</span>)</span><br><span class="line"><span class="comment"># 删除一个目录</span></span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>删除文件</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.remove(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>)</span><br><span class="line"><span class="comment"># 删除文件</span></span><br></pre></td></tr></table></figure>
-<ol start="11">
-<li>列出当前目录所有的文件及文件夹</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.listdir(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>获取当前平台路径分隔符</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.seq)</span><br><span class="line"><span class="comment"># 运行结果 /</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>获取当前平台换行符</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.lineseq, end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="三-os下的path模块"><a href="#三-os下的path模块" class="headerlink" title="三 os下的path模块"></a>三 os下的path模块</h1><ol>
-<li>返回绝对路径</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.abspath(<span class="string">'a/b/c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码/a/b/c</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>将路径拆分为文件夹路径和文件名（返回元祖）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.split(<span class="string">'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 ('/Users/jingxing/PycharmProjects/python全栈/day20/代码', '5.os下path模块.py')</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>获取路径中的上一级</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.dirname(__file__))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/python全栈/day20/代码</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>获取路径的最后一级名称</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.basename(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 5.os下path模块.py</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>判断路径是否存在（返回布尔值）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">print</span> path.exists(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>)</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>判断是否为绝对路径（返回布尔值）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.isabs(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈/day20/代码/5.os下path模块.py'</span>))</span><br><span class="line"><span class="comment"># 运行结果 True</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>路径拼接</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.join(<span class="string">'/Users/jingxing/PycharmProjects/'</span>, <span class="string">'day20'</span>))</span><br><span class="line"><span class="comment"># 运行结果 /Users/jingxing/PycharmProjects/day20</span></span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>获取文件的大小</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.getsize(<span class="string">r'/Users/jingxing/PycharmProjects/python全栈'</span>))</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>大写变小写，斜杠根据当前平台修改</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normcase(<span class="string">r'a/\b/\c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/\b/\c</span></span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>斜杠会修改为当前平台的分隔符，执行..来返回上一级</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">print(path.normpath(<span class="string">'a/b/c/../c'</span>))</span><br><span class="line"><span class="comment"># 运行结果 a/b/c</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 避免使用select *</span><br><span class="line">- count(1)或count(列) 代替 count(*)</span><br><span class="line">- 创建表时尽量时 char 代替 varchar</span><br><span class="line">- 表的字段顺序固定长度的字段优先</span><br><span class="line">- 组合索引代替多个单列索引（经常使用多个条件查询时）</span><br><span class="line">- 尽量使用短索引</span><br><span class="line">- 使用连接（JOIN）来代替子查询(Sub-Queries)</span><br><span class="line">- 连表时注意条件类型需一致</span><br><span class="line">- 索引散列值（重复少）不适合建索引，例：性别不适合</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -600,12 +555,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/模块/" rel="tag"># 模块</a>
-          
-        </div>
-      
 
       
       
@@ -615,8 +564,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/Python常用模块之time与datetime/" rel="next" title="Python模块之time与datetime">
-                <i class="fa fa-chevron-left"></i> Python模块之time与datetime
+              <a href="/2018/11/26/数据库（七）/" rel="next" title="数据库（七）">
+                <i class="fa fa-chevron-left"></i> 数据库（七）
               </a>
             
           </div>
@@ -624,10 +573,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/17/python模块之random/" rel="prev" title="python模块之random">
-                python模块之random <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -790,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-sys"><span class="nav-number">1.</span> <span class="nav-text">一 sys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-os"><span class="nav-number">2.</span> <span class="nav-text">二 os</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-os下的path模块"><span class="nav-number">3.</span> <span class="nav-text">三 os下的path模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是索引？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是索引？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要用索引？"><span class="nav-number">2.2.</span> <span class="nav-text">为什么要用索引？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引的影响"><span class="nav-number">2.3.</span> <span class="nav-text">索引的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘-IO-与预读"><span class="nav-number">2.4.</span> <span class="nav-text">磁盘 IO 与预读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引的数据结构"><span class="nav-number">2.5.</span> <span class="nav-text">索引的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B-树查找过程"><span class="nav-number">2.5.1.</span> <span class="nav-text">B+树查找过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-数性质"><span class="nav-number">2.5.2.</span> <span class="nav-text">B+数性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚集索引与辅助索引"><span class="nav-number">2.6.</span> <span class="nav-text">聚集索引与辅助索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#聚集索引"><span class="nav-number">2.6.1.</span> <span class="nav-text">聚集索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#聚集索引优点"><span class="nav-number">2.6.1.1.</span> <span class="nav-text">聚集索引优点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辅助索引"><span class="nav-number">2.6.2.</span> <span class="nav-text">辅助索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-索引管理"><span class="nav-number">2.7.</span> <span class="nav-text">MySQL 索引管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的功能"><span class="nav-number">2.7.1.</span> <span class="nav-text">索引的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-常用索引"><span class="nav-number">2.7.2.</span> <span class="nav-text">MySQL 常用索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-删除索引"><span class="nav-number">2.7.3.</span> <span class="nav-text">创建/删除索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.7.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确使用索引"><span class="nav-number">2.8.</span> <span class="nav-text">正确使用索引</span></a></li></ol></li></ol></div>
             
 
           </div>
