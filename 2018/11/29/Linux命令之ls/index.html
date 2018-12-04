@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Linux Python Vim Git">
+<meta name="description" content="前言不知道从什么时候开始，对Linux系统一直很着迷，就单纯觉得使用 Linux 系统（特别是命令行）是一件很酷的事情，所以很早就开始学习一些 linux 知识了，推荐鸟哥的 linux 私房菜，哈哈，不用我推荐这本书已经是鼎鼎大名了（所以这个系列博客主要参考鸟哥的 linux 并且我会在 linux18.04上面测试）。所以现在想从最基础的命令开始，系统的了解 linux 系统，所以这也会是个系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令之ls">
 <meta property="og:url" content="http://yoursite.com/2018/11/29/Linux命令之ls/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="Linux Python Vim Git">
+<meta property="og:description" content="前言不知道从什么时候开始，对Linux系统一直很着迷，就单纯觉得使用 Linux 系统（特别是命令行）是一件很酷的事情，所以很早就开始学习一些 linux 知识了，推荐鸟哥的 linux 私房菜，哈哈，不用我推荐这本书已经是鼎鼎大名了（所以这个系列博客主要参考鸟哥的 linux 并且我会在 linux18.04上面测试）。所以现在想从最基础的命令开始，系统的了解 linux 系统，所以这也会是个系">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T04:27:43.255Z">
+<meta property="og:updated_time" content="2018-11-30T10:58:58.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令之ls">
-<meta name="twitter:description" content="Linux Python Vim Git">
+<meta name="twitter:description" content="前言不知道从什么时候开始，对Linux系统一直很着迷，就单纯觉得使用 Linux 系统（特别是命令行）是一件很酷的事情，所以很早就开始学习一些 linux 知识了，推荐鸟哥的 linux 私房菜，哈哈，不用我推荐这本书已经是鼎鼎大名了（所以这个系列博客主要参考鸟哥的 linux 并且我会在 linux18.04上面测试）。所以现在想从最基础的命令开始，系统的了解 linux 系统，所以这也会是个系">
 
 
 
@@ -347,12 +347,34 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-29T12:27:43+08:00" content="2018-11-29">
-      2018-11-29
+    <time itemprop="dateUpdated" datetime="2018-11-30T18:58:58+08:00" content="2018-11-30">
+      2018-11-30
     </time>
   </span>
 
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux命令/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux命令</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0word
+                  179word
                 </span>
               
 
@@ -427,7 +449,8 @@
       
 
       
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>不知道从什么时候开始，对Linux系统一直很着迷，就单纯觉得使用 Linux 系统（特别是命令行）是一件很酷的事情，所以很早就开始学习一些 linux 知识了，推荐鸟哥的 linux 私房菜，哈哈，不用我推荐这本书已经是鼎鼎大名了（所以这个系列博客主要参考鸟哥的 linux 并且我会在 linux18.04上面测试）。所以现在想从最基础的命令开始，系统的了解 linux 系统，所以这也会是个系列博客，尽量做到每天写一个 linux 命令，这也是件自我激励的事情，开始我的 linux 之旅吧！！！</p>
+<h1 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h1>
       
     </div>
     
@@ -460,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/04/前端（一）之-HTML/" rel="prev" title="前端（一）之 HTML">
+                前端（一）之 HTML <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -516,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,7 +572,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +583,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -604,6 +640,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ls"><span class="nav-number">2.</span> <span class="nav-text">ls</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -631,7 +683,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">107.8k</span>
+    <span title="Site words total count">109.8k</span>
   
 </div>
 
