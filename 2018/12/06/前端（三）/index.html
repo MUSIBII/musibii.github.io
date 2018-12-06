@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="面向对象," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
-<meta name="keywords" content="面向对象">
+<meta name="description" content="前端之 CSS 选择器高级与盒模型前言先回顾昨日的内容，昨天讲了 w3c 的整个架构，由结构层&amp;gt;布局层&amp;gt;内容层三部分组成，了解了 CSS 的三种引入方式，行间式最简单直接；内联式解耦合，可读性强；外联式适合团队高效开发，耦合性低，复用性强，了解了三种选择器，并且 id 选择器&amp;gt;类选择器&amp;gt;标签选择器&amp;gt;通配选择器，还有通过多类名选择器来操作标签。还有常用的长度单位包括 p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类的内置方法">
-<meta property="og:url" content="http://yoursite.com/2018/10/25/类的内置方法/index.html">
+<meta property="og:title" content="前端（三）">
+<meta property="og:url" content="http://yoursite.com/2018/12/06/前端（三）/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
+<meta property="og:description" content="前端之 CSS 选择器高级与盒模型前言先回顾昨日的内容，昨天讲了 w3c 的整个架构，由结构层&amp;gt;布局层&amp;gt;内容层三部分组成，了解了 CSS 的三种引入方式，行间式最简单直接；内联式解耦合，可读性强；外联式适合团队高效开发，耦合性低，复用性强，了解了三种选择器，并且 id 选择器&amp;gt;类选择器&amp;gt;标签选择器&amp;gt;通配选择器，还有通过多类名选择器来操作标签。还有常用的长度单位包括 p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T15:25:23.323Z">
+<meta property="og:updated_time" content="2018-12-06T07:35:26.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类的内置方法">
-<meta name="twitter:description" content="类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了. 在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:  isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象 issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类  1 __str__方法">
+<meta name="twitter:title" content="前端（三）">
+<meta name="twitter:description" content="前端之 CSS 选择器高级与盒模型前言先回顾昨日的内容，昨天讲了 w3c 的整个架构，由结构层&amp;gt;布局层&amp;gt;内容层三部分组成，了解了 CSS 的三种引入方式，行间式最简单直接；内联式解耦合，可读性强；外联式适合团队高效开发，耦合性低，复用性强，了解了三种选择器，并且 id 选择器&amp;gt;类选择器&amp;gt;标签选择器&amp;gt;通配选择器，还有通过多类名选择器来操作标签。还有常用的长度单位包括 p">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/25/类的内置方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/06/前端（三）/"/>
 
 
 
 
 
-  <title>类的内置方法 | MUSIBII</title>
+  <title>前端（三） | MUSIBII</title>
   
 
 
@@ -306,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/类的内置方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/06/前端（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Thales">
@@ -323,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">类的内置方法</h1>
+          <h1 class="post-title" itemprop="name headline">前端（三）</h1>
         
 
         <div class="post-meta">
@@ -335,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T16:03:23+08:00">
-                2018-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T14:58:11+08:00">
+                2018-12-06
               </time>
             
 
@@ -348,8 +347,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-10-25T23:25:23+08:00" content="2018-10-25">
-      2018-10-25
+    <time itemprop="dateUpdated" datetime="2018-12-06T15:35:26+08:00" content="2018-12-06">
+      2018-12-06
     </time>
   </span>
 
@@ -367,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -385,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/25/类的内置方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/类的内置方法/" itemprop="commentCount"></span>
+                <a href="/2018/12/06/前端（三）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/06/前端（三）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  284word
+                  1.7kword
                 </span>
               
 
@@ -429,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  6min
                 </span>
               
             </div>
@@ -450,19 +449,366 @@
       
 
       
-        <p><strong>类的内置方法都是继承object基类的,内置方法通常为双下划线的方法,比如__init__方法,而类的内置方法也叫做魔术方法,因为太强大了.</strong></p>
-<p>在介绍魔术方法之前先看一些判断对象和类的继承关系的方法:</p>
-<ol>
-<li>isinstance(obj, A_tuple):判断某个对象是否属于某一个集合类的对象</li>
-<li>issubclass(x, A_tuple): 判断某个类是否是某一个集合类的子类</li>
-</ol>
-<h3 id="1-str-方法"><a href="#1-str-方法" class="headerlink" title="1 __str__方法"></a>1 __str__方法</h3><p>会在对象被打印的时候自动触发,然后将返回值当做打印的结果</p>
-<p>使用例子:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span>:</span></span><br><span class="line">    de __init__(self, name, age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;%s : %s&gt;'</span> % (self.name, self.age)</span><br><span class="line">    </span><br><span class="line">peo = People(<span class="string">'musibii'</span>, <span class="number">18</span>)</span><br><span class="line">print(peo) <span class="comment"># print(peo.__str__())</span></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">&lt;musibii : <span class="number">18</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-del-方法"><a href="#2-del-方法" class="headerlink" title="2 __del__方法"></a>2 __del__方法</h3><p>会在对象被删除时自动触发执行,用来在对象被删除前回收资源</p>
-<p>使用例子:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y, filepath)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        self.f = open(filepath, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 写回收系统资源相关的代码</span></span><br><span class="line">        self.f.close()</span><br><span class="line">        </span><br><span class="line">obj = Bar(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="keyword">del</span> obj</span><br></pre></td></tr></table></figure>
-<p><strong>未完待续</strong></p>
+        <h1 id="前端之-CSS-选择器高级与盒模型"><a href="#前端之-CSS-选择器高级与盒模型" class="headerlink" title="前端之 CSS 选择器高级与盒模型"></a>前端之 CSS 选择器高级与盒模型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>先回顾昨日的内容，昨天讲了 w3c 的整个架构，由结构层&gt;布局层&gt;内容层三部分组成，了解了 CSS 的三种引入方式，行间式最简单直接；内联式解耦合，可读性强；外联式适合团队高效开发，耦合性低，复用性强，了解了三种选择器，并且 id 选择器&gt;类选择器&gt;标签选择器&gt;通配选择器，还有通过多类名选择器来操作标签。还有常用的长度单位包括 px、cm、mm、em、vw、in，颜色属性有 rgb、rgba 等，还有操作文本样式的属性调整字体大小，字体风格，文本对齐，缩进，字间距，词间距等，其中 font 是综合性描述：font: 风格 大小/行高 字族（风格可以省略），比如font: 100 normal 60px/200px ‘STSong’;最后讲的就是 display，这是一个重点难点，display 目前只介绍了三个属性值：inline：不支持宽高，宽高由文本内容撑开，只能嵌套 inline 标签同行显示；block：像 p 标签，h 标签的 display 属性就是 block，支持所有的 css 样式，默认有宽高（自定义后取自定义值），能嵌套所有标签，异行显示；inline-block：支持所有css 样式，默认没有宽高（由内容撑开（可以自定义宽高））不建议嵌套任意标签，同行显示。</p>
+<h2 id="选择器高级"><a href="#选择器高级" class="headerlink" title="选择器高级"></a>选择器高级</h2><h3 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h3><h4 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h4><p>群组选择器可以同时控制多个选择器，语法：逗号分隔，控制多个<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">'utf-8'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>群组选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">'text/css'</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		.d1,div,#a &#123;</span></span><br><span class="line"><span class="undefined">			color: green;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'d1'</span>&gt;</span>001<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>002<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'d3'</span>&gt;</span>003<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>一次性控制多个选择器</li>
+<li>选择器之间以,隔开，每一个选择器位均可以为任意合法选择器或选择器组合</li>
+</ul>
+<h4 id="2、子代-后代-选择器"><a href="#2、子代-后代-选择器" class="headerlink" title="2、子代(后代)选择器"></a>2、子代(后代)选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">子代选择器用&gt;连接</span><br><span class="line"><span class="selector-tag">body</span> &gt; <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">后代选择器用空格连接</span><br><span class="line"><span class="selector-class">.sup</span> <span class="selector-class">.sub</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一次性控制一个选择器(逻辑最后的那个选择器)，前置位的选择器为修饰性选择器</li>
+<li>每一个选择器位均可以为任意合法选择器或选择器组合</li>
+<li>子代选择器必须为一级父子嵌套关系，后代选择器可以为一级及多级父子嵌套关系</li>
+</ul>
+<h4 id="3、相邻-兄弟-选择器"><a href="#3、相邻-兄弟-选择器" class="headerlink" title="3、相邻(兄弟)选择器"></a>3、相邻(兄弟)选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相邻选择器用+连接</span><br><span class="line"><span class="selector-class">.d1</span> + <span class="selector-class">.d2</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">兄弟选择器用~连接</span><br><span class="line"><span class="selector-class">.d1</span> ~ <span class="selector-class">.d3</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一次性控制一个选择器(逻辑最后的那个选择器)，前置位的选择器为修饰性选择器</li>
+<li>每一个选择器位均可以为任意合法选择器或选择器组合</li>
+<li>相邻选择器必须为直接相邻关系，兄弟选择器可以为直接相邻或间接相邻关系</li>
+</ul>
+<h4 id="4、交集选择器"><a href="#4、交集选择器" class="headerlink" title="4、交集选择器"></a>4、交集选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="d" id="dd"&gt;&lt;/div&gt;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.d</span><span class="selector-id">#dd</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="d1 d2 d3"&gt;&lt;/div&gt;</span><br><span class="line"><span class="selector-class">.d1</span><span class="selector-class">.d2</span><span class="selector-class">.d3</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、组合选择器优先级"><a href="#四、组合选择器优先级" class="headerlink" title="四、组合选择器优先级"></a>四、组合选择器优先级</h2><ul>
+<li>组合选择器优先级与权值相关，权值为权重和</li>
+<li>权重对应关系</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选择器</th>
+<th style="text-align:center">权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">通配</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">标签</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">类、属性</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">1000</td>
+</tr>
+<tr>
+<td style="text-align:center">!important</td>
+<td style="text-align:center">10000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>选择器权值比较，只关心权重和，不更新选择器位置</li>
+<li>不同级别的选择器间不具备可比性：1个类选择器优先级高于n个标签选择器的任意组合</li>
+</ul>
+<h2 id="五、属性选择器"><a href="#五、属性选择器" class="headerlink" title="五、属性选择器"></a>五、属性选择器</h2><ul>
+<li>[attr]：匹配拥有attr属性的标签</li>
+<li>[attr=val]：匹配拥有attr属性，属性值为val的标签</li>
+<li>[attr^=val]：匹配拥有attr属性，属性值以val开头的标签</li>
+<li>[attr$=val]：匹配拥有attr属性，属性值以val结尾的标签</li>
+<li>[attr*=val]：匹配拥有attr属性，属性值包含val的标签</li>
+</ul>
+<h6 id="v-hint：属性选择器权重等价于类"><a href="#v-hint：属性选择器权重等价于类" class="headerlink" title="v_hint：属性选择器权重等价于类"></a>v_hint：属性选择器权重等价于类</h6><h6 id="v-test：掌握所有选择器，并熟知选择器优先级"><a href="#v-test：掌握所有选择器，并熟知选择器优先级" class="headerlink" title="v_test：掌握所有选择器，并熟知选择器优先级"></a>v_test：掌握所有选择器，并熟知选择器优先级</h6><h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><h1 id="盒模型-1"><a href="#盒模型-1" class="headerlink" title="盒模型"></a>盒模型</h1><h2 id="一、盒模型概念"><a href="#一、盒模型概念" class="headerlink" title="一、盒模型概念"></a>一、盒模型概念</h2><ul>
+<li>广义盒模型：文档中所有功能性及内容性标签，及文档中所有显示性标签</li>
+<li>侠义盒模型：文档中以块级形式存在的标签（块级标签拥有盒模型100%特性且最常用）</li>
+<li>盒模型组成：margin + border + padding + content</li>
+</ul>
+<h6 id="v-hint：content-width-x-height"><a href="#v-hint：content-width-x-height" class="headerlink" title="v_hint：content = width x height"></a>v_hint：content = width x height</h6><h2 id="二、盒模型成员介绍"><a href="#二、盒模型成员介绍" class="headerlink" title="二、盒模型成员介绍"></a>二、盒模型成员介绍</h2><h4 id="1、content"><a href="#1、content" class="headerlink" title="1、content"></a>1、content</h4><ul>
+<li>通过设置width与height来规定content</li>
+<li>块级标签可以设置自身宽高，默认宽为父级宽(width=auto)、高为0，高度可以由内容决定</li>
+<li>内联标签不可以设置自身宽高，默认宽高均为0，宽高一定由内容决定</li>
+</ul>
+<h4 id="2、border"><a href="#2、border" class="headerlink" title="2、border"></a>2、border</h4><ul>
+<li>border(边框)由border-width(宽度)、border-color(颜色)、border-style(风格)三部分组成</li>
+<li>border成员：border-left、border-right、border-top、border-bottom</li>
+<li>border-width成员：border-left-width、border-right-width、border-top-width、border-bottom-width</li>
+<li>border-color成员：border-left-color、border-right-color、border-top-color、border-bottom-color</li>
+<li>border-style成员：border-left-style、border-right-style、border-top-style、border-bottom-style</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">风格</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">solid</td>
+<td style="text-align:center">实线</td>
+</tr>
+<tr>
+<td style="text-align:center">dashed</td>
+<td style="text-align:center">虚线</td>
+</tr>
+<tr>
+<td style="text-align:center">dotted</td>
+<td style="text-align:center">点状线</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">双实线</td>
+</tr>
+<tr>
+<td style="text-align:center">groove</td>
+<td style="text-align:center">槽状线</td>
+</tr>
+<tr>
+<td style="text-align:center">ridge</td>
+<td style="text-align:center">脊线</td>
+</tr>
+<tr>
+<td style="text-align:center">inset</td>
+<td style="text-align:center">内嵌效果线</td>
+</tr>
+<tr>
+<td style="text-align:center">outset</td>
+<td style="text-align:center">外凸效果线</td>
+</tr>
+</tbody>
+</table>
+<h6 id="v-hint：border满足整体设置语法，eg：border-1px-solid-red"><a href="#v-hint：border满足整体设置语法，eg：border-1px-solid-red" class="headerlink" title="v_hint：border满足整体设置语法，eg：border: 1px solid red;"></a>v_hint：border满足整体设置语法，eg：border: 1px solid red;</h6><h4 id="3、padding"><a href="#3、padding" class="headerlink" title="3、padding"></a>3、padding</h4><ul>
+<li>padding成员：padding-left、padding-right、padding-top、padding-bottom</li>
+<li>padding整体设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值得个数</th>
+<th style="text-align:center">方位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">上下左右</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">上下 \</td>
+<td>左右</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">上 \</td>
+<td>左右 \</td>
+<td>下</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">上 \</td>
+<td>右 \</td>
+<td>下 \</td>
+<td>左</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4、margin"><a href="#4、margin" class="headerlink" title="4、margin"></a>4、margin</h4><ul>
+<li>margin成员：margin-left、margin-right、margin-top、margin-bottom</li>
+<li>margin整体设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">赋值个数</th>
+<th style="text-align:center">方位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">上下左右</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">上下 \</td>
+<td>左右</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">上 \</td>
+<td>左右 \</td>
+<td>下</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">上 \</td>
+<td>右 \</td>
+<td>下 \</td>
+<td>左</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、边界圆角"><a href="#三、边界圆角" class="headerlink" title="三、边界圆角"></a>三、边界圆角</h2><h4 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h4><ul>
+<li>border-radius成员</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">成员</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">border-top-left-radius</td>
+<td style="text-align:center">左上 方位</td>
+</tr>
+<tr>
+<td style="text-align:center">border-top-right-radius</td>
+<td style="text-align:center">右上 方位</td>
+</tr>
+<tr>
+<td style="text-align:center">border-bottom-left-radius</td>
+<td style="text-align:center">左下 方位</td>
+</tr>
+<tr>
+<td style="text-align:center">border-bottom-right-radius</td>
+<td style="text-align:center">右下 方位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>单方位设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">赋值个数(值类型：长度 \</th>
+<th style="text-align:center">百分比)</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">横纵</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">横 \</td>
+<td>纵</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>按角整体设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">赋值个数(值类型：长度 \</th>
+<th style="text-align:center">百分比)</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">左上 右上 左下 右下</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">左上 右下 \</td>
+<td>右上 左下</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">左上  \</td>
+<td>右上 左下 \</td>
+<td>右下</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">左上 \</td>
+<td>右上 \</td>
+<td>右下 \</td>
+<td>左下</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>分向整体设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">格式</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 / 1</td>
+<td style="text-align:center">横向 \</td>
+<td>纵向</td>
+</tr>
+</tbody>
+</table>
+<h2 id="四、其他相关属性"><a href="#四、其他相关属性" class="headerlink" title="四、其他相关属性"></a>四、其他相关属性</h2><ul>
+<li>max|min-width|height</li>
+<li>overflow</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">visible</td>
+<td style="text-align:left">默认值。内容不会被修剪，会呈现在元素框之外。</td>
+</tr>
+<tr>
+<td style="text-align:center">hidden</td>
+<td style="text-align:left">内容会被修剪，并且其余内容是不可见的。</td>
+</tr>
+<tr>
+<td style="text-align:center">scroll</td>
+<td style="text-align:left">内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</td>
+</tr>
+<tr>
+<td style="text-align:center">auto</td>
+<td style="text-align:left">如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</td>
+</tr>
+<tr>
+<td style="text-align:center">inherit</td>
+<td style="text-align:left">规定应该从父元素继承 overflow 属性的值。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>display</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">inline</td>
+<td style="text-align:center">内联</td>
+</tr>
+<tr>
+<td style="text-align:center">block</td>
+<td style="text-align:center">块级</td>
+</tr>
+<tr>
+<td style="text-align:center">inline-block</td>
+<td style="text-align:center">内联块</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -478,12 +824,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
-          
-        </div>
-      
 
       
       
@@ -493,8 +833,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/25/通过字符串来操作类或对象的属性/" rel="next" title="通过字符串来操作类或对象的属性">
-                <i class="fa fa-chevron-left"></i> 通过字符串来操作类或对象的属性
+              <a href="/2018/12/05/前端（二）之-CSS/" rel="next" title="前端（二）之  CSS">
+                <i class="fa fa-chevron-left"></i> 前端（二）之  CSS
               </a>
             
           </div>
@@ -502,10 +842,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/27/python-模块与包的导入问题/" rel="prev" title="python 模块与包的导入问题">
-                python 模块与包的导入问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -668,7 +1004,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-str-方法"><span class="nav-number">1.</span> <span class="nav-text">1 __str__方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-del-方法"><span class="nav-number">2.</span> <span class="nav-text">2 __del__方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端之-CSS-选择器高级与盒模型"><span class="nav-number">1.</span> <span class="nav-text">前端之 CSS 选择器高级与盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器高级"><span class="nav-number">1.2.</span> <span class="nav-text">选择器高级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组合选择器"><span class="nav-number">1.2.1.</span> <span class="nav-text">组合选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#群组选择器"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">群组选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、子代-后代-选择器"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2、子代(后代)选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、相邻-兄弟-选择器"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">3、相邻(兄弟)选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、交集选择器"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">4、交集选择器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、组合选择器优先级"><span class="nav-number">1.3.</span> <span class="nav-text">四、组合选择器优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、属性选择器"><span class="nav-number">1.4.</span> <span class="nav-text">五、属性选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#v-hint：属性选择器权重等价于类"><span class="nav-number">1.4.0.0.0.1.</span> <span class="nav-text">v_hint：属性选择器权重等价于类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#v-test：掌握所有选择器，并熟知选择器优先级"><span class="nav-number">1.4.0.0.0.2.</span> <span class="nav-text">v_test：掌握所有选择器，并熟知选择器优先级</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.5.</span> <span class="nav-text">盒模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#盒模型-1"><span class="nav-number">2.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、盒模型概念"><span class="nav-number">2.1.</span> <span class="nav-text">一、盒模型概念</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#v-hint：content-width-x-height"><span class="nav-number">2.1.0.0.0.1.</span> <span class="nav-text">v_hint：content = width x height</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、盒模型成员介绍"><span class="nav-number">2.2.</span> <span class="nav-text">二、盒模型成员介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、content"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">1、content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、border"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">2、border</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#v-hint：border满足整体设置语法，eg：border-1px-solid-red"><span class="nav-number">2.2.0.2.0.1.</span> <span class="nav-text">v_hint：border满足整体设置语法，eg：border: 1px solid red;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、padding"><span class="nav-number">2.2.0.3.</span> <span class="nav-text">3、padding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、margin"><span class="nav-number">2.2.0.4.</span> <span class="nav-text">4、margin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、边界圆角"><span class="nav-number">2.3.</span> <span class="nav-text">三、边界圆角</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">border-radius</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、其他相关属性"><span class="nav-number">2.4.</span> <span class="nav-text">四、其他相关属性</span></a></li></ol></li></ol></div>
             
 
           </div>
