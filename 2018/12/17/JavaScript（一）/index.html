@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="JavaScript 系列博客（一）前言本系列博客为记录学习 JavaScript 的学习笔记，会从基础开始慢慢探索 js。今天的学习笔记主要为 js 引入、定义变量以及 JavaScript 中数据类型和数据类型之间的转换。 引入 JavaScript什么是JavaScript 语言？JavaScript 是一种轻量级的脚本语言。所谓的‘’脚本语言‘’，指的是它不具备开发操作系统的能力，而是只用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T13:26:09.997Z">
+<meta property="og:updated_time" content="2018-12-18T09:09:10.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript（一）">
 <meta name="twitter:description" content="JavaScript 系列博客（一）前言本系列博客为记录学习 JavaScript 的学习笔记，会从基础开始慢慢探索 js。今天的学习笔记主要为 js 引入、定义变量以及 JavaScript 中数据类型和数据类型之间的转换。 引入 JavaScript什么是JavaScript 语言？JavaScript 是一种轻量级的脚本语言。所谓的‘’脚本语言‘’，指的是它不具备开发操作系统的能力，而是只用">
@@ -347,8 +347,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-12-17T21:26:09+08:00" content="2018-12-17">
-      2018-12-17
+    <time itemprop="dateUpdated" datetime="2018-12-18T17:09:10+08:00" content="2018-12-18">
+      2018-12-18
     </time>
   </span>
 
@@ -483,7 +483,7 @@
 <ul>
 <li>内联式</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    ddd.style.backgroundColor = <span class="string">'pink'</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    ddd.style.backgroundColor = 'pink'</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>特点：</p>
 <ol>
 <li>可以通过标签的 id（唯一标识），在 js 代码块中访问到该标签（js 选择器）；</li>
@@ -493,7 +493,7 @@
 <ul>
 <li>外联式</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/01.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="comment">// 被屏蔽掉的代码块</span></span></span><br><span class="line"><span class="javascript">    ddd.style.fontSize = <span class="string">'100px'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/01.js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	// 被屏蔽掉的代码块</span></span><br><span class="line"><span class="undefined">    ddd.style.fontSize = '100px';</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>特点：</p>
 <ol>
 <li>通过 script 标签的 src 数据连接外部 js 文件；</li>
@@ -585,7 +585,6 @@
 <h2 id="四-三种弹出框"><a href="#四-三种弹出框" class="headerlink" title="四.三种弹出框"></a>四.三种弹出框</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通弹出框</span></span><br><span class="line"><span class="comment">// alert("你丫真帅!!!");</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入框: 以字符串形式接收用户输入内容</span></span><br><span class="line"><span class="comment">// var info = prompt("请输入内容:");</span></span><br><span class="line"><span class="comment">// console.log(info)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确认框: 根据用户选择确认或取消, 得到 true | false 两个布尔结果</span></span><br><span class="line"><span class="comment">// var res = confirm("你是猪吗?");</span></span><br><span class="line"><span class="comment">// console.log(res)</span></span><br></pre></td></tr></table></figure>
 <h2 id="五-数据类型"><a href="#五-数据类型" class="headerlink" title="五.数据类型"></a>五.数据类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 值类型</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;  <span class="comment">// Number 10</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'abc'</span>;  <span class="comment">// String abc</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;  <span class="comment">// Boolean true</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">undefined</span>  <span class="comment">// undefined undefined</span></span><br><span class="line"><span class="comment">// 引用类型</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">// function f()&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;  <span class="comment">// Object &#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>  <span class="comment">// Null null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他Object具体体现</span></span><br><span class="line"><span class="built_in">Array</span> | <span class="built_in">Date</span> | <span class="built_in">RegExp</span></span><br></pre></td></tr></table></figure>
 <h2 id="六-值类型的类型转换"><a href="#六-值类型的类型转换" class="headerlink" title="六.值类型的类型转换"></a>六.值类型的类型转换</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.通过类型声明转换</span></span><br><span class="line"><span class="built_in">Number</span>() | <span class="built_in">String</span>() | <span class="built_in">Boolean</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.方法(函数)</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'10'</span>) | <span class="built_in">parseFloat</span>(<span class="string">'3.14'</span>)</span><br><span class="line"><span class="number">123.</span>.toString()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.隐式转换</span></span><br><span class="line">+<span class="string">'10'</span> =&gt; <span class="number">10</span></span><br><span class="line"><span class="string">''</span> + <span class="number">10</span> =&gt; <span class="string">'10'</span></span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -707,7 +706,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -818,7 +817,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">127.7k</span>
+    <span title="Site words total count">135k</span>
   
 </div>
 
