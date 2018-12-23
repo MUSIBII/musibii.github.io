@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fyfl6k5uovj30u00wiq9q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyfl7y0fj7j30vq0gaq6f.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fyflaz87z3j30vo040dg2.jpg">
-<meta property="og:updated_time" content="2018-12-22T08:53:12.652Z">
+<meta property="og:updated_time" content="2018-12-23T02:25:00.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript（五）">
 <meta name="twitter:description" content="JavaScript 系列博客之（五）前言本篇介绍 JavaScript 中的对象。在第一篇博客中已经说到 JavaScript 是一种‘’对象模型‘’语言。所以可以这样说，对象是 JavaScript 语言的核心概念，也是最重要的数据类型。 概述生成方法在 JavaScript 中声称对象相当方便，直接定义一个空字典就 ok。想要添加属性或者方法的话可以在定义结束之后动态添加。注意：对象时无序的">
@@ -355,8 +355,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-12-22T16:53:12+08:00" content="2018-12-22">
-      2018-12-22
+    <time itemprop="dateUpdated" datetime="2018-12-23T10:25:00+08:00" content="2018-12-23">
+      2018-12-23
     </time>
   </span>
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2kword
+                  2.5kword
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8min
+                  9min
                 </span>
               
             </div>
@@ -463,6 +463,7 @@
 <p>上面代码中，大括号就可以直接定义一个对象，被赋值给变量 a，所以 a 就指向一个对象。该对象为一个空对象，但是会有一些默认的方法，像 constructor 是构造方法，想要动态的添加属性和方法就是这个方法的功劳。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyfd3zdllbj30vk06wgm4.jpg" alt=""></p>
 <p>在这里添加了一个属性为name，那么 name 是键名（成员名称），字符串 musibii 是键值（成员的值）。键名与键值之间用冒号分隔。如果再添加一个属性，那么属性之间使用逗号分隔。</p>
+<h3 id="具体生成方法"><a href="#具体生成方法" class="headerlink" title="具体生成方法"></a>具体生成方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.单一对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="comment">// 属性</span></span><br><span class="line">    name: <span class="string">'Zero'</span>,</span><br><span class="line">    <span class="comment">// 方法</span></span><br><span class="line">    teach: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"教学"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.name | obj.teach()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;  <span class="comment">// 类似于python中的类一样来使用</span></span><br><span class="line">   	<span class="comment">// this代表Person构造函数实例化出的所有具体对象中的某一个</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;  </span><br><span class="line">    <span class="keyword">this</span>.teach = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"正在教学"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ①通过构造函数实例化出具体对象</span></span><br><span class="line"><span class="comment">// ②通过对象.语法调用属性与方法</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>); </span><br><span class="line">p1.name  <span class="comment">// 张三, this指向p1对象</span></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">"李四"</span>); </span><br><span class="line">p2.teach  <span class="comment">// 李四正在教学, this指向p2对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.ES6类语法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 需要构造器(构造函数)来完成对象的声明与初始化</span></span><br><span class="line">    <span class="keyword">constructor</span> (name) &#123;</span><br><span class="line">        <span class="comment">// 属性在构造器中声明并完成初始化</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 类中规定普通方法</span></span><br><span class="line">    study () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"正在学习"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 类方法</span></span><br><span class="line">    <span class="keyword">static</span> fn() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"我是类方法"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 类中的普通方法由类的具体实例化对象来调用</span></span><br><span class="line"><span class="comment">// 类中的类方法由类直接来调用(这类型的方法大多是功能性方法,不需要对象的存在)</span></span><br></pre></td></tr></table></figure>
 <h3 id="键名"><a href="#键名" class="headerlink" title="键名"></a>键名</h3><p>对象的所有键名都是字符串（ES6又引入了 Symbol 值也可以作为键名：还没了解过），所以加不加引号都可以。如果键名是数值，会被自动转为字符串。如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。</p>
 <p>对象的每一个键名又称为‘’属性‘’，它的键值可以是任何数据类型。如果一个属性的值为函数，通常把这个属性称为方法，调用方法和函数一样。</p>
 <p>特别的如果属性的值指向的还是一个对象，那么就行成了链式引用。对象的属性之间用逗号分隔，最后一个属性后面可以加逗号，也可以不加。</p>
@@ -648,7 +649,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -725,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-系列博客之（五）"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 系列博客之（五）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键名"><span class="nav-number">1.2.2.</span> <span class="nav-text">键名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的引用"><span class="nav-number">1.2.3.</span> <span class="nav-text">对象的引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的操作"><span class="nav-number">1.3.</span> <span class="nav-text">属性的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的读取"><span class="nav-number">1.3.1.</span> <span class="nav-text">属性的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的赋值"><span class="nav-number">1.3.2.</span> <span class="nav-text">属性的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的查看"><span class="nav-number">1.3.3.</span> <span class="nav-text">属性的查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的删除"><span class="nav-number">1.3.4.</span> <span class="nav-text">属性的删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断属性的存在"><span class="nav-number">1.3.5.</span> <span class="nav-text">判断属性的存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性遍历"><span class="nav-number">1.3.6.</span> <span class="nav-text">属性遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#with-语句"><span class="nav-number">1.4.</span> <span class="nav-text">with 语句</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-系列博客之（五）"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 系列博客之（五）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体生成方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">具体生成方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键名"><span class="nav-number">1.2.3.</span> <span class="nav-text">键名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的引用"><span class="nav-number">1.2.4.</span> <span class="nav-text">对象的引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的操作"><span class="nav-number">1.3.</span> <span class="nav-text">属性的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的读取"><span class="nav-number">1.3.1.</span> <span class="nav-text">属性的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的赋值"><span class="nav-number">1.3.2.</span> <span class="nav-text">属性的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的查看"><span class="nav-number">1.3.3.</span> <span class="nav-text">属性的查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的删除"><span class="nav-number">1.3.4.</span> <span class="nav-text">属性的删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断属性的存在"><span class="nav-number">1.3.5.</span> <span class="nav-text">判断属性的存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性遍历"><span class="nav-number">1.3.6.</span> <span class="nav-text">属性遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#with-语句"><span class="nav-number">1.4.</span> <span class="nav-text">with 语句</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -759,7 +760,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">138.8k</span>
+    <span title="Site words total count">139.9k</span>
   
 </div>
 
