@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址； 修改不可变对象时（str、tuple、int）需要开辟新的内存空间； 修改可变对象时（list、d">
+<meta name="description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 在 python 中，标识一个对象的唯一身份有三个状态：对象的 id（内存地址），对象类型，对象值。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 中的深浅复制">
 <meta property="og:url" content="http://yoursite.com/2018/12/26/python-中的深浅复制/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址； 修改不可变对象时（str、tuple、int）需要开辟新的内存空间； 修改可变对象时（list、d">
+<meta property="og:description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 在 python 中，标识一个对象的唯一身份有三个状态：对象的 id（内存地址），对象类型，对象值。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-26T13:18:53.191Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fylbbsvc16j309u06uaa9.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fylbdfzszej30ac078aad.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fylbeprqf6j30b307e74o.jpg">
+<meta property="og:updated_time" content="2018-12-27T07:05:33.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 中的深浅复制">
-<meta name="twitter:description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址； 修改不可变对象时（str、tuple、int）需要开辟新的内存空间； 修改可变对象时（list、d">
+<meta name="twitter:description" content="python 中的深浅复制前言想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。 在 python 中，标识一个对象的唯一身份有三个状态：对象的 id（内存地址），对象类型，对象值。 赋值 赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fylbbsvc16j309u06uaa9.jpg">
 
 
 
@@ -347,8 +351,8 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-12-26T21:18:53+08:00" content="2018-12-26">
-      2018-12-26
+    <time itemprop="dateUpdated" datetime="2018-12-27T15:05:33+08:00" content="2018-12-27">
+      2018-12-27
     </time>
   </span>
 
@@ -412,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  344word
+                  816word
                 </span>
               
 
@@ -428,7 +432,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  3min
                 </span>
               
             </div>
@@ -450,14 +454,37 @@
 
       
         <h1 id="python-中的深浅复制"><a href="#python-中的深浅复制" class="headerlink" title="python 中的深浅复制"></a>python 中的深浅复制</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想起来写这篇博客是因为这段时间学习 js 的时候涉及到了变量的深浅复制问题，然后想先把 python 中的深浅复制理解的更深入一些，再写 js 中的深浅复制，因为 python 对我来说已经很熟悉了。</p>
+<p>在 python 中，标识一个对象的唯一身份有三个状态：对象的 id（内存地址），对象类型，对象值。</p>
 <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
 <li>赋值是将一个对象的地址赋值给一个变量，使得变量指向该内存地址；</li>
 <li>修改不可变对象时（str、tuple、int）需要开辟新的内存空间；</li>
 <li>修改可变对象时（list、dict、set）不需要开辟新的内存空间。</li>
 </ul>
-<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>浅拷贝只是复制了被复制对象的元素地址，也就是将值得内存地址复制一下并将内存地址赋值给新的变量。</p>
+<p><strong>赋值是将 id 重新赋值给了一个新的变量，引用计数加1。</strong></p>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>浅拷贝只是拷贝父对象，而对于父对象中的子对象并不会进行拷贝。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;</span><br><span class="line">b = a.copy()</span><br><span class="line">a[<span class="string">'name'</span>] = <span class="string">'musibii'</span></span><br><span class="line">a <span class="comment"># &#123;1: [1, 2, 3], 'name': 'musibii'&#125;</span></span><br><span class="line">b <span class="comment"># &#123;1: [1, 2, 3]&#125;</span></span><br><span class="line">a[<span class="number">1</span>].append(<span class="number">4</span>)</span><br><span class="line">a <span class="comment"># &#123;1: [1, 2, 3, 4], 'name': 'musibii'&#125;</span></span><br><span class="line">b <span class="comment"># &#123;1: [1, 2, 3, 4]&#125;</span></span><br></pre></td></tr></table></figure>
+<p>也就是说浅拷贝将a的值复制到一个新的内存空间，并将内存地址赋值给 b，所以对 a 对象添加新的属性，b 并不会改变；但是因为浅拷贝只是拷贝了一层，对于子对象的内存空间是原对象的内存引用，所以修改 a 相应的 b 中也会改变。</p>
+<p><strong>浅拷贝只拷贝父对象，不会拷贝对象内部的子对象。</strong></p>
 <h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>深拷贝完全赋值被复制对象的元素，不是复制内存地址，是开辟新的内存空间将被复制对象的值放在了新的内存空降中，并将新的内存地址指向了新的变量，这样的话，修改原对象不会对新的对象产生影响。</p>
 <p>深拷贝是在另一块地址中创建一个新的变量，同时容器内的元素的地址也是新开辟的，仅仅是值相同而已，是完全的副本。</p>
+<p>在Python 中深拷贝需要引入 copy 模块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">c = copy.deepcopy(a)</span><br><span class="line">c <span class="comment"># &#123;1: [1, 2, 3], 'name': 'musibii'&#125;</span></span><br><span class="line">a[<span class="number">1</span>].append(<span class="number">4</span>)</span><br><span class="line">a <span class="comment"># &#123;1: [1, 2, 3, 4], 'name': 'musibii'&#125;</span></span><br><span class="line">c <span class="comment"># &#123;1: [1, 2, 3], 'name': 'musibii'&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><ol>
+<li>b = a：赋值引用，a 和 b 都指向同一个对象</li>
+</ol>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fylbbsvc16j309u06uaa9.jpg" alt=""></p>
+<ol start="2">
+<li>b = a.copy()：浅拷贝，a 和 b 是一个独立的对象，但他们的子对象还是指向同一个对象（引用）。</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fylbdfzszej30ac078aad.jpg" alt=""></p>
+<ol start="3">
+<li>b = copy.deepcopy(a)：深拷贝，a 和 b 完全拷贝了父对象及其子对象，两者完全独立。</li>
+</ol>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fylbeprqf6j30b307e74o.jpg" alt=""></p>
+<h2 id="更多实例"><a href="#更多实例" class="headerlink" title="更多实例"></a>更多实例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]] <span class="comment">#原始对象</span></span><br><span class="line"> </span><br><span class="line">b = a                       <span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c = copy.copy(a)            <span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d = copy.deepcopy(a)        <span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"> </span><br><span class="line">a.append(<span class="number">5</span>)                 <span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">4</span>].append(<span class="string">'c'</span>)            <span class="comment">#修改对象a中的['a', 'b']数组对象</span></span><br><span class="line"> </span><br><span class="line">print( <span class="string">'a = '</span>, a )</span><br><span class="line">print( <span class="string">'b = '</span>, b )</span><br><span class="line">print( <span class="string">'c = '</span>, c )</span><br><span class="line">print( <span class="string">'d = '</span>, d )</span><br></pre></td></tr></table></figure>
+<p><strong>输出</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">'a = '</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>])</span><br><span class="line">(<span class="string">'b = '</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>])</span><br><span class="line">(<span class="string">'c = '</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]])</span><br><span class="line">(<span class="string">'d = '</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]])</span><br></pre></td></tr></table></figure>
+<h3 id="以上部分参考"><a href="#以上部分参考" class="headerlink" title="以上部分参考"></a>以上部分参考</h3><p><a href="http://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 
       
     </div>
@@ -653,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-中的深浅复制"><span class="nav-number">1.</span> <span class="nav-text">python 中的深浅复制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.2.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.3.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.4.</span> <span class="nav-text">深拷贝</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-中的深浅复制"><span class="nav-number">1.</span> <span class="nav-text">python 中的深浅复制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.2.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.3.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.4.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.5.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多实例"><span class="nav-number">1.6.</span> <span class="nav-text">更多实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以上部分参考"><span class="nav-number">1.6.1.</span> <span class="nav-text">以上部分参考</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -687,7 +714,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">140.5k</span>
+    <span title="Site words total count">141k</span>
   
 </div>
 
