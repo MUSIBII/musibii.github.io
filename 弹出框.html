@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <style type="text/css">
+        .alert {
+            height: 100px;
+            width: 100px;
+            background: #ff6700;
+            text-align: center;
+            line-height: 100px;
+        }
+        .button {
+            float: left;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert">
+        <span></span>
+    </div>
+    <div class="btn">
+        <div class="button btn1">确定</div>
+        <div class="button btn2">取消</div>
+    </div>
+</body>
+<script type="text/javascript">
+    var ybtn = document.querySelector('.btn1');
+    var nbtn = document.querySelector('.btn2');
+    // console.log(ybtn);
+    function question () {
+        console.log('你是猪吗');
+    };
+    // question();
+    function answer () {
+        question();
+        count = 0;
+
+
+        ybtn.onclick = function () {
+            console.log('对，你是猪');
+        }
+        nbtn.onclick = function () {
+            // body...
+            if (count == 3) {
+                console.log('不，你就是猪！！！')
+            }
+            question();
+            count++;
+        }
+
+    }
+    answer();
+
+</script>
+</html>
