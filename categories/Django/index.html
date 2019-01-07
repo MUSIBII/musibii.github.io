@@ -82,7 +82,7 @@
 <meta name="description" content="Linux Python Vim Git">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MUSIBII">
-<meta property="og:url" content="http://yoursite.com/categories/Django/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/django/index.html">
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="Linux Python Vim Git">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Django/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/django/"/>
 
 
 
 
 
-  <title>分类: Django | MUSIBII</title>
+  <title>分类: django | MUSIBII</title>
   
 
 
@@ -297,7 +297,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Django<small>分类</small>
+        <h1>django<small>分类</small>
         </h1>
       </div>
 
@@ -309,37 +309,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/01/04/Django（二）/" itemprop="url">
+            <a class="post-title-link" href="/2019/01/05/Django（三）/" itemprop="url">
               
-                <span itemprop="name">Django（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-04T14:53:55+08:00"
-              content="2019-01-04" >
-          01-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/03/Django（一）/" itemprop="url">
-              
-                <span itemprop="name">Django（一）</span>
+                <span itemprop="name">Django（三）</span>
               
             </a>
         
@@ -347,9 +319,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-03T14:54:24+08:00"
-              content="2019-01-03" >
-          01-03
+              datetime="2019-01-05T22:43:51+08:00"
+              content="2019-01-05" >
+          01-05
         </time>
       </div>
 
@@ -523,7 +495,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">149.3k</span>
+    <span title="Site words total count">150.8k</span>
   
 </div>
 
@@ -987,6 +959,74 @@
               })
               searchResultList += "</ul>";
               resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+ntent.innerHTML = searchResultList;
             }
           }
 
