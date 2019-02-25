@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Django-restframework之频率组件源码分析]]></title>
+    <url>%2F2019%2F02%2F25%2FDjango-restframework%E4%B9%8B%E9%A2%91%E7%8E%87%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Django-restframework之权限组件源码分析]]></title>
+    <url>%2F2019%2F02%2F25%2FDjango-restframework%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Django-restframework之认证组件源码分析]]></title>
+    <url>%2F2019%2F02%2F25%2FDjango-restframework%E4%B9%8B%E8%AE%A4%E8%AF%81%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[Django-restframework 源码之认证组件源码分析一 前言之前在 Django-restframework 的流程分析博客中，把最重要的关于认证、权限和频率的方法找到了。该方法是 APIView 的一个名为initial的类方法，也就是在 views 中定义的视图类方法，继承自APIView方法。该方法源码如下： 那么当代码执行到这里时，最开始执行的是用户的认证，也就是perform_autnentication方法。下面来深入的分析一下在用户认证中具体是怎么执行的。 二 用户认证执行流程进入查看该方法源码如下： 1. 执行APIView.perform_authentication 2. 执行 Request.user 3. 执行Request._authenticate 4. Request.authenticators 5. APIView.initialize_request 6. APIView.get_authticators 7. api_settings.DEFAULT_AUTHENTICATION_CLASSES到这里就是查找APIView 配置的问题了，后面的DEFAULT_AUTHENTICATION_CLASSES是默认的认证类，该类定义在settings.py文件中。之后我会写一篇 Django 加载项目配置的博客，到时候详细分析一下，这会涉及到 python 的两种加载文件的方式，一种是 import；一种是使用importlib模块导入。 三 自定义认证组件了解了 restframework 的认证流程，对于需要自定义认证组件其实很明了，就是自定义认证类，重写 authenticate 方法。不过这还不行，我们还需要进行一下配置。 需求：在之前的项目中，我们需要在服务器中保存相关的 cookie 或 session 来进行用户身份校验，那么如何使用 restframework 的认证来实现该需求，使得既能校验身份，也可以不用在服务端保存用户的 cookie 或 session。 首先不管 cookie 或 session 都是为了校验用户的，那么在这里我们可以使用一个随机字符串（加密后的），当客户端朝服务端发送请求时会携带该值，之后进行反解用来对比。 1. urls.py1url(r'^login/', views.Login.as_view()), 2. Views.py1234567891011121314151617181920212223242526272829# 获取 随机token值def get_token(id, salt='123'): md = hashlib.md5() md.update(bytes(str(id), encoding='utf-8')) md.update(bytes(salt, encoding='utf-8')) return md.hexdigest() + '|' + str(id)# 登陆视图类class Login(APIView): # def dispatch(self, request, *args, **kwargs): # return super(Login, self).dispatch(request, *args, **kwargs) def post(self, request): response = &#123;'status': 100, 'msg': None&#125; name = request.data.get('name') password = request.data.get('password') print(name, password) user_obj = models.UserInfo.objects.filter(name=name, password=password).first() if user_obj: token = get_token(user_obj.pk) response['msg'] = '登陆成功' response['status'] = 100 response['token'] = token print('111', token) else: response['msg'] = '用户名或密码错误' return Response(response) 3. authenticate_classes.py12345678910111213141516171819202122232425262728# 校验 tokendef check_token(token, salt='123'): ls = token.split('|') md = hashlib.md5() md.update(bytes(ls[-1], encoding='utf-8')) md.update(bytes(salt, encoding='utf-8')) if md.hexdigest() == ls[0]: return True else: return False# 改写的认证类class BookAuth(BaseAuthentication): def authenticate(self, request): token = request.data.get('token') print('222', token) if token: succ = check_token(token) if succ: print('333') # user = return else: raise NotAuthenticated('认证失败') else: raise NotAuthenticated('请先登录') 四 配置自定义认证类1. 局部配置假设一个功能需要登陆成功才可以使用，那么只需要在该视图类中定义一个参数authentication_classes 123456789101112131415161718class Book(APIView): # 配置该参数可以局部使用 authentication_classes = [authticate_classes.BookAuth, ] def dispatch(self, request, *args, **kwargs): return super().dispatch(request, *args, **kwargs) def get(self, request, id): print(request.user, '444') response = &#123;'status': 100, 'msg': None&#125; book_obj = models.Book.objects.filter(pk=id).first() if book_obj: book_ser = myser.BookSer(book_obj, many=False) response['book'] = book_ser.data else: response['msg'] = '图书没有对象' response['status'] = 101 return Response(response) 2. 全局使用全局使用的话需要在项目 settings 中配置，如下： 123REST_FRAMEWORK=&#123; "DEFAULT_AUTHENTICATION_CLASSES":["app01.authenticate_classes.BookAuth",]&#125; 这样对 views 中所有的请求方法都有效。因为所有的视图类都会加载 settings 中的配置。这些都是在dispatch方法中完成的。 3. 局部禁用局部禁用的话只需要在视图类中定义一个空的authentication_classes。 1authentication_classes = []]]></content>
+      <categories>
+        <category>Django-restframework 源码</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[with 是什么]]></title>
+    <url>%2F2019%2F02%2F25%2Fwith-%E6%98%AF%E4%BB%80%E4%B9%88%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[mro列表是什么东西]]></title>
+    <url>%2F2019%2F02%2F24%2Fmro%E5%88%97%E8%A1%A8%E6%98%AF%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Django restframework之序列化组件源码探析]]></title>
     <url>%2F2019%2F02%2F22%2FDjango-restframework%E4%B9%8B%E5%BA%8F%E5%88%97%E5%8C%96%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E6%8E%A2%E6%9E%90%2F</url>
     <content type="text"></content>
