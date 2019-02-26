@@ -79,17 +79,28 @@
 
 
 
-<meta name="description" content="Linux Python Vim Git">
+<meta name="description" content="Django-restframework 之频率源码分析一 前言经过权限判断之后就是进行频率的判断了，而频率的判断和权限又不一样，认证、权限和频率的执行流程都差不多，使用配置里面的相关类来进行判断。而不和认证和权限一样，频率的配置没有，查看APIView的类属性如下：   二 频率组件执行流程虽然restframework原生灭有配置频率，但是提供了几个进行频率判断的类，如下：  其中Simple">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-restframework之频率组件源码分析">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/Django-restframework之频率组件源码分析/index.html">
 <meta property="og:site_name" content="MUSIBII">
-<meta property="og:description" content="Linux Python Vim Git">
+<meta property="og:description" content="Django-restframework 之频率源码分析一 前言经过权限判断之后就是进行频率的判断了，而频率的判断和权限又不一样，认证、权限和频率的执行流程都差不多，使用配置里面的相关类来进行判断。而不和认证和权限一样，频率的配置没有，查看APIView的类属性如下：   二 频率组件执行流程虽然restframework原生灭有配置频率，但是提供了几个进行频率判断的类，如下：  其中Simple">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T11:26:58.703Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g0jolhvijhj31es0fo456.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g0jomlax2gj31g00p2gu9.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0joona2jrj311i066taz.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0jsqpl8dkj31fq0l8tft.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0jt3y8eoej31fu0dq0xd.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0jt85q53sj31ee0mqgsg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0jt9uszixj31ag07ogow.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g0jtef84ajj31ds0b2q9a.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0jtgzjdg2j31ew07wn02.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0k1tmv4b2j31ew0dudji.jpg">
+<meta property="og:updated_time" content="2019-02-26T11:46:42.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-restframework之频率组件源码分析">
-<meta name="twitter:description" content="Linux Python Vim Git">
+<meta name="twitter:description" content="Django-restframework 之频率源码分析一 前言经过权限判断之后就是进行频率的判断了，而频率的判断和权限又不一样，认证、权限和频率的执行流程都差不多，使用配置里面的相关类来进行判断。而不和认证和权限一样，频率的配置没有，查看APIView的类属性如下：   二 频率组件执行流程虽然restframework原生灭有配置频率，但是提供了几个进行频率判断的类，如下：  其中Simple">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g0jolhvijhj31es0fo456.jpg">
 
 
 
@@ -345,12 +356,34 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2019-02-25T19:26:58+08:00" content="2019-02-25">
-      2019-02-25
+    <time itemprop="dateUpdated" datetime="2019-02-26T19:46:42+08:00" content="2019-02-26">
+      2019-02-26
     </time>
   </span>
 
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/django-restframework/" itemprop="url" rel="index">
+                    <span itemprop="name">django-restframework</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -388,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0word
+                  990word
                 </span>
               
 
@@ -404,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  4min
                 </span>
               
             </div>
@@ -425,7 +458,31 @@
       
 
       
-        
+        <h1 id="Django-restframework-之频率源码分析"><a href="#Django-restframework-之频率源码分析" class="headerlink" title="Django-restframework 之频率源码分析"></a>Django-restframework 之频率源码分析</h1><h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一 前言"></a>一 前言</h2><p>经过权限判断之后就是进行频率的判断了，而频率的判断和权限又不一样，认证、权限和频率的执行流程都差不多，使用配置里面的相关类来进行判断。而不和认证和权限一样，频率的配置没有，查看<code>APIView</code>的类属性如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0jolhvijhj31es0fo456.jpg" alt></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0jomlax2gj31g00p2gu9.jpg" alt></p>
+<h2 id="二-频率组件执行流程"><a href="#二-频率组件执行流程" class="headerlink" title="二 频率组件执行流程"></a>二 频率组件执行流程</h2><p>虽然<code>restframework</code>原生灭有配置频率，但是提供了几个进行频率判断的类，如下：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0joona2jrj311i066taz.jpg" alt></p>
+<p>其中<code>SimpleRateThrottle</code>类是根据访问者 ip 来进行频率限制的一个类，来看看这个类的执行流程。</p>
+<h3 id="1-init方法"><a href="#1-init方法" class="headerlink" title="1. init方法"></a>1. init方法</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0jsqpl8dkj31fq0l8tft.jpg" alt></p>
+<h3 id="2-get-rate"><a href="#2-get-rate" class="headerlink" title="2. get_rate"></a>2. get_rate</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0jt3y8eoej31fu0dq0xd.jpg" alt></p>
+<h3 id="3-执行-allow-request方法"><a href="#3-执行-allow-request方法" class="headerlink" title="3. 执行 allow_request方法"></a>3. 执行 allow_request方法</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0jt85q53sj31ee0mqgsg.jpg" alt></p>
+<h3 id="4-get-cache-key"><a href="#4-get-cache-key" class="headerlink" title="4. get_cache_key"></a>4. get_cache_key</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0jt9uszixj31ag07ogow.jpg" alt></p>
+<h3 id="5-时间差判断"><a href="#5-时间差判断" class="headerlink" title="5. 时间差判断"></a>5. 时间差判断</h3><p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0jtef84ajj31ds0b2q9a.jpg" alt></p>
+<h3 id="6-throttle-success"><a href="#6-throttle-success" class="headerlink" title="6. throttle_success"></a>6. throttle_success</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0jtgzjdg2j31ew07wn02.jpg" alt></p>
+<p>认证失败的话执行<code>throttle_failure</code>，其实就是返回<code>False</code>。</p>
+<h3 id="7-wait"><a href="#7-wait" class="headerlink" title="7. wait"></a>7. wait</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0k1tmv4b2j31ew0dudji.jpg" alt></p>
+<h2 id="三-自定义频率组件"><a href="#三-自定义频率组件" class="headerlink" title="三 自定义频率组件"></a>三 自定义频率组件</h2><h3 id="1-自定义频率类"><a href="#1-自定义频率类" class="headerlink" title="1. 自定义频率类"></a>1. 自定义频率类</h3><p>频率类需要继承自带的频率类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># from rest_framework.throttling import BaseThrottle</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookThrottle</span><span class="params">(BaseThrottle)</span>:</span></span><br><span class="line"></span><br><span class="line">    VISIT_RECORD = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.history = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">allow_request</span><span class="params">(self, request, view)</span>:</span></span><br><span class="line">        print(request.META)</span><br><span class="line">        REMOTE_ADDR = request.META.get(<span class="string">'REMOTE_ADDR'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">import</span> time</span><br><span class="line">        ctime = time.time()</span><br><span class="line">        <span class="keyword">if</span> REMOTE_ADDR <span class="keyword">not</span> <span class="keyword">in</span> self.VISIT_RECORD:</span><br><span class="line">            self.VISIT_RECORD[REMOTE_ADDR] = [ctime,]</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        self.history = self.VISIT_RECORD.get(REMOTE_ADDR)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> self.history <span class="keyword">and</span> ctime - self.history[<span class="number">-1</span>] &gt; <span class="number">60</span>:</span><br><span class="line">            self.history.pop()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(self.history) &lt; <span class="number">3</span>:</span><br><span class="line">            self.history.insert(<span class="number">0</span>, ctime)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wait</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">import</span> time</span><br><span class="line">        ctime = time.time()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">60</span> - (ctime - self.history[<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 频率类代码注释</span></span><br><span class="line">         <span class="comment"># 访问频率的逻辑</span></span><br><span class="line"><span class="comment">#         #     &#123;'ip地址':[16:13:39,16:13:19,],'ip地址2':[时间1,时间2],&#125;</span></span><br><span class="line"><span class="comment">#         # （1）取出访问者ip</span></span><br><span class="line"><span class="comment">#         # （2）判断当前ip不在访问字典里，添加进去，并且直接返回True,表示第一次访问，在字典里，继续往下走</span></span><br><span class="line"><span class="comment">#         # （3）循环判断当前ip的列表，有值，并且当前时间减去列表的最后一个时间大于60s，把这种数据pop掉，这样列表中只有60s以内的访问时间，</span></span><br><span class="line"><span class="comment">#         # （4）判断，当列表小于3，说明一分钟以内访问不足三次，把当前时间插入到列表第一个位置，返回True，顺利通过</span></span><br><span class="line"><span class="comment">#         # （5）当大于等于3，说明一分钟内访问超过三次，返回False验证失败</span></span><br><span class="line"><span class="comment">#         #（1）取出访问者ip</span></span><br><span class="line"><span class="comment">#         # print(request.META)</span></span><br><span class="line"><span class="comment">#         # REMOTE_ADDR 就是访问者的ip:127.0.0.1</span></span><br><span class="line"><span class="comment">#         ip=request.META.get('REMOTE_ADDR')</span></span><br><span class="line"><span class="comment">#         import time</span></span><br><span class="line"><span class="comment">#         # 获取当前时间</span></span><br><span class="line"><span class="comment">#         ctime=time.time()</span></span><br><span class="line"><span class="comment">#         # （2）判断当前ip不在访问字典里，添加进去，并且直接返回True,表示第一次访问</span></span><br><span class="line"><span class="comment">#         if ip not in self.VISIT_RECORD:</span></span><br><span class="line"><span class="comment">#             self.VISIT_RECORD[ip]=[ctime,]</span></span><br><span class="line"><span class="comment">#             # &#123;'127.0.0.1':[时间1,时间1,]&#125;</span></span><br><span class="line"><span class="comment">#             return True</span></span><br><span class="line"><span class="comment">#         # self.history=[时间1,时间1,]</span></span><br><span class="line"><span class="comment">#         self.history=self.VISIT_RECORD.get(ip)</span></span><br><span class="line"><span class="comment">#         # （3）循环判断当前ip的列表，有值，并且当前时间减去列表的最后一个时间大于60s，把这种数据pop掉，这样列表中只有60s以内的访问时间，</span></span><br><span class="line"><span class="comment">#         while self.history and ctime-self.history[-1]&gt;60:</span></span><br><span class="line"><span class="comment">#             self.history.pop()</span></span><br><span class="line"><span class="comment">#         # （4）判断，当列表小于3，说明一分钟以内访问不足三次，把当前时间插入到列表第一个位置，返回True，顺利通过</span></span><br><span class="line"><span class="comment">#         # （5）当大于等于3，说明一分钟内访问超过三次，返回False验证失败</span></span><br><span class="line"><span class="comment">#         if len(self.history)&lt;3:</span></span><br><span class="line"><span class="comment">#             self.history.insert(0,ctime)</span></span><br><span class="line"><span class="comment">#             return True</span></span><br><span class="line"><span class="comment">#         else:</span></span><br><span class="line"><span class="comment">#             return False</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><p>使用很简单，在需要进行频率控制的视图类中定义一个属性<code>throttle_classes</code>，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    authentication_classes = [authticate_classes.BookAuth]</span><br><span class="line">    permission_classes = [permiss_classes.LoginPermission]</span><br><span class="line">    throttle_classes = [thrott_classes.BookThrottle]</span><br><span class="line">    <span class="comment"># authentication_classes = []</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> super().dispatch(request, *args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, id)</span>:</span></span><br><span class="line">        print(request.user, <span class="string">'444'</span>)</span><br><span class="line">        response = &#123;<span class="string">'status'</span>: <span class="number">100</span>, <span class="string">'msg'</span>: <span class="keyword">None</span>&#125;</span><br><span class="line">        book_obj = models.Book.objects.filter(pk=id).first()</span><br><span class="line">        <span class="keyword">if</span> book_obj:</span><br><span class="line">            book_ser = myser.BookSer(book_obj, many=<span class="keyword">False</span>)</span><br><span class="line">            response[<span class="string">'book'</span>] = book_ser.data</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            response[<span class="string">'msg'</span>] = <span class="string">'图书没有对象'</span></span><br><span class="line">            response[<span class="string">'status'</span>] = <span class="number">101</span></span><br><span class="line">        <span class="keyword">return</span> Response(response)</span><br></pre></td></tr></table></figure>
+<h2 id="四-配置自定义频率类"><a href="#四-配置自定义频率类" class="headerlink" title="四 配置自定义频率类"></a>四 配置自定义频率类</h2><h3 id="1-局部配置"><a href="#1-局部配置" class="headerlink" title="1. 局部配置"></a>1. 局部配置</h3><p>其实上面的就是局部配置，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    authentication_classes = [authticate_classes.BookAuth]</span><br><span class="line">    permission_classes = [permiss_classes.LoginPermission]</span><br><span class="line">    throttle_classes = [thrott_classes.BookThrottle]</span><br></pre></td></tr></table></figure>
+<h3 id="2-全局使用"><a href="#2-全局使用" class="headerlink" title="2. 全局使用"></a>2. 全局使用</h3><p>全局配置如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK=&#123;</span><br><span class="line">    <span class="string">'DEFAULT_THROTTLE_CLASSES'</span>: [<span class="string">'app01.thrott_classes.BookThrottle'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-局部禁用"><a href="#3-局部禁用" class="headerlink" title="3. 局部禁用"></a>3. 局部禁用</h3><p>局部禁用需要在视图类中定义一个空的<code>throttle_classes</code>属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">throttle_classes = []</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -458,6 +515,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/importlib模块的使用/" rel="prev" title="importlib模块的使用">
+                importlib模块的使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,8 +575,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -532,7 +602,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">114</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -612,6 +682,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-restframework-之频率源码分析"><span class="nav-number">1.</span> <span class="nav-text">Django-restframework 之频率源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-前言"><span class="nav-number">1.1.</span> <span class="nav-text">一 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-频率组件执行流程"><span class="nav-number">1.2.</span> <span class="nav-text">二 频率组件执行流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-init方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. init方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-get-rate"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. get_rate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-执行-allow-request方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 执行 allow_request方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-get-cache-key"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. get_cache_key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-时间差判断"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. 时间差判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-throttle-success"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. throttle_success</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-wait"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. wait</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-自定义频率组件"><span class="nav-number">1.3.</span> <span class="nav-text">三 自定义频率组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-自定义频率类"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 自定义频率类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-配置自定义频率类"><span class="nav-number">1.4.</span> <span class="nav-text">四 配置自定义频率类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-局部配置"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 局部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-全局使用"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. 全局使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-局部禁用"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. 局部禁用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -639,7 +725,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">192.4k</span>
+    <span title="Site words total count">195.5k</span>
   
 </div>
 
