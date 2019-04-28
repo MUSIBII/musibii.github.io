@@ -5,11 +5,13 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/green/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -96,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
@@ -154,7 +156,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+      <a href="https://github.com/musibii"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -303,6 +307,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/前端（一）之-HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thales">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/something.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MUSIBII">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/前端（一）之-HTML/" itemprop="url">前端（一）之 HTML</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T14:48:02+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+  <span class="post-updated">
+    &nbsp; | &nbsp; 更新于
+    <time itemprop="dateUpdated" datetime="2018-12-04T15:28:45+08:00" content="2018-12-04">
+      2018-12-04
+    </time>
+  </span>
+
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/前端（一）之-HTML/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/04/前端（一）之-HTML/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8kword
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前端之 HTML前言python 基础、网络编程、并发编程与数据库要开始告一段落了，从现在开始进入前端的学习。前端的东西多且杂，需要好好地练习。
+什么是前端前端即网站前台部分，运行在 PC 端，移动端等浏览器上展现给用户浏览的网页。随着互联网技术的发展，HTML5、CSS3，前端框架的应用，跨平台响应式网页设计能够适应各种屏幕分辨率，完美的动效设计，给用户带来极高的用户体验。
+前端技术一般分为前端
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/04/前端（一）之-HTML/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      <div>
+      
+</div>
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/Linux命令之ls/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,7 +551,7 @@
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -471,6 +679,10 @@
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -541,7 +753,7 @@
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -671,6 +883,10 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -741,7 +957,7 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -869,6 +1085,10 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -939,7 +1159,7 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1069,6 +1289,10 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1139,7 +1363,7 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1270,6 +1494,10 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1340,7 +1568,7 @@ python 中的单例模式单例模式也叫单子模式，是一种常用的软�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1472,6 +1700,10 @@ mysql 用户管理因为数据安全对于互联网公司来说是最重要的�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1542,7 +1774,7 @@ mysql 用户管理因为数据安全对于互联网公司来说是最重要的�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1671,6 +1903,10 @@ MySQL 语句执行顺序MySQL 语句一共分为11不，如下图所示，最先
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1741,7 +1977,7 @@ MySQL 语句执行顺序MySQL 语句一共分为11不，如下图所示，最先
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1871,6 +2107,10 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1941,7 +2181,7 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -2078,208 +2318,9 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
     <footer class="post-footer">
       
 
+      <div>
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/数据库-二/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Thales">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/something.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MUSIBII">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/20/数据库-二/" itemprop="url">数据库（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T14:48:57+08:00">
-                2018-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-          
-          
-  <span class="post-updated">
-    &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2018-11-24T19:00:00+08:00" content="2018-11-24">
-      2018-11-24
-    </time>
-  </span>
-
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/20/数据库-二/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/20/数据库-二/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.3kword
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前言本篇博客学习数据库的详细建表语句，数据库数据类型以及约束条件。
-详细建表语句在介绍建表语句之前需要了解一下存储引擎。
-存储引擎MySQL 支持的存储引擎有以下几种：
-
-以后我们使用的就只有 InnoDB 引擎，可以看到默认情况下存储引擎就是 InnoDB，建立一个表的时候，可以看看在文件夹里发生了什么。
-1mysql&gt; create table t1(id int, name char)
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/20/数据库-二/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
+</div>
 
       
 
@@ -2352,7 +2393,7 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2585,6 +2626,13 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2988,5 +3036,5 @@ into 可以省略，表名后的字段可选，如果写了后面的 values 中�
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

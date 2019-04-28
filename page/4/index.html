@@ -5,11 +5,13 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/green/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -96,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
@@ -154,7 +156,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+      <a href="https://github.com/musibii"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -303,6 +307,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/Vue（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thales">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/something.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MUSIBII">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/Vue（二）/" itemprop="url">Vue（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T08:55:35+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+  <span class="post-updated">
+    &nbsp; | &nbsp; 更新于
+    <time itemprop="dateUpdated" datetime="2019-02-18T09:07:11+08:00" content="2019-02-18">
+      2019-02-18
+    </time>
+  </span>
+
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/18/Vue（二）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/18/Vue（二）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  710word
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Vue 系列博客（二）前言本篇博客介绍 Vue 中的组件相关知识。
+什么是组件？
+每一个组件都是 Vue 实例；
+每个组件均具有自身的模板 template，根组件的模板就是挂载点；
+每个组件模板只能拥有一个根标签；
+子组件的数据具有作用域，以达到组件的复用。
+
+根组件12345678910111213141516171819&lt;div id="app"&gt;    &lt;h1&gt;  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/18/Vue（二）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      <div>
+      
+</div>
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/Vue（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,7 +556,7 @@
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -472,6 +685,10 @@
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -542,7 +759,7 @@
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -672,6 +889,10 @@ session：Django 的 session 机制会向请求的浏览器发送 cookie 字符�
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -742,7 +963,7 @@ session：Django 的 session 机制会向请求的浏览器发送 cookie 字符�
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -872,6 +1093,10 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -942,7 +1167,7 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1072,6 +1297,10 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1142,7 +1371,7 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1273,6 +1502,10 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1343,7 +1576,7 @@ Form 类内置字段介绍123456789101112131415161718192021222324252627282930313
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1474,6 +1707,10 @@ CharField字符类型，必须提供max_leng
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1544,7 +1781,7 @@ CharField字符类型，必须提供max_leng
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1675,6 +1912,10 @@ aggregate()
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1745,7 +1986,7 @@ aggregate()
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -1878,6 +2119,10 @@ aggregate()
     <footer class="post-footer">
       
 
+      <div>
+      
+</div>
+
       
 
       
@@ -1948,7 +2193,7 @@ aggregate()
 
             
           </span>
-          
+
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
@@ -2080,206 +2325,9 @@ MVC 或者 MTV 框架中包括一个重要的部分，就是 ORM，它实现了�
     <footer class="post-footer">
       
 
+      <div>
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/Django（九）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Thales">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/something.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MUSIBII">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/14/Django（九）/" itemprop="url">Django（九）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T15:04:45+08:00">
-                2019-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-          
-          
-  <span class="post-updated">
-    &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2019-01-14T16:23:11+08:00" content="2019-01-14">
-      2019-01-14
-    </time>
-  </span>
-
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Django/" itemprop="url" rel="index">
-                    <span itemprop="name">Django</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/14/Django（九）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/Django（九）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.1kword
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  10min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Django 系列博客（九）前言本篇博客介绍 Django 模板的导入与继承以及导入导入静态文件的几种方式。
-模板导入模板导入语法：&123;% include ‘模板名称’ %&125;
-如下：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&lt;!-- base.htm
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/14/Django（九）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
+</div>
 
       
 
@@ -2352,7 +2400,7 @@ MVC 或者 MTV 框架中包括一个重要的部分，就是 ORM，它实现了�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2585,6 +2633,13 @@ MVC 或者 MTV 框架中包括一个重要的部分，就是 ORM，它实现了�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2988,5 +3043,5 @@ MVC 或者 MTV 框架中包括一个重要的部分，就是 ORM，它实现了�
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
