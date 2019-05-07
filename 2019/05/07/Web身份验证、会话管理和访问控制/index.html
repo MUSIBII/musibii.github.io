@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="本文翻译自：Web身份验证、会话管理和访问控制 介绍Web身份验证、会话管理和访问控制: 一个网站会话是用户的一系列的网络 http 请求和响应事务关联。现代而复杂的web应用程序要求每个用户的信息和状态固定在多请求的持续期间。因此，会话提供建立变量的能力 - 像访问权限和本地化设置 - 适用于用户在网站会话持续期间应用用户的每次交互。 网站应用程序会创建会话并且在每个用户的第一次请求之后保持对匿">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1g2szwhcfdjj30kx04r3z1.jpg">
-<meta property="og:updated_time" content="2019-05-07T12:29:31.308Z">
+<meta property="og:image" content="https://github.com/musibii/image/blob/master/Session_Management_Cheat_Sheet_Diagram.png">
+<meta property="og:updated_time" content="2019-05-07T12:58:38.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web身份验证、会话管理和访问控制">
 <meta name="twitter:description" content="本文翻译自：Web身份验证、会话管理和访问控制 介绍Web身份验证、会话管理和访问控制: 一个网站会话是用户的一系列的网络 http 请求和响应事务关联。现代而复杂的web应用程序要求每个用户的信息和状态固定在多请求的持续期间。因此，会话提供建立变量的能力 - 像访问权限和本地化设置 - 适用于用户在网站会话持续期间应用用户的每次交互。 网站应用程序会创建会话并且在每个用户的第一次请求之后保持对匿">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1g2szwhcfdjj30kx04r3z1.jpg">
+<meta name="twitter:image" content="https://github.com/musibii/image/blob/master/Session_Management_Cheat_Sheet_Diagram.png">
 
 
 
@@ -352,7 +352,7 @@
           
   <span class="post-updated">
     &nbsp; | &nbsp; 更新于
-    <time itemprop="dateUpdated" datetime="2019-05-07T20:29:31+08:00" content="2019-05-07">
+    <time itemprop="dateUpdated" datetime="2019-05-07T20:58:38+08:00" content="2019-05-07">
       2019-05-07
     </time>
   </span>
@@ -459,7 +459,7 @@
 <p>一个网站会话是用户的一系列的网络 http 请求和响应事务关联。现代而复杂的web应用程序要求每个用户的信息和状态固定在多请求的持续期间。因此，会话提供建立变量的能力 - 像访问权限和本地化设置 - 适用于用户在网站会话持续期间应用用户的每次交互。</p>
 <p>网站应用程序会创建会话并且在每个用户的第一次请求之后保持对匿名用户的追踪。一个例子就是会保持用户的语言设置。另外，网站应用程序在用户通过认证后建立和会话的关联关系。这确保了在用户的任何子请求中也会应用安全访问控制提供认证的能力，授权访问用户的私有数据，而且会提高网站程序的可用性。因此，目前的网站应用程序在上一个认证和下一个认证可以提供会话功能。</p>
 <p>一旦认证会话建立成功，会话 ID(或者叫 token)等同于应用程序提供的最强认证方法，像用户名和密码，密码短语，一次性密码(OTP)，基于客户端的数字证书，智能卡，或者生物识别技术(如指纹或眼睛视网膜)。参考<a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md" target="_blank" rel="noopener">OWASP Authentication Cheat Sheet</a></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1g2szwhcfdjj30kx04r3z1.jpg" alt></p>
+<p><img src="https://github.com/musibii/image/blob/master/Session_Management_Cheat_Sheet_Diagram.png" alt></p>
 <p>会话 ID 或者 token 通过网站应用程序强制绑定用户认证证书(以用户会话的形式)通过 HTTP 流量和执行适当的访问控制。在现代网站应用程序这三个组件(认证、会话管理、访问控制)的复杂性，此外，实现和绑定也存在于网站开发人员手中(向开发框架并不提供这些组件之间强制的关系)，实现安全会话管理模块非常具有挑战性。</p>
 <p>会话 ID 的泄露、捕获、预测、暴力或者不变会导致会话被劫持，攻击者可以在网站应用程序中完全的模仿受害者。攻击者可以执行两种类型的会话劫持攻击，针对性和一般性。在针对性的攻击中，攻击者的目标是模仿特定(或私密)的网站应用程序受害者。一般性的攻击，攻击者的目标是模仿(或获取访问)网站应用程序中任意有效或合法的用户。</p>
 <h1 id="会话-ID-属性"><a href="#会话-ID-属性" class="headerlink" title="会话 ID 属性"></a>会话 ID 属性</h1><p>为了保持认证状态和追踪网站应用程序中用户的访问进度，应用程序为用户提供了会话识别码(会话 ID 或 token)在会话创建时，而且在会话持续期间可以通过用户和网站应用程序分享和修改(在每次 HTTP 请求中都会发送)。会话 ID 就是键值对。</p>
@@ -501,7 +501,7 @@
   <p><span>本文标题:</span><a href="/2019/05/07/Web身份验证、会话管理和访问控制/">Web身份验证、会话管理和访问控制</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Thales 的个人博客">Thales</a></p>
   <p><span>发布时间:</span>2019年05月07日 - 18:41</p>
-  <p><span>最后更新:</span>2019年05月07日 - 20:29</p>
+  <p><span>最后更新:</span>2019年05月07日 - 20:58</p>
   <p><span>原始链接:</span><a href="/2019/05/07/Web身份验证、会话管理和访问控制/" title="Web身份验证、会话管理和访问控制">http://yoursite.com/2019/05/07/Web身份验证、会话管理和访问控制/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/05/07/Web身份验证、会话管理和访问控制/" aria-label="复制成功！"></i></span>
   </p>
