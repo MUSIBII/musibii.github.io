@@ -85,7 +85,7 @@
 <meta name="description" content="Linux Python Vim Git">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MUSIBII">
-<meta property="og:url" content="http://yoursite.com/categories/docker/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/Docker/index.html">
 <meta property="og:site_name" content="MUSIBII">
 <meta property="og:description" content="Linux Python Vim Git">
 <meta property="og:locale" content="zh-Hans">
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/docker/">
+  <link rel="canonical" href="http://yoursite.com/categories/Docker/">
 
 
 
 
 
-  <title>分类: docker | MUSIBII</title>
+  <title>分类: Docker | MUSIBII</title>
   
 
 
@@ -300,7 +300,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>docker<small>分类</small>
+        <h1>Docker<small>分类</small>
         </h1>
       </div>
 
@@ -312,43 +312,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/05/03/Docker的安装、组成及基础命令/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/03/Docker-的安装/" itemprop="url">
               
-                <span itemprop="name">Docker的安装、组成及基础命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-03T11:51:25+08:00" content="2019-05-03">
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/03/Docker-创建本地私有仓库/" itemprop="url">
-              
-                <span itemprop="name">Docker 创建本地私有仓库</span>
+                <span itemprop="name">Docker 的安装</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-03T11:48:19+08:00" content="2019-05-03">
-          05-03
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T15:23:36+08:00" content="2019-03-03">
+          03-03
         </time>
       </div>
 
@@ -413,7 +387,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">138</span>
+                  <span class="site-state-item-count">139</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +494,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">232.1k</span>
+    <span title="Site words total count">232.3k</span>
   
 </div>
 
@@ -998,6 +972,67 @@
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+   $('.search-icon').click(inputEventFunction);
             input.addEventListener('keypress', function (event) {
               if (event.keyCode === 13) {
                 inputEventFunction();
